@@ -1,0 +1,290 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@color/jppPrimaryColor"
+             tools:context="com.jaipurpinkpanthers.android.fragments.AboutUsFragment">
+
+
+
+    <ScrollView
+        android:id="@+id/scrollView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:layout_above="@+id/bottom_menu_fixed">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView"
+                    android:src="@drawable/aboutus"
+                    android:adjustViewBounds="true"
+                    android:maxHeight="300dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/tvAboutContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dummyBig"
+                        android:textColor="@color/jppNewsDesc"
+                        android:textSize="16sp"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:id="@+id/tvAboutMain"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="20dp"
+                        android:text="@string/aboutMain"
+                        android:textColor="@color/jppNewsDesc"
+                        android:textSize="16sp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp">
+
+                        <TextView
+                            android:id="@+id/tvAboutFounded"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="5dp"
+                            android:gravity="center_vertical"
+                            android:text="@string/aboutFounded"
+                            android:textSize="16sp"
+                            android:textColor="@color/jppAccentColor"/>
+
+                        <TextView
+                            android:id="@+id/tvAboutFoundedYear"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:text="@string/aboutFoundedYear"
+                            android:textSize="16sp"
+                            android:textColor="@color/jppNewsDesc"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp">
+
+                        <TextView
+                            android:id="@+id/tvAboutOwner"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="5dp"
+                            android:gravity="center_vertical"
+                            android:text="@string/aboutOwner"
+                            android:textSize="16sp"
+                            android:textColor="@color/jppAccentColor"/>
+
+                        <TextView
+                            android:id="@+id/tvAboutOwnerName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:text="@string/aboutOwnerName"
+                            android:textSize="16sp"
+                            android:textColor="@color/jppNewsDesc"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp">
+
+                        <TextView
+                            android:id="@+id/tvAboutCoach"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="5dp"
+                            android:gravity="center_vertical"
+                            android:text="@string/aboutCoach"
+                            android:textSize="16sp"
+                            android:textColor="@color/jppAccentColor"/>
+
+                        <TextView
+                            android:id="@+id/tvAboutCoachName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:text="@string/aboutCoachName"
+                            android:textSize="16sp"
+                            android:textColor="@color/jppNewsDesc"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp">
+
+                        <TextView
+                            android:id="@+id/tvAboutCaptain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="5dp"
+                            android:gravity="center_vertical"
+                            android:text="@string/aboutCaptain"
+                            android:textSize="16sp"
+                            android:textColor="@color/jppAccentColor"/>
+
+                        <TextView
+                            android:id="@+id/tvAboutCaptainName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:text="@string/aboutCaptainName"
+                            android:textSize="16sp"
+                            android:textColor="@color/jppNewsDesc"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp">
+
+                        <TextView
+                            android:id="@+id/tvAboutGround"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="5dp"
+                            android:gravity="center_vertical"
+                            android:text="@string/aboutGround"
+                            android:textSize="16sp"
+                            android:textColor="@color/jppAccentColor"/>
+
+                        <TextView
+                            android:id="@+id/tvAboutGroundName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:text="@string/aboutGroundName"
+                            android:textSize="16sp"
+                            android:textColor="@color/jppNewsDesc"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/tvAboutTeam"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="5dp"
+                            android:gravity="center_vertical"
+                            android:text="@string/aboutTeam"
+                            android:textSize="16sp"
+                            android:textColor="@color/jppAccentColor"/>
+
+                        <TextView
+                            android:id="@+id/tvAboutTeamColors"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:text="@string/aboutTeamColors"
+                            android:textSize="16sp"
+                            android:textColor="@color/jppNewsDesc"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/tvAboutSquad"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="5dp"
+                            android:gravity="center_vertical"
+                            android:text="@string/aboutSquad"
+                            android:textSize="16sp"
+                            android:textColor="@color/jppAccentColor"/>
+
+                        <TextView
+                            android:id="@+id/tvAboutCurrentSquad"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:text="@string/aboutCurrentSquad"
+                            android:textSize="16sp"
+                            android:textColor="@color/jppNewsDesc"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvAboutBottom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/aboutBottom"
+                        android:textSize="16sp"
+                        android:textColor="@color/jppNewsDesc"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/white"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="10dp"
+                    android:visibility="gone">
+
+                    <include
+                        android:id="@+id/llTeam"
+                        layout="@layout/layout_cross_header"/>
+
+                    <include
+                        android:id="@+id/llTeam1"
+                        layout="@layout/layout_team_member"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@color/jppPrimaryColor"/>
+
+                    <include
+                        layout="@layout/layout_team_member"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/llmatchUpdateScore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/ivHomeMainlive"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/schedule_back" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="170dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical"
+            >
+
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <!--android:background="@drawable/zheaderstyle"-->
+
+                <ImageView
+                    android:id="@+id/matchup_iv_pinkhead"
+                    android:layout_marginTop="-8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    />
+                <!--android:src="@drawable/zheaderstyle"-->
+                <TextView
+                    android:id="@+id/matchup_tv_pinkhead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Match - 16"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginLeft="50dp"
+                    android:textColor="#ffff"
+                    android:textSize="14sp"
+                    android:layout_gravity="center_horizontal|center_vertical"
+
+
+                    />
+
+            </RelativeLayout>
+
+
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/llTeamVslive"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="6.3">
+
+                <ImageView
+                    android:id="@+id/ivT1matchupdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="-10dp"
+                    android:layout_weight="2"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/t5" />
+
+                <ImageView
+                    android:id="@+id/imageView7live"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.5"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/jppvs" />
+
+                <ImageView
+                    android:id="@+id/ivT2matchupdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-10dp"
+                    android:layout_weight="2"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/t1" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/llTeamVs"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvmatchupdateVenue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="Shree shiv Chhatrapati Sports Complex, Pune"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/lltvMatchTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="25 Jun 2016,21:00(IST)"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/llmatchscore"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_below="@+id/llTeamVslive"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/halftime_fulltime"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/scorebar"
+                    android:gravity="center"
+                    android:text=""
+                    android:layout_marginTop="50dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp"
+                    />
+
+                <TextView
+                    android:id="@+id/tvupdatescore1"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="-10dp"
+                    android:gravity="center"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textStyle="bold"
+                    android:text="00"
+                    android:shadowColor="#d3f3ff"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:shadowRadius="5"
+                    android:textColor="@color/Pink_Panthers"
+                    android:textSize="60sp"
+                    android:paddingBottom="7dp"
+                    />
+
+                <TextView
+                    android:id="@+id/tvupdatescore2"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginTop="-10dp"
+                    android:gravity="center"
+                    android:text="00"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textStyle="bold"
+                    android:shadowColor="#d3f3ff"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:shadowRadius="5"
+                    android:textColor="@color/Patna_Pirates"
+                    android:textSize="60sp"
+                    android:paddingBottom="7dp"/>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </FrameLayout>
+</LinearLayout>

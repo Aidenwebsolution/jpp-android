@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="50dp"
+    android:orientation="horizontal"
+    android:background="@color/jppPrimaryDarkColor"
+    android:id="@+id/llBottomFixed">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/ivHome"
+        android:layout_weight="1"
+        android:src="@drawable/ic_bottom_home_color"
+        android:padding="7.5dp"
+        android:onClick="home"/>
+
+    <View
+        android:layout_width="2dp"
+        android:layout_height="match_parent"
+        android:background="@color/jppDarkColor"/>
+
+
+
+
+    <!--<ImageView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:id="@+id/ivSchedule"-->
+        <!--android:layout_weight="1"-->
+        <!--android:src="@drawable/ic_bottom_schedule_color"-->
+        <!--android:padding="7.5dp"-->
+        <!--android:onClick="schedule"-->
+        <!--android:visibility="visible"/>-->
+
+    <!--<View-->
+        <!--android:layout_width="2dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="@color/jppDarkColor"-->
+       <!--/>-->
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/ivGallery"
+        android:layout_weight="1"
+        android:src="@drawable/ic_bottom_gallery_color"
+        android:padding="7.5dp"
+        android:onClick="gallery"/>
+
+    <View
+        android:layout_width="2dp"
+        android:layout_height="match_parent"
+        android:background="@color/jppDarkColor"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/ivNews"
+        android:layout_weight="1"
+        android:src="@drawable/ic_bottom_news_color"
+        android:padding="7.5dp"
+        android:onClick="news"/>
+
+    <View
+        android:layout_width="2dp"
+        android:layout_height="match_parent"
+        android:background="@color/jppDarkColor"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/ivPanthers"
+        android:layout_weight="1"
+        android:src="@drawable/ic_bottom_panthers_color"
+        android:padding="7.5dp"
+        android:onClick="knowPanthers"/>
+</LinearLayout>

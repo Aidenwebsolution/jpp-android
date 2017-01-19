@@ -1,0 +1,1015 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/jppPrimaryColor"
+    tools:context="com.jaipurpinkpanthers.android.fragments.HomeFragment">
+
+    <android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <!--timer-->
+                <!--<FrameLayout
+                    android:id="@+id/ll1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/ivHomeMain"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/schedule_back"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <include
+                            android:id="@+id/llLatestUpdate"
+                            layout="@layout/layout_cross_header"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <LinearLayout
+                            android:id="@+id/llTeamVs"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:weightSum="6.3">
+
+                            <ImageView
+                                android:id="@+id/llivT1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="-25dp"
+                                android:layout_weight="2"
+                                android:adjustViewBounds="true"
+                                android:src="@drawable/t1" />
+
+                            <ImageView
+                                android:id="@+id/imageView7"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5"
+                                android:adjustViewBounds="true"
+                                android:src="@drawable/jppvs" />
+
+                            <ImageView
+                                android:id="@+id/llivT2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="-25dp"
+                                android:layout_weight="2"
+                                android:adjustViewBounds="true"
+                                android:src="@drawable/t5" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/llTeamVs"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/lltvVenue"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:text="Shree shiv Chhatrapati Sports Complex, Pune"
+                                android:textColor="@android:color/white"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/lltvMatchTime"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="-5dp"
+                                android:gravity="center"
+                                android:text="25 Jun 2016,21:00(IST)"
+                                android:textColor="@android:color/white" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lltimer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:id="@+id/llsubtimer1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:id="@+id/rlmonth"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:adjustViewBounds="true"
+                                    android:background="@drawable/jppcoutdownbox">
+
+                                    <TextView
+                                        android:id="@+id/tvmonth"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:text="00"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="28dp" />
+                                </RelativeLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="5dp"
+                                    android:gravity="center"
+                                    android:text="MONTH"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+
+                            <ImageView
+                                android:id="@+id/ivcolon1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="10dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:gravity="center"
+                                android:src="@drawable/colon" />
+
+                            <LinearLayout
+                                android:id="@+id/llsubtimer2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:id="@+id/rldays"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:adjustViewBounds="true"
+                                    android:background="@drawable/jppcoutdownbox">
+
+                                    <TextView
+                                        android:id="@+id/tvdays"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:text="00"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="28dp" />
+                                </RelativeLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="5dp"
+                                    android:gravity="center"
+                                    android:text="DAYS"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+
+                            <ImageView
+                                android:id="@+id/ivcolon2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="10dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:gravity="center"
+                                android:src="@drawable/colon" />
+
+                            <LinearLayout
+                                android:id="@+id/llsubtimer3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:id="@+id/rlhours"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:adjustViewBounds="true"
+                                    android:background="@drawable/jppcoutdownbox">
+
+                                    <TextView
+                                        android:id="@+id/tvhours"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:text="00"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="28dp" />
+                                </RelativeLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="5dp"
+                                    android:gravity="center"
+                                    android:text="HOURS"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+
+                            <ImageView
+                                android:id="@+id/ivcolon3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="10dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:gravity="center"
+                                android:src="@drawable/colon" />
+
+                            <LinearLayout
+                                android:id="@+id/llsubtimer4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:id="@+id/rlmins"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:adjustViewBounds="true"
+                                    android:background="@drawable/jppcoutdownbox">
+
+                                    <TextView
+                                        android:id="@+id/tvmins"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:text="00"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="28dp" />
+                                </RelativeLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="5dp"
+                                    android:gravity="center"
+                                    android:text="MINS"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout311"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/teambutton"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center_horizontal"
+
+                            android:orientation="horizontal"
+                            android:visibility="visible">
+
+                            <Button
+                                android:layout_width="150dp"
+                                android:layout_height="40dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginRight="10dp"
+                                android:background="@color/jppplayertablelist"
+                                android:text="BOOK TICKETS"
+                                android:textColor="@android:color/white"
+                                android:visibility="gone" />
+
+                            <Button
+                                android:id="@+id/bAddToCalendar"
+                                android:layout_width="150dp"
+                                android:layout_height="40dp"
+                                android:layout_marginBottom="10dp"
+                                android:layout_marginLeft="10dp"
+                                android:background="@color/jppplayertablelist"
+                                android:onClick="addToCalendar"
+                                android:text="ADD TO CALENDER"
+                                android:textColor="@android:color/white" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </FrameLayout>
+&lt;!&ndash;score&ndash;&gt;
+                <FrameLayout
+                    android:id="@+id/llLiveUpdatescore"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/ivHomeMainlive"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/schedule_back" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="50dp"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <include
+                            android:id="@+id/llLiveUpdate"
+                            layout="@layout/layout_cross_header"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <LinearLayout
+                            android:id="@+id/llTeamVslive"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:weightSum="6.3">
+
+                            <ImageView
+                                android:id="@+id/llivT1live"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="-25dp"
+                                android:layout_weight="2"
+                                android:adjustViewBounds="true"
+                                android:src="@drawable/t5" />
+
+                            <ImageView
+                                android:id="@+id/imageView7live"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5"
+                                android:adjustViewBounds="true"
+                                android:src="@drawable/jppvs" />
+
+                            <ImageView
+                                android:id="@+id/llivT2live"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="-25dp"
+                                android:layout_weight="2"
+                                android:adjustViewBounds="true"
+                                android:src="@drawable/t1" />
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/llmatchscore"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:layout_below="@+id/llTeamVslive"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/halftime_fulltime"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:background="@drawable/scorebar"
+                                android:gravity="center"
+                                android:text=""
+                                android:textColor="@android:color/black"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/tvlivescore1"
+                                android:layout_width="80dp"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentLeft="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="40dp"
+                                android:layout_marginTop="-10dp"
+                                android:gravity="center"
+                                android:shadowColor="#d3f3ff"
+                                android:shadowDx="2"
+                                android:shadowDy="2"
+                                android:shadowRadius="5"
+                                android:text="00"
+                                android:textColor="@color/Pink_Panthers"
+                                android:textSize="70sp" />
+
+                            <TextView
+                                android:id="@+id/tvlivescore2"
+                                android:layout_width="80dp"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="40dp"
+                                android:layout_marginTop="-10dp"
+                                android:gravity="center"
+                                android:shadowColor="#d3f3ff"
+                                android:shadowDx="2"
+                                android:shadowDy="2"
+                                android:shadowRadius="5"
+                                android:text="00"
+                                android:textColor="@color/Patna_Pirates"
+                                android:textSize="70sp" />
+
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:id="@+id/llmatchreport"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/teambutton"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <Button
+                                android:id="@+id/bMATCHREPORT"
+                                android:layout_width="150dp"
+                                android:layout_height="40dp"
+                                android:layout_marginBottom="10dp"
+                                android:layout_marginLeft="10dp"
+                                android:background="@color/jppplayertablelist"
+                                android:onClick="addToCalendar"
+                                android:text="MATCH REPORT"
+                                android:textColor="@android:color/white" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </FrameLayout>-->
+
+                <!--<FrameLayout
+                    android:id="@+id/ll1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:id="@+id/ivHomeMain"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        &lt;!&ndash;<include
+                            android:id="@+id/llUpcomingMatch"
+                            layout="@layout/layout_cross_header"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>&ndash;&gt;
+                        <include
+                            android:id="@+id/llLatestUpdate"
+                            layout="@layout/layout_cross_header"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                            android:id="@+id/llTeamVs"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+
+                            <ImageView
+                                android:id="@+id/ivT1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_weight="2"
+                                android:adjustViewBounds="true"
+                                android:src="@drawable/blank"/>
+
+                            <ImageView
+                                android:id="@+id/imageView7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3.35"
+                                android:adjustViewBounds="true"
+                                android:src="@drawable/vs"/>
+
+                            <ImageView
+                                android:id="@+id/ivT2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="10dp"
+                                android:layout_weight="2"
+                                android:adjustViewBounds="true"
+                                android:paddingLeft="10dp"
+                                android:src="@drawable/blank"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/llTeamVs"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvS1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:gravity="right"
+                                android:paddingRight="40dp"
+                                android:text="&#45;&#45;"
+                                android:textColor="@android:color/white"
+                                android:textIsSelectable="false"
+                                android:textSize="44sp"/>
+
+                            <TextView
+                                android:id="@+id/tvCo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:gravity="center"
+                                android:text=":"
+                                android:textColor="@android:color/white"
+                                android:textSize="44sp"/>
+
+                            <TextView
+                                android:id="@+id/tvS2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:gravity="left"
+                                android:paddingLeft="40dp"
+                                android:text="&#45;&#45;"
+                                android:textColor="@android:color/white"
+                                android:textSize="44sp"/>
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/llTeamVs"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvMatchTime"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="&#45;&#45;:&#45;&#45;"
+                                android:textColor="@android:color/white"/>
+
+                            <TextView
+                                android:id="@+id/tvVenue"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:text="&#45;&#45;"
+                                android:textColor="@android:color/white"/>
+
+                            <TextView
+                                android:id="@+id/tvTime"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="&#45;&#45;"
+                                android:textColor="@android:color/white"/>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </FrameLayout>-->
+
+                <RelativeLayout
+                    android:id="@+id/flReview"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/schedule_back"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/ivReview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <include
+                            android:id="@+id/llReview"
+                            layout="@layout/layout_cross_header"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <com.jaipurpinkpanthers.android.util.HeightWrappingViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+                            android:id="@+id/view_pager"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_below="@id/llReview"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginTop="20dp"
+                            android:foregroundGravity="center" />
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/congrats"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/home_congrats"
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:src="@drawable/appbanner"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentStart="true" />
+
+                </RelativeLayout>
+                <!--news-->
+                <RelativeLayout
+                    android:id="@+id/ll2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/white"
+                    android:onClick="news"
+                    android:visibility="gone">
+
+                    <include
+                        android:id="@+id/llNews"
+                        layout="@layout/layout_cross_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <View
+                        android:id="@+id/blankView"
+                        android:layout_width="match_parent"
+                        android:layout_height="15dp"
+                        android:layout_below="@id/llNews" />
+
+                    <LinearLayout
+                        android:id="@+id/news_body"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/blankView"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:id="@+id/ivNews"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/loadingpink"
+                            android:scaleType="centerCrop" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="5dp">
+
+                            <TextView
+                                android:id="@+id/tvNewsHead"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:maxLines="2"
+                                android:text="--"
+                                android:textColor="@color/jppProfileType"
+                                android:textSize="17sp" />
+
+                            <TextView
+                                android:id="@+id/tvNewsDesc"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:ellipsize="end"
+                                android:maxLines="4" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/newsDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/news_body"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="right"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvNewsDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="10dp"
+                            android:text="--" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llRead"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/newsDate"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:gravity="right"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvNewsRead"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="10dp"
+                            android:text="Read more News >"
+                            android:textColor="@color/jppProfileType"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <!--<View
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:layout_below="@+id/llRead"/>-->
+                </RelativeLayout>
+                <!--signup-->
+                <RelativeLayout
+                    android:id="@+id/ll4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/white"
+                    android:visibility="visible">
+
+
+                    <LinearLayout
+                        android:id="@+id/llsignUp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/tvsignUp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center"
+                            android:text="SIGN UP AND BECOME PART OF THE PANTHER FAMILY. EXCLUSIVE OFFERS AND LOTS MORE!"
+                            android:textAlignment="center"
+                            android:textColor="@color/jppAccentColor"
+                            android:textSize="14sp" />
+
+                        <Button
+                            android:id="@+id/bsignUp"
+                            android:layout_width="126dp"
+                            android:layout_gravity="center_horizontal"
+                            android:background="@color/jppplayertablelist"
+                            android:onClick="fan1"
+                            android:layout_height="36dp"
+                            android:text="CLICK HERE"
+                            android:textColor="#fefdfd" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+                <!--jpptv-->
+                <RelativeLayout
+                    android:id="@+id/ll5"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/jpptv_section"
+                    android:onClick="jppTv"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/home_iv_jpptv"/>
+
+
+
+                </RelativeLayout>
+
+                <!-- table -->
+                <RelativeLayout
+                    android:id="@+id/ll3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/jpptable"
+                    android:visibility="gone">
+
+                    <include
+                        android:id="@+id/llTable"
+                        layout="@layout/layout_cross_header_white"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/llTable"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/jpptable"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:background="@color/jppplayertablelist"
+                            android:orientation="horizontal"
+                            android:padding="5dp">
+
+                            <TextView
+                                android:id="@+id/tvNo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:text="No."
+                                android:textColor="@android:color/black" />
+
+                            <TextView
+                                android:id="@+id/tvTeam"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:text="Team"
+                                android:textColor="@android:color/black" />
+
+                            <TextView
+                                android:id="@+id/tvP"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:gravity="center"
+                                android:text="P"
+                                android:textColor="@android:color/black" />
+
+                            <TextView
+                                android:id="@+id/tvW"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:gravity="center"
+                                android:text="W"
+                                android:textColor="@android:color/black" />
+
+                            <TextView
+                                android:id="@+id/tvL"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:gravity="center"
+                                android:text="L"
+                                android:textColor="@android:color/black" />
+
+                            <TextView
+                                android:id="@+id/tvPts"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="PTS"
+                                android:textColor="@android:color/black" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/llPoints"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingBottom="5dp"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <!--sponsers-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:visibility="gone"
+                    android:id="@+id/sponsers"
+                    >
+                    <!--android:background="@drawable/footersponsor"-->
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:id="@+id/home_iv_sponsor"
+                        android:src="@drawable/footersponsor"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+</FrameLayout>

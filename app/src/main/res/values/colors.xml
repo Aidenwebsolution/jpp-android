@@ -1,0 +1,55 @@
+<resources>
+
+    <!--
+        Check Android Theme colors for color reference:
+        https://developer.android.com/training/material/images/ThemeColors.png
+
+        Refer also to Color palette for the UI colors you should use:
+        http://www.google.com/design/spec/style/color.html#color-ui-color-palette
+    -->
+
+    <color name="myPrimaryColor">#2196F3</color>
+    <color name="myPrimaryDarkColor">#1976D2</color>
+    <color name="myAccentColor">#FF4081</color>
+    <color name="myDrawerBackground">#FFF</color>
+    <color name="myWindowBackground">#FFF</color>
+    <color name="myTextPrimaryColor">#212121</color>
+    <color name="myNavigationColor">#000</color>
+
+    <drawable name="pressed_gray">#0c000000</drawable>
+    <drawable name="selected_gray">#00000000</drawable> <!--2c000000-->
+
+    <!-- custom -->
+
+    <color name="jppAccentColor">#ee4a9b</color>
+    <color name="jppPrimaryColor">#c4f0ff</color>
+    <color name="jppPrimaryDarkColor">#0a7ba1</color>
+    <color name="jppDarkColor">#0c7598</color>
+    <color name="jppNewsHeader">#b41e72</color>
+    <color name="jppNewsDesc">#262626</color>
+    <color name="jppProfileType">#4ecaf5</color>
+    <color name="jppGalleryToolbar">#ebf9fe</color>
+    <color name="jppPointsRow">#ef67ab</color>
+    <color name="jppFanBorder">#00b0ae</color>
+    <color name="jppFanButton">#d73785</color>
+    <color name="jppFanText">#676767</color>
+    <color name="jppFanHint">#A3A3A3</color>
+    <color name="jpptable">#4ecaf5</color>
+    <color name="jppplayertablelist">#7bd9fa</color>
+    <color name="score">#078042</color>
+    <color name="border">#d3f3ff</color>
+
+
+    <color name="Bengaluru_Bulls">#ffb01d21</color>
+    <color name="Bengal_Warriors">#fff26724</color>
+    <color name="Dabang_Delhi">#ffd91f2d</color>
+    <color name="Patna_Pirates">#ff0a4436</color>
+    <color name="Puneri_Patlan">#fff04e23</color>
+    <color name="Telgu_Titans">#ffda2131</color>
+    <color name="U_Mumba">#fff15922</color>
+    <color name="Pink_Panthers">#ffee4a9b</color>
+
+
+
+
+</resources>

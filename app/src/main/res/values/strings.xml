@@ -1,0 +1,182 @@
+<resources>
+    <string name="app_name">JPP</string>
+    <string name="drawer_open">Menu opened</string>
+    <string name="drawer_close">Menu closed</string>
+    <string name="action_settings">Settings</string>
+    <string name="dummy">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
+
+    <string name="dummyBig">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_about_us">AboutUsActivity</string>
+    <string name="title_activity_about">AboutActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+
+
+<!-- player detail layout -->
+    <string name="playerName">GANGADHARI</string>
+    <string name="playerType">RAIDER</string>
+    <string name="playerNationality">NATIONALITY: </string>
+    <string name="playerIndian">INDIAN</string>
+    <string name="playerNative">STATE: </string>
+    <string name="playerNativePlace">MUMBAI</string>
+    <string name="playerBorn">BORN: </string>
+    <string name="playerDob">JUN 08, 1993</string>
+    <string name="playerAge">AGE: </string>
+    <string name="playerAgeNo">22</string>
+    <string name="playerJersey">JERSEY NUMBER: </string>
+    <string name="playerJerseyNo">10</string>
+    <string name="playerTour">TOURNAMENTS PLAYED:</string>
+    <string name="playerAchieve">ACHIEVEMENTS:</string>
+    
+<!-- About -->
+    <string name="aboutMain">Jaipur Pink Panthers is a professional kabaddi team based in Jaipur, Rajasthan that competes in the Pro Kabaddi League.</string>
+    <string name="aboutFounded">Founded:</string>
+    <string name="aboutFoundedYear">2014</string>
+    <string name="aboutOwner">Owner:</string>
+    <string name="aboutOwnerName">Abhishek Bachchan</string>
+    <string name="aboutCoach">Coach:</string>
+    <string name="aboutCoachName">Balwan Singh</string>
+    <string name="aboutCaptain">Captain:</string>
+    <string name="aboutCaptainName">Jasvir Singh</string>
+    <string name="aboutGround">Home Ground:</string>
+    <string name="aboutGroundName">Sawai Mansingh Stadium, Jaipur</string>
+    <string name="aboutTeam">Team Colours:</string>
+    <string name="aboutTeamColors">Pink and Blue</string>
+    <string name="aboutSquad">Current Squad:</string>
+    <string name="aboutCurrentSquad">15 Indian &amp; 3 International Players</string>
+    <string name="aboutBottom">Jaipur Pink Panthers are the champions of the first season of the Pro Kabaddi League in 2014.</string>
+    <string name="fanRegister">Register and get a chance to win exclusive Jaipur Pink Panthers merchandise, meet and greet with the players and win home match tickets.</string>
+    <string name="fanRegisterBottom">Stay tuned to our weekly contests on social media and stand a chance to win exclusive merchandise!</string>
+    <string name="actvcity1">AutoCompleteTextView_Static</string>
+
+<!-- players -->
+    <string name="playerDesc1">Ajay Kumar#Raider#Indian#Jan 02, 1994#33# #School u19 (Gold) 4-10-2011 to 8-10-2011, Junior National Championship 27-12-2011 to 30-12-2011  (Bronze), Senior National Championship 24-11-2015 to 29-11-2015 (Bronze), Federation cup 1-5-2016 to 5-5-2016 (Gold)#22#Haryana</string>
+    <string name="playerDesc2">Amit Hooda#Defender#Indian#May 03, 1996#10#2015-16 Pro Kabaddi League (Patna Pirates), 2010-16 Senior State Campionship, 2015 Senior Nationals, 2016 Departmental Nationals, 2016 Federation Cup#2016 Pro Kabaddi League (Gold), 2015 Senior Nationals (Bronze), 2016 Federation Cup (Silver), 2016 Departmental Nationals (Gold), 2012,14,16 Senior State Championship (Silver), 2013 Senior State Championship (Gold)#20#Haryana</string>
+    <string name="playerDesc3">Amit Nagar#Raider#Indian#Aug 22, 1997#04#2014-15 Junior National Games, 2015 U-19 School Games, 2016 Junior Asian Championship#2015 U-19 School Games(Bronze), 2016 Junior Asian Championship (Gold)#18#New Delhi</string>
+    <string name="playerDesc4">Jasvir Singh#Raider#Indian#Apr 04, 1984#02#2004-2016 Senior Nationals, 2007,2009,2013 Indoor Asian Games, 2014 Asian Games, 2009-15 Departmental Nationals, 2014-16 Pro Kabaddi League(Jaipur Pink Panthers)#2014 Pro Kabaddi League (Gold), 2004,2013 Senior National Games (Gold), 2005,2010,2015 Senior Nationals (Silver), 2007 Senior Nationals (Bronze), 2007,2009,2013 Indoor Asian Games (Gold), 2014 Asian Games (Gold), 2013-14 Departmental Nationals (Gold), 2015 Departmental Nationals (Silver)#32#Haryana</string>
+    <string name="playerDesc5">Jawahar#All Rounder#Indian#May 02, 1995#111# #Silver medal in 45th Haryana state school tournament, 56th National School Games 2010-11 held at Himachal Pradesh secure bronze medal, Participant 46th Haryana state school tournament 2011-12, Participate in Delhi state kabaddi championship 2012-13, Secure first position in Haryana state championship 2013-14, Silver medal in 61st senior national kabaddi championship 2013-14, Gold medal in 62nd senior national kabaddi championship 2014-15, Bronze medal in 35th national games Kerala 2015#21#Haryana</string>
+    <string name="playerDesc6">Lo Chia Wei#Raider#Chinese#Nov 24, 1989#09#2016 Pro Kabaddi League (Dabang Delhi K.C.)# #26#New Taipei City</string>
+    <string name="playerDesc7">Mahipal Narwal#Raider#Indian#Apr 24, 1992#12#2011-14 Senior National Championship, 2014-2015 Pro Kabaddi League(Puneri Paltan) , 2016 Pro Kabaddi League(Patna Pirates), 2016 Pro Kabaddi League (Jaipur Pink Panthers), 2010 All India University , 2010 National Games#2016 Pro Kabaddi League(Gold), 2013  Senior National Championship(gold), 2011 Senior Nationals Campionship (Silver), 2010 All India University (Gold), 2010 National Games (Gold).#24#Haryana</string>
+    <string name="playerDesc8">Parveen Narwal#All Rounder#Indian#Aug 08, 1995#07#2009 Rural State Championship, 2009 U-17 National Games, 2010 U-19 School Games, 2012,2015 Senior State Championship#2009 Rural State Championship(Gold), 2009 U-17 National Games (Silver), 2010 U-19 School Games(Gold), 2012,2015 Senior State Championship(Gold)#20#Haryana</string>
+    <string name="playerDesc9">Parvesh Malik#Defender#Indian#Apr 12, 1997#06#2015-16 All India University, 2016 Junior National Games, 2016 Junior Asian Championship#2015-16 All India Univerisity(gold),2016 Junior Asian Championship(gold), 2015 Junior National Games(Gold)#19#Haryana</string>
+    <string name="playerDesc10">Rajesh Narwal#All Rounder#Indian#Jul 08, 1990#11#2007 Federation Cup, 2007 U-17 School Games, 2004 Junior Rural National Championship, 2006-2015 Senior State Championship, 2008 All India University, 2014 - Beach Asian Games, 2014-16 - Super National Games , 2010-16 - Dept. Nationals Games , 2015 - National Games , 2016 - Federations Cup , 2014-16 Pro Kabaddi League(Jaipur Pink Panthers)#2008 All India University (Gold), 2010 National Games(Bronze), 2004 Junior Rural National Championship (Gold), 2007 U-17 School Games(Gold), 2006-2009 Senior State Championship (Gold), 2012-15 Senior State Championship (Gold)2014 - Beach Asian Games(Gold) , 2014-15 Super Nationals Games (Silver) , 2016 Super National Games (Bronze) , 2011-2016 Departmental Nationals Games (Gold), 2015 Nationals Games (Gold) , 2016 Federations Cup (Silver) , 2014 Pro Kabaddi Leaugue (Gold)#25#Haryana</string>
+    <string name="playerDesc11">Ran Singh#All Rounder#Indian#Apr 02, 1987#13#2014-2016 Pro Kabaddi League (Jaipur Pink Panthers),2002-08 Senior National Games, 2014 Senior National Games, 2014 Departmental National Games, 2008-2011 All India Police Tournament#2014 Pro Kabaddi League (Gold), 2007 Senior National Games (Silver), 2006 Senior National Games (Bronze), 2008,2011 All India Police Tournament (Gold), 2009,2010 All India Police Tournament (Bronze), 2014 Departmental National Tournament (Silver)#29#Punjab</string>
+    <string name="playerDesc12">Rohit Rana#Defender#Indian#Mar 30, 1988#05#2006-2010 Senior Nationals, 2010-14 Beach Kabaddi, 2011-16 Departmental Nationals, 2014-16 Pro Kabaddi League(Jaipur Pink Panthers), 2015 National Games.)#2014 Pro Kabaddi League (Gold) , 2015 National Games (Bronze), 2011-2014 Departmental Nationals (Gold),#28#Himachal Pradesh</string>
+    <string name="playerDesc13">Shabeer Bapu Sharfudheen#Raider#Indian#Aug 03, 1986#03#2004-2006 All India University, 2013-16 Departmental National Games, 2009-16 Senior National Games, 2015 National Games , 2014-16 Pro Kabaddi League#2016 Pro Kabaddi League (Silver), 2015 Pro Kabaddi League(Gold), 2014 Pro Kabaddi League(Silver),2015 National Games(silver),2014 Departmental National Games (Gold)#29#Kerela</string>
+    <string name="playerDesc14">Shrikant  Tewthia#All Rounder#Indian#Jul 10, 1992#08#2007 Junior Nationals, 2009 All India University, 2011 National Championship, 2013 Senior Nationals, 2015 Senior Nationals, 2016 Federations Cup, 2014-15 Pro Kabaddi League (Dabang Delhi), 2016 Pro Kabaddi League (Bengluru Bulls), 2016 Pro Kabaddi League (Jaipur Pink Panthers)#2009 All India University(Silver),2013 Senior Nationals(Bronze), 2015 Senior Nationals (Gold), 2016 Federations Cup(Bronze)#23#Uttar Pradesh</string>
+    <string name="playerDesc15">Tushar Patil#All Rounder#Indian#Nov 11, 1994#99#2011-12 U-19 School National Games, 2016 Departmental Nationals, 2013 Junior National Championship,2015 University Games#2016 Star Sports Pro Kabaddi semi-finalist team (Puneri Paltan), 2011 U-19 School National Games (Gold), 2012 U-19 School National Games (Silver)#21#Maharashtra</string>
+
+
+    <string name="player1">1#Ajay Kumar#Raider</string>
+    <string name="player2">2#Amit Hooda#Defender</string>
+    <string name="player3">3#Amit Nagar#Raider</string>
+    <string name="player4">4#Jasvir Singh#Raider</string>
+    <string name="player5">5#Jawahar#All Rounder</string>
+    <string name="player6">6#Lo Chia Wei#Raider</string>
+    <string name="player7">7#Mahipal Narwal #Raider</string>
+    <string name="player8">8#Praveen Narwal#All Rounder</string>
+    <string name="player9">9#Parvesh Malik#Defender</string>
+    <string name="player10">10#Rajesh Narwal#All Rounder</string>
+    <string name="player11">11#Ran Singh#All Rounder</string>
+    <string name="player12">12#Rohit Rana#Defender</string>
+    <string name="player13">13#Shabeer Bapu Sharfudheen#Raider</string>
+    <string name="player14">14#Shrikant Tewthia#All Rounder</string>
+    <string name="player15">15#Tushar Patil#All Rounder</string>
+
+
+    <string-array name="player">
+        <item>@string/player1</item>
+        <item>@string/player2</item>
+        <item>@string/player3</item>
+        <item>@string/player4</item>
+        <item>@string/player5</item>
+        <item>@string/player6</item>
+        <item>@string/player7</item>
+        <item>@string/player8</item>
+        <item>@string/player9</item>
+        <item>@string/player10</item>
+        <item>@string/player11</item>
+        <item>@string/player12</item>
+        <item>@string/player13</item>
+        <item>@string/player14</item>
+        <item>@string/player15</item>
+    </string-array>
+
+    <string-array name="playersDesc">
+        <item>@string/playerDesc1</item>
+        <item>@string/playerDesc2</item>
+        <item>@string/playerDesc3</item>
+        <item>@string/playerDesc4</item>
+        <item>@string/playerDesc5</item>
+        <item>@string/playerDesc6</item>
+        <item>@string/playerDesc7</item>
+        <item>@string/playerDesc8</item>
+        <item>@string/playerDesc9</item>
+        <item>@string/playerDesc10</item>
+        <item>@string/playerDesc11</item>
+        <item>@string/playerDesc12</item>
+        <item>@string/playerDesc13</item>
+        <item>@string/playerDesc14</item>
+        <item>@string/playerDesc15</item>
+
+
+    </string-array>
+
+    <string-array name="playerImages">
+        <item>@drawable/jpp_ajay</item>
+        <item>@drawable/jpp_amit_hooda</item>
+        <item>@drawable/jpp_amit_nagar</item>
+        <item>@drawable/jpp_jasvir</item>
+        <item>@drawable/jpp_jawahar</item>
+        <item>@drawable/jpp_lo_chia</item>
+        <item>@drawable/jpp_mahipal</item>
+        <item>@drawable/jpp_praveen</item>
+        <item>@drawable/jpp_parvesh</item>
+        <item>@drawable/jpp_rajesh</item>
+        <item>@drawable/jpp_ran</item>
+        <item>@drawable/jpp_rohit_rana</item>
+        <item>@drawable/jpp_shabeer</item>
+        <item>@drawable/jpp_shrikant</item>
+        <item>@drawable/jpp_tushar</item>
+    </string-array>
+
+    <string-array name="teamLogo">
+        <item>@drawable/t1</item>
+        <item>@drawable/t2</item>
+        <item>@drawable/t3</item>
+        <item>@drawable/t4</item>
+        <item>@drawable/t5</item>
+        <item>@drawable/t6</item>
+        <item>@drawable/t7</item>
+        <item>@drawable/t8</item>
+    </string-array>
+    <string-array name="teamLogo_new">
+        <item>http://jaipurpinkpanthers.com/img/team/India.png</item>
+        <item>http://jaipurpinkpanthers.com/img/team/SouthKorea.png</item>
+        <item>http://jaipurpinkpanthers.com/img/team/USA.png</item>
+        <item>http://jaipurpinkpanthers.com/img/team/Iran.png</item>
+        <item>http://jaipurpinkpanthers.com/img/team/England.png</item>
+        <item>http://jaipurpinkpanthers.com/img/team/Bangladesh.png</item>
+        <item>http://jaipurpinkpanthers.com/img/team/Poland.png</item>
+        <item>http://jaipurpinkpanthers.com/img/team/Kenya.png</item>
+        <item>http://jaipurpinkpanthers.com/img/team/Australia.png</item>
+        <item>http://jaipurpinkpanthers.com/img/team/Argentina.png</item>
+        <item>http://jaipurpinkpanthers.com/img/team/Thailand.png</item>
+        <item>http://jaipurpinkpanthers.com/img/team/TBD.png</item>
+
+    </string-array>
+
+    <string name="title_activity_merchandise">MerchandiseActivity</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_points_actitivy">PointsActitivy</string>
+    <string name="title_activity_web">WebActivity</string>
+    <string name="title_activity_wallpaper">WallpaperActivity</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_slide_show">SlideShowActivity</string>
+    <string name="title_activity_fan">FanActivity</string>
+    <string name="title_activity_test">TestActivity</string>
+
+</resources>

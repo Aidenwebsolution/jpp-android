@@ -1,0 +1,655 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/jppPrimaryColor"
+    tools:context="com.jaipurpinkpanthers.android.fragments.MerchandiseFragment">
+
+    <!--<ScrollView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content">-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="5">
+<!--
+        <LinearLayout
+            android:id="@+id/rlSchedule1"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/schedule_back"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:weightSum="13">
+
+            <include
+                android:id="@+id/llMatch1"
+                layout="@layout/layout_cross_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:id="@+id/llTeamVs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:layout_weight="12"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="8">
+
+
+                <ImageView
+                    android:id="@+id/ivT1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.5"
+                    android:adjustViewBounds="true"
+                    android:paddingRight="-10dp"
+                    android:src="@drawable/t5" />
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/jppvs" />
+
+                <ImageView
+                    android:id="@+id/ivT2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.5"
+                    android:adjustViewBounds="true"
+                    android:paddingLeft="-10dp"
+                    android:src="@drawable/t7" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/llTeamVs"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvVenue1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Sawai Mansingh Stadium, Jaipur"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tvTime1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="WED 29 JUN 2016, 20:00 (IST)"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llAddToCalendar"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearLayout3"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal">
+
+                <Button
+                    android:id="@+id/bBook1"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="@color/jppplayertablelist"
+                    android:text="BOOK TICKETS"
+                    android:textColor="@android:color/white"
+                    android:visibility="visible" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/rlSchedule2"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_below="@id/rlSchedule1"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/schedule_back"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:weightSum="13">
+
+            <include
+                android:id="@+id/llMatch2"
+                layout="@layout/layout_cross_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:id="@+id/llTeamVs1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:layout_weight="12"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="8">
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.5"
+                    android:adjustViewBounds="true"
+                    android:paddingRight="-10dp"
+                    android:src="@drawable/t5" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/jppvs" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.5"
+                    android:adjustViewBounds="true"
+                    android:paddingLeft="-10dp"
+                    android:src="@drawable/t2" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout31"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/llTeamVs1"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvVenue2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Sawai Mansingh Stadium, Jaipur"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tvTime2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="THU 30 JUN 2016,20:00 (IST)"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearLayout31"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal">
+
+                <Button
+                    android:id="@+id/bBook2"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/jppplayertablelist"
+                    android:text="BOOK TICKETS"
+                    android:textColor="@android:color/white"
+                    android:visibility="visible" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/rlSchedule3"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_below="@id/rlSchedule2"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/schedule_back"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:weightSum="13">
+
+            <include
+                android:id="@+id/llMatch3"
+                layout="@layout/layout_cross_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:id="@+id/llTeamVs2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:layout_weight="12"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="8">
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.5"
+                    android:adjustViewBounds="true"
+                    android:paddingRight="-10dp"
+                    android:src="@drawable/t5" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/jppvs" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.5"
+                    android:adjustViewBounds="true"
+                    android:paddingLeft="-10dp"
+                    android:src="@drawable/t3" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout32"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/llTeamVs2"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvVenue3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Sawai Mansingh Stadium, Jaipur"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tvTime3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="FRI 1 JUL 2016,21:00 (IST)"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearLayout32"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal">
+
+                <Button
+                    android:id="@+id/bBook3"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/jppplayertablelist"
+                    android:text="BOOK TICKETS"
+                    android:textColor="@android:color/white"
+                    android:visibility="visible" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/rlSchedule4"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_below="@id/rlSchedule3"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/schedule_back"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:weightSum="13">
+
+            <include
+                android:id="@+id/llMatch4"
+                layout="@layout/layout_cross_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:id="@+id/llTeamVs3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="0dp"
+                android:layout_weight="12"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="8">
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.5"
+                    android:adjustViewBounds="true"
+                    android:paddingRight="-10dp"
+                    android:src="@drawable/t5" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/jppvs" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.5"
+                    android:adjustViewBounds="true"
+                    android:paddingLeft="-10dp"
+                    android:src="@drawable/t6" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout33"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/llTeamVs3"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvVenue4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Sawai Mansingh Stadium, Jaipur"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tvTime4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="SAT 2 JUL 2016,21:00 (IST)"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearLayout33"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal">
+
+                <Button
+                    android:id="@+id/bBook4"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/jppplayertablelist"
+                    android:gravity="center"
+                    android:text="BOOK TICKETS"
+                    android:textColor="@android:color/white"
+                    android:visibility="visible" />
+
+            </LinearLayout>
+
+        </LinearLayout>-->
+
+        <RelativeLayout
+            android:id="@+id/merchandise1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_buynow"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:visibility="visible"
+            android:weightSum="10"
+            >
+            <LinearLayout
+                android:id="@+id/merchandise_kit"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="100dp"
+                android:orientation="horizontal"
+                android:background="@drawable/merchandise_kit"
+                android:layout_weight="1"
+                />
+
+            <ImageView
+                android:id="@id/merchandise1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/merchandise_kit"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                android:layout_marginBottom="-30dp"
+                android:src="@drawable/merchandise_text"
+                android:layout_weight="4"
+                />
+
+            <Button
+                android:id="@+id/buynow"
+                android:layout_width="120dp"
+                android:layout_height="30dp"
+                android:layout_below="@+id/merchandise1"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:background="@color/jppProfileType"
+                android:text="BUY NOW"
+                android:textColor="@color/jppAccentColor"
+                android:visibility="visible"
+                android:layout_weight="5"
+                />
+        </RelativeLayout>
+
+    </RelativeLayout>
+    <!--</ScrollView>-->
+
+
+    <!--<ImageView-->
+    <!--android:layout_below="@+id/rlSchedule1"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:src="@drawable/merchandise_commingsoon"-->
+    <!--android:layout_gravity="center"-->
+    <!--/>-->
+
+
+    <!--<LinearLayout-->
+    <!--android:orientation="vertical"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_margin="10dp"-->
+    <!--android:weightSum="2.5"-->
+    <!--android:layout_gravity="center_horizontal|bottom"-->
+    <!--android:background="@android:color/white">-->
+
+
+    <!--<LinearLayout-->
+    <!--android:orientation="vertical"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="1"-->
+    <!--android:weightSum="5">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="TICKETS"-->
+    <!--android:textSize="30sp"-->
+    <!--android:id="@+id/tvTic"-->
+    <!--android:textColor="@color/jppNewsHeader"-->
+    <!--android:gravity="center_horizontal"-->
+    <!--android:layout_weight="1"/>-->
+
+    <!--<ImageView-->
+    <!--android:layout_width="110dp"-->
+    <!--android:layout_height="110dp"-->
+    <!--android:src="@drawable/tickets"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:id="@+id/ivTic"-->
+    <!--android:layout_weight="4"/>-->
+
+    <!--<LinearLayout-->
+    <!--android:orientation="horizontal"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@color/jppNewsHeader"-->
+    <!--android:layout_marginLeft="10dp"-->
+    <!--android:layout_marginRight="10dp"-->
+    <!--android:onClick="goToTic"-->
+    <!--android:padding="5dp"-->
+    <!--android:layout_weight="1">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="BOOK NOW"-->
+    <!--android:textSize="16sp"-->
+    <!--android:id="@+id/tvBookNow"-->
+    <!--android:gravity="center"-->
+    <!--android:padding="7dp"-->
+    <!--android:textColor="@android:color/white" />-->
+    <!--</LinearLayout>-->
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="0.5">-->
+
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+    <!--android:orientation="vertical"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="1"-->
+    <!--android:weightSum="5">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="MERCHANDISE"-->
+    <!--android:textSize="30sp"-->
+    <!--android:id="@+id/tvMer"-->
+    <!--android:textColor="@color/jppNewsHeader"-->
+    <!--android:gravity="center_horizontal"-->
+    <!--android:layout_weight="1"-->
+    <!--android:layout_marginTop="10dp"/>-->
+
+    <!--<ImageView-->
+    <!--android:layout_width="110dp"-->
+    <!--android:layout_height="110dp"-->
+    <!--android:id="@+id/imageButton"-->
+    <!--android:src="@drawable/merchant"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:layout_weight="4"/>-->
+
+    <!--<LinearLayout-->
+    <!--android:orientation="horizontal"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@color/jppNewsHeader"-->
+    <!--android:layout_marginLeft="10dp"-->
+    <!--android:layout_marginRight="10dp"-->
+    <!--android:onClick="goToMerc"-->
+    <!--android:padding="5dp"-->
+    <!--android:layout_weight="1">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="COMING SOON"-->
+    <!--android:textSize="16sp"-->
+    <!--android:id="@+id/tvBuyNow"-->
+    <!--android:gravity="center"-->
+    <!--android:padding="7dp"-->
+    <!--android:textColor="@android:color/white" />-->
+    <!--</LinearLayout>-->
+
+    <!--</LinearLayout>-->
+
+    <!--</LinearLayout>-->
+
+</RelativeLayout>

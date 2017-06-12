@@ -325,47 +325,47 @@ public class MainActivity extends ActionBarActivity
 //                    clearBackStackOfFragments(getFragmentManager());
 //                    scheduleShow();
 //                    break;
+//                case 1:
+//                    clearBackStackOfFragments(getFragmentManager());
+//                    matchupdate();
+//                    break;
                 case 1:
-                    clearBackStackOfFragments(getFragmentManager());
-                    matchupdate();
-                    break;
-                case 2:
                     clearBackStackOfFragments(getFragmentManager());
                     matchupdate1();
                     break;
-                case 3:
+                case 2:
                     clearBackStackOfFragments(getFragmentManager());
                     galleryShow();
                     break;
-                case 4:
+                case 3:
                     clearBackStackOfFragments(getFragmentManager());
                     videoShows();
                     break;
-                case 5:
+                case 4:
                     clearBackStackOfFragments(getFragmentManager());
                     newsShow();
                     break;
-                case 6:
+                case 5:
                     clearBackStackOfFragments(getFragmentManager());
                     knowPanthersShow();
                     break;
-                case 7:
-                    clearBackStackOfFragments(getFragmentManager());
-                    merchandise1();
-                    break;
-                case 8:
+//                case 7:
+//                    clearBackStackOfFragments(getFragmentManager());
+//                    merchandise1();
+//                    break;
+                case 6:
                     clearBackStackOfFragments(getFragmentManager());
                     wallpapers1();
                     break;
-                case 9:
+                case 7:
                     clearBackStackOfFragments(getFragmentManager());
                     points1();
                     break;
-                case 10:
+                case 8:
                     clearBackStackOfFragments(getFragmentManager());
                     fan();
                     break;
-                case 11:
+                case 9:
                     clearBackStackOfFragments(getFragmentManager());
                     about1();
                     break;

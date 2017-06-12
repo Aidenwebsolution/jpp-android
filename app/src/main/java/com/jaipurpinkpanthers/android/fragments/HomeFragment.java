@@ -908,13 +908,13 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
 //                .asBitmap()
 //                .override(400, 400)
 //                .into(imageView);
-//        Glide.with(activity)
-//                .load(imageLink)
-//                .asBitmap()
-//                .override(300, 300)
-//                .placeholder(R.drawable.loadingnews)
-//                .centerCrop()
-//                .into(ivNews);
+        Glide.with(activity)
+                .load(imageLink)
+                .asBitmap()
+                .override(300, 300)
+                .placeholder(R.drawable.loadingnews)
+                .centerCrop()
+                .into(ivNews);
 //        Glide.with(activity)
 //                .load("https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xlf1/v/t1.0-9/14184463_491172797758946_2550913372511562820_n.jpg?oh=1c15b241ea74477f5d2e70c9d3d40734&oe=58495F70&__gda__=1481591055_35d3820926abd0aa152c2ee85b625fe6")
 //                .asBitmap()

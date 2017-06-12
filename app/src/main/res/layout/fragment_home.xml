@@ -702,7 +702,7 @@
                         android:id="@+id/home_congrats"
                         android:layout_width="match_parent"
                         android:layout_height="250dp"
-                        android:src="@drawable/appbanner"
+                        android:src="@drawable/appbanner1"
                         android:layout_alignParentTop="true"
                         android:layout_alignParentStart="true" />
 
@@ -1004,7 +1004,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="120dp"
                         android:id="@+id/home_iv_sponsor"
-                        android:src="@drawable/footersponsor"/>
+                        android:src="@drawable/jppsponsors"/>
 
                 </RelativeLayout>
 

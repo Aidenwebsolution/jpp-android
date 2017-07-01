@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.jaipurpinkpanthers.android.R;
 import com.jaipurpinkpanthers.android.util.CustomFonts;
+import com.jaipurpinkpanthers.android.util.InternetOperations;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -108,17 +109,26 @@ public class PanthersAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
+
         HashMap<String, String> map = list.get(position);
 
-        String playerInfo = map.get("PlayerInfo");
-        List<String> playerInfoList = Arrays.asList(playerInfo.split("#"));
+        String playerId = map.get("id");
+        String playerName = map.get("name");
+        String playerType = map.get("type");
+        String image = map.get("image");
 
-        String playerId = playerInfoList.get(0);            //playerId
-        String playerName = playerInfoList.get(1);          //playerName
-        String playerType = playerInfoList.get(2);          //playerType
+        image = InternetOperations.SERVER_UPLOADS_URL + image;
+//        HashMap<String, String> map = list.get(position);
+//
+//        String playerInfo = map.get("PlayerInfo");
+//        List<String> playerInfoList = Arrays.asList(playerInfo.split("#"));
+//
+//        String playerId = playerInfoList.get(0);            //playerId
+//        String playerName = playerInfoList.get(1);          //playerName
+//        String playerType = playerInfoList.get(2);          //playerType
 
-        String imageUri = "drawable://" + playerImages.getResourceId(position, -1);
-        imageLoader.displayImage(imageUri, holder.player_image,options);
+//        String imageUri = "drawable://" + playerImages.getResourceId(position, -1);
+        imageLoader.displayImage(image, holder.player_image,options);
 
         holder.player_name.setText(playerName.toUpperCase());
         holder.player_type.setText(playerType.toUpperCase());

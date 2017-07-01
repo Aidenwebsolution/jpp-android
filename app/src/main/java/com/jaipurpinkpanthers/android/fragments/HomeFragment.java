@@ -79,7 +79,7 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
     ImageLoader imageLoader;
     DisplayImageOptions options;
     ArrayList<HashMap<String, String>> list;
-    String team1Id = null, team2Id = null, team1 = null, team2 = null, team1Pts = null, team2Pts = null, venue = "--", time = null, matchTime = null;
+    String team1Id = null, team2Id = null, team1 = null, team2 = null, team1Pts = null, team2Pts = null, venue = "--", time = null, matchTime = null ,bannerimg =null;
     String teamlive1= null,teamlive2= null;
     ListView lvTeams;
     RelativeLayout ll2, ll3,ll4,ll5,rlsponsers;
@@ -87,7 +87,7 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
     ProgressDialog progressDialog;
     Activity activity;
     RelativeLayout flReview,showcongrats;
-    ImageView ivReview,ivsponsor;
+    ImageView ivReview,ivsponsor,ivpoints,ivsignup;
     LinearLayout llSeasonReview;
     private ViewPager mViewPager;
     private ViewPagerAdapter viewPagerAdapter;
@@ -205,15 +205,15 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
     @Override
     public void onRefresh() {
 
-        getdata();
-        /*if (InternetOperations.checkIsOnlineViaIP()) {
-            getdata();
-            //getHomeContentData();
+//        getdata();
+        if (InternetOperations.checkIsOnlineViaIP()) {
+//            getdata();
+            getHomeContentData();
         } else {
             progressDialog.dismiss();
             Toast.makeText(activity, "Please check your Internet Connection!", Toast.LENGTH_SHORT).show();
             swipeRefreshLayout.setRefreshing(false);
-        }*/
+        }
         //Toast.makeText(activity,"Refreshed!",Toast.LENGTH_SHORT).show();
     }
 
@@ -345,6 +345,8 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
         tvNewsDate = (TextView) view.findViewById(R.id.tvNewsDate);
         tvNewsRead = (TextView) view.findViewById(R.id.tvNewsRead);
         ivNews = (ImageView) view.findViewById(R.id.ivNews);
+        ivpoints = (ImageView) view.findViewById(R.id.ivpoints);
+        ivsignup = (ImageView) view.findViewById(R.id.ivsignup);
 
         tvNewsHead.setTypeface(CustomFonts.getBoldFont(activity));
         tvNewsDesc.setTypeface(CustomFonts.getLightFont(activity));
@@ -358,16 +360,16 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
 
         //mViewPager.setAdapter(viewPagerAdapter);
 
-        getdata();
+//        getdata();
 
-        /*if (InternetOperations.checkIsOnlineViaIP()) {
+        if (InternetOperations.checkIsOnlineViaIP()) {
 
             getHomeContentData();
 
         } else {
             progressDialog.dismiss();
             Toast.makeText(activity, "Please check your Internet Connection!", Toast.LENGTH_SHORT).show();
-        }*/
+        }
     }
 
     boolean a = false, b = false, c = false, d = false, e = false, f = false, jpptv = false, signUp = false,livescore=false,sponsers=true;
@@ -391,9 +393,10 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                     response = InternetOperations.postBlank(InternetOperations.SERVER_URL + "getHomeContent");
 
                     jsonObject = new JSONObject(response);
+                    Log.d("jsonObject", String.valueOf(jsonObject));
 
                     //live update
-                   /* try {
+                    try {
                         JSONObject latestUpdate = new JSONObject(jsonObject.optString("latestMatch"));
 //                        response = InternetOperations.postBlank(InternetOperations.SERVER_URL + "getLatestMatch");
 //
@@ -430,8 +433,8 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                         team2 = latestUpdate.optString("team2");
                         venue = latestUpdate.optString("stadium");
                        time = latestUpdate.optString("starttimedate");
-                      *//*team1Id="3";
-                        team2Id="4";*//*
+                      team1Id="3";
+                        team2Id="4";
                        team1Id = latestUpdate.optString("team1id");
                        team2Id = latestUpdate.optString("team2id");
                        //addMatch( venue, time, team1Id, team2Id);
@@ -439,9 +442,10 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                         Log.e("JPP", Log.getStackTraceString(je));
                         //ll1.setVisibility(View.GONE);
                         a = true;
-                    }*/
+                    }
                     try {
                         JSONObject latestNews = new JSONObject(jsonObject.optString("news"));
+                        Log.d("news", String.valueOf(latestNews));
                         newsTitle = latestNews.optString("name");
                         newsImage = latestNews.optString("image");
                         newsTime = latestNews.optString("timestamp");
@@ -523,6 +527,21 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                     Log.e("JPP", Log.getStackTraceString(e));
                 }
 
+
+                try {
+                    response = InternetOperations.postBlank(InternetOperations.SERVER_URL + "getapphomeimage");
+                    jsonObject = new JSONObject(response);
+                    done = true;
+
+                } catch (IOException io) {
+                    Log.e("JPP", Log.getStackTraceString(io));
+                    a = b = c = true;
+                } catch (JSONException je) {
+                    Log.e("JPP", Log.getStackTraceString(je));
+                } catch (Exception e) {
+                    Log.e("JPP", Log.getStackTraceString(e));
+                }
+
                 return null;
             }
 
@@ -542,7 +561,8 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
 
     public  void getdata(){
 
-        String DATA_URL = "http://admin.jaipurpinkpanthers.com/index.php/json/getHomeContent";
+//        String DATA_URL = "http://admin.jaipurpinkpanthers.com/index.php/json/getHomeContent";
+        String DATA_URL = InternetOperations.SERVER_URL + "getHomeContent";
         swipeRefreshLayout.setRefreshing(true);
         //relativeLayout.setVisibility(View.GONE);
         //Creating a json array request to get the json from our api
@@ -738,6 +758,7 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
         if (signUp) {
             Log.d( "refreshfdkls", String.valueOf(sponsers));
 
+            ll4.setVisibility(View.VISIBLE);
             llsignUp.setVisibility(View.VISIBLE);
             rlsponsers.setVisibility(View.VISIBLE);
             showcongrats.setVisibility(View.VISIBLE);
@@ -915,13 +936,25 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                 .placeholder(R.drawable.loadingnews)
                 .centerCrop()
                 .into(ivNews);
-//        Glide.with(activity)
-//                .load("https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xlf1/v/t1.0-9/14184463_491172797758946_2550913372511562820_n.jpg?oh=1c15b241ea74477f5d2e70c9d3d40734&oe=58495F70&__gda__=1481591055_35d3820926abd0aa152c2ee85b625fe6")
-//                .asBitmap()
-//                .override(300, 300)
-//                .placeholder(R.drawable.loadingnews)
-//                .centerCrop()
-//                .into(iv_jpptv);
+        Glide.with(activity)
+                .load("http://jaipurpinkpanthers.com/img/mobile/pointtable.png")
+                .asBitmap()
+                .placeholder(R.drawable.loadingnews)
+                .centerCrop()
+                .into(ivpoints);
+        Glide.with(activity)
+                .load("http://jaipurpinkpanthers.com/img/mobile/meet.png")
+                .asBitmap()
+                .placeholder(R.drawable.loadingnews)
+                .centerCrop()
+                .into(iv_jpptv);
+        Glide.with(activity)
+                .load("http://jaipurpinkpanthers.com/img/mobile/signup.png")
+                .asBitmap()
+                .placeholder(R.drawable.loadingnews)
+                .centerCrop()
+                .into(ivsignup);
+
 //        Glide.with(activity)
 //                .load("https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xat1/v/t1.0-9/14232527_491168884426004_7663862123275341614_n.png?oh=c91af2a5a2eb6632878ee61f36ce6c5c&oe=5845BA35&__gda__=1480334314_b45d96141fb80951e985479528a929f4")
 //                .asBitmap()

@@ -8,6 +8,7 @@ import android.graphics.Typeface;
  */
 public class CustomFonts {
 
+
     public static Typeface getRegularFont(Activity activity){
         return Typeface.createFromAsset(activity.getAssets(), "fonts/Oswald-Regular.ttf");
     }
@@ -26,5 +27,8 @@ public class CustomFonts {
 
     public static Typeface getScoreFont(Activity activity){
         return Typeface.createFromAsset(activity.getAssets(), "fonts/Kenyan-Coffee-Rg.ttf");
+    }
+    public static Typeface getDreamwalker(Activity activity){
+        return Typeface.createFromAsset(activity.getAssets(), "fonts/dreamwalker.ttf");
     }
 }

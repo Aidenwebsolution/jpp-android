@@ -1,5 +1,7 @@
 package com.jaipurpinkpanthers.android.util;
 
+import android.util.Log;
+
 import com.squareup.okhttp.MediaType;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
@@ -18,14 +20,18 @@ public class InternetOperations {
     //public static String SERVER_URL = "http://192.168.1.103/jppbackend/index.php/json/";
     /*public static String SERVER_UPLOADS_URL = "http://192.168.0.124/jppbackend/uploads/";
     public static String SERVER_THUMB_URL = "http://192.168.0.124/admin/index.php/image/index?name=";*/
-    //String local_url="http://192.168.1.105/jppbackend/index.php/json/";
-    public static String SERVER_URL = "http://admin.jaipurpinkpanthers.com/index.php/json/";
-    public static String SERVER_UPLOADS_URL = "http://admin.jaipurpinkpanthers.com/uploads/";
-    public static String SERVER_THUMB_URL = "http://admin.jaipurpinkpanthers.com/index.php/image/index?name=";
+    //String local_url="http://192.168.1.105/jppbackend/indexindex.php/json/";
+    public static String SERVER_URL = "http://admin.jaipurpinkpanthers.com/beta/index.php/json/";
+//    public static String SERVER_URL = "http://admin.jaipurpinkpanthers.com/index.php/json/";
+    public static String SERVER_UPLOADS_URL = "http://admin.jaipurpinkpanthers.com/beta/uploads/";
+//    public static String SERVER_UPLOADS_URL = "http://admin.jaipurpinkpanthers.com/uploads/";
+    public static String SERVER_THUMB_URL = "http://admin.jaipurpinkpanthers.com/beta/index.php/image/index?name=";
+//    public static String SERVER_THUMB_URL = "http://admin.jaipurpinkpanthers.com/index.php/image/index?name=";
     public static String SERVER_WIDTH_250 = "&width=250";
     public static String SERVER_WIDTH_400 = "&width=400";
 
     public static String post(String url, String json) throws IOException {
+        Log.d("json",json);
         RequestBody body = RequestBody.create(JSON, json);
 
         Request request = new Request.Builder()
@@ -34,6 +40,7 @@ public class InternetOperations {
                 .build();
 
         Response response = client.newCall(request).execute();
+        Log.d("response", String.valueOf(response));
         return response.body().string();
     }
 

@@ -23,7 +23,7 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
                 <!--timer-->
-                <!--<FrameLayout
+                <FrameLayout
                     android:id="@+id/ll1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -134,7 +134,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentLeft="true"
                                 android:layout_alignParentStart="true"
-                                android:orientation="vertical">
+                                android:orientation="vertical"
+                                android:visibility="gone">
 
                                 <RelativeLayout
                                     android:id="@+id/rlmonth"
@@ -172,6 +173,7 @@
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginRight="10dp"
                                 android:gravity="center"
+                                android:visibility="gone"
                                 android:src="@drawable/colon" />
 
                             <LinearLayout
@@ -341,7 +343,6 @@
                     </LinearLayout>
 
                 </FrameLayout>
-&lt;!&ndash;score&ndash;&gt;
                 <FrameLayout
                     android:id="@+id/llLiveUpdatescore"
                     android:layout_width="match_parent"
@@ -491,7 +492,7 @@
                         </LinearLayout>
                     </LinearLayout>
 
-                </FrameLayout>-->
+                </FrameLayout>
 
                 <!--<FrameLayout
                     android:id="@+id/ll1"
@@ -702,7 +703,7 @@
                         android:id="@+id/home_congrats"
                         android:layout_width="match_parent"
                         android:layout_height="250dp"
-                        android:src="@drawable/appbanner1"
+                        android:src="@drawable/loadingpink"
                         android:layout_alignParentTop="true"
                         android:layout_alignParentStart="true" />
 
@@ -736,7 +737,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/blankView"
-                        android:orientation="horizontal"
+                        android:orientation="vertical"
                         android:padding="10dp">
 
                         <ImageView
@@ -744,6 +745,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:layout_weight="1"
+                            android:layout_marginLeft="50dp"
+                            android:layout_marginRight="50dp"
                             android:background="@drawable/loadingpink"
                             android:scaleType="centerCrop" />
 
@@ -754,7 +757,15 @@
                             android:orientation="vertical"
                             android:paddingLeft="10dp"
                             android:paddingRight="5dp">
-
+                            <TextView
+                                android:id="@+id/tvNewsDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingRight="10dp"
+                                android:gravity="right"
+                                android:layout_marginRight="50dp"
+                                android:layout_gravity="right"
+                                android:text="--" />
                             <TextView
                                 android:id="@+id/tvNewsHead"
                                 android:layout_width="match_parent"
@@ -770,36 +781,38 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:ellipsize="end"
+                                android:visibility="gone"
                                 android:maxLines="4" />
+
 
                         </LinearLayout>
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:id="@+id/newsDate"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/news_body"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginTop="5dp"
-                        android:gravity="right"
-                        android:orientation="horizontal">
+                    <!--<LinearLayout-->
+                        <!--android:id="@+id/newsDate"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_below="@+id/news_body"-->
+                        <!--android:layout_marginBottom="5dp"-->
+                        <!--android:layout_marginLeft="5dp"-->
+                        <!--android:layout_marginRight="5dp"-->
+                        <!--android:layout_marginTop="5dp"-->
+                        <!--android:gravity="right"-->
+                        <!--android:orientation="horizontal">-->
 
-                        <TextView
-                            android:id="@+id/tvNewsDate"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingRight="10dp"
-                            android:text="--" />
-                    </LinearLayout>
+                        <!--<TextView-->
+                            <!--android:id="@+id/tvNewsDate"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:paddingRight="10dp"-->
+                            <!--android:text="&#45;&#45;" />-->
+                    <!--</LinearLayout>-->
 
                     <LinearLayout
                         android:id="@+id/llRead"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/newsDate"
+                        android:layout_below="@+id/news_body"
                         android:layout_marginBottom="5dp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
@@ -811,8 +824,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingRight="10dp"
-                            android:text="Read more News >"
-                            android:textColor="@color/jppProfileType"
+                            android:text="Read more news >"
+                            android:textColor="@color/jppPointsRow"
                             android:textSize="16sp" />
                     </LinearLayout>
 
@@ -825,13 +838,20 @@
                 <RelativeLayout
                     android:id="@+id/ll4"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="100dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="10dp"
                     android:background="@android:color/white"
                     android:visibility="visible">
 
+                    <ImageView
+                        android:id="@+id/ivsignup"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                         />
 
                     <LinearLayout
                         android:id="@+id/llsignUp"
@@ -847,16 +867,16 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="10dp"
                             android:gravity="center"
-                            android:text="SIGN UP AND BECOME PART OF THE PANTHER FAMILY. EXCLUSIVE OFFERS AND LOTS MORE!"
+                            android:text="SIGN UP AND STAND A CHANCE TO WIN JPP MERCHANDISE!"
                             android:textAlignment="center"
-                            android:textColor="@color/jppAccentColor"
+                            android:textColor="@android:color/white"
                             android:textSize="14sp" />
 
                         <Button
                             android:id="@+id/bsignUp"
                             android:layout_width="126dp"
                             android:layout_gravity="center_horizontal"
-                            android:background="@color/jppplayertablelist"
+                            android:background="@color/jppAccentColor"
                             android:onClick="fan1"
                             android:layout_height="36dp"
                             android:text="CLICK HERE"
@@ -876,8 +896,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/jpptv_section"
-                    android:onClick="jppTv"
+                    android:onClick="knowPanthers"
                     android:visibility="gone">
 
                     <ImageView
@@ -893,13 +912,20 @@
                 <RelativeLayout
                     android:id="@+id/ll3"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="530dp"
                     android:layout_marginBottom="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="10dp"
-                    android:background="@color/jpptable"
                     android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/ivpoints"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                         />
 
                     <include
                         android:id="@+id/llTable"
@@ -912,7 +938,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/llTable"
                         android:layout_marginTop="10dp"
-                        android:background="@color/jpptable"
+                        android:background="@android:color/transparent"
                         android:orientation="vertical">
 
 
@@ -993,9 +1019,6 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="120dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
                     android:visibility="gone"
                     android:id="@+id/sponsers"
                     >

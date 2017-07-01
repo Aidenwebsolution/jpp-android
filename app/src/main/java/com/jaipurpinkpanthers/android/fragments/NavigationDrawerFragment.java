@@ -114,7 +114,7 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
         items.add(new NavigationItem("JPP TV", "ic_menu_jpptv"));
         items.add(new NavigationItem("NEWS & MEDIA", "ic_menu_news"));
         items.add(new NavigationItem("KNOW YOUR PANTHERS", "ic_menu_panthers"));
-//        items.add(new NavigationItem("MERCHANDISE","ic_menu_merc"));
+        items.add(new NavigationItem("MERCHANDISE","ic_menu_merc"));
         items.add(new NavigationItem("WALLPAPERS", "ic_menu_wallpaper"));
         items.add(new NavigationItem("POINTS TABLE", "ic_menu_points"));
         items.add(new NavigationItem("FAN CORNER", "ic_menu_fan"));

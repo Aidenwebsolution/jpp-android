@@ -80,6 +80,7 @@ public class NewsFragment extends Fragment {
                     response = InternetOperations.postBlank(InternetOperations.SERVER_URL + "getallnews");
 
                     jsonArray = new JSONArray(response);
+                    Log.d("news", String.valueOf(jsonArray));
 
                     for (int j = 0; j < jsonArray.length(); j++) {
 

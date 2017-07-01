@@ -5,7 +5,7 @@
     android:layout_marginBottom="30dp"
     android:gravity="center_horizontal"
     android:orientation="horizontal"
-    android:background="@color/jpptable"
+    android:background="@android:color/transparent"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
 

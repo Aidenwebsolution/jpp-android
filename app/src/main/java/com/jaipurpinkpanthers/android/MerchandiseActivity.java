@@ -164,10 +164,10 @@ public class MerchandiseActivity extends ActionBarActivity
                 }
             }, 300);
         }
-//        if (position == 7) { // Merchandise
-//
-//        }
-        if (position == 6) { // wallpaper
+        if (position == 6) { // Merchandise
+
+        }
+        if (position == 7) { // wallpaper
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -178,7 +178,7 @@ public class MerchandiseActivity extends ActionBarActivity
                 }
             }, 300);
         }
-        if (position == 7) { // points table
+        if (position == 8) { // points table
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -190,7 +190,7 @@ public class MerchandiseActivity extends ActionBarActivity
             }, 300);
         }
 
-        if (position == 8) { // fan corner
+        if (position == 9) { // fan corner
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -201,7 +201,7 @@ public class MerchandiseActivity extends ActionBarActivity
                 }
             }, 300);
         }
-        if (position == 9) { // about us
+        if (position == 10) { // about us
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override

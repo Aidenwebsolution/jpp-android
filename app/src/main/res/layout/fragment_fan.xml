@@ -12,7 +12,7 @@
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"
+        android:visibility="visible"
         >
 
         <FrameLayout
@@ -270,77 +270,78 @@
                         android:weightSum="8"
                         >
 
-                        <CheckBox
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/cbplayer16"
-                            android:text="Ajay Kumar"
-                            android:layout_weight="1"/>
+
                         <CheckBox
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/cbplayer1"
-                            android:text="Amit Nagar"
-                            android:layout_weight="1"
-                            />
+                            android:text="Jasvir Singh"
+                            android:layout_weight="1"/>
                         <CheckBox
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/cbplayer2"
-                            android:text="Amit Hooda"
+                            android:text="Manjeet Chhillar"
                             android:layout_weight="1"
                             />
-                      <!--  <CheckBox
+                        <CheckBox
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/cbplayer3"
-                            android:text="David Tsai"
-                            />-->
-                        <CheckBox
+                            android:text="Navneet Gautam"
+                            android:layout_weight="1"
+                            />
+
+                      <CheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:id="@+id/cbplayer4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Jasvir Singh"
-                            android:layout_weight="1"
+                            android:text="Tushar Patil"
                             />
-
                         <CheckBox
-                            android:id="@+id/cbplayer17"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Jawahar"
-                            android:layout_weight="1"
-                            />
-
-
-                        <CheckBox
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
                             android:id="@+id/cbplayer5"
-                            android:text="Lo Chia Wei"
-                            android:layout_weight="1"
-                            />
-                        <CheckBox
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/cbplayer6"
-                            android:text="Mahipal Narwal"
+                            android:text="Manoj Dhull"
                             android:layout_weight="1"
                             />
-                       <!-- <CheckBox
+
+                        <CheckBox
+                            android:id="@+id/cbplayer6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Selvamani K"
+                            android:layout_weight="1"
+                            />
+
+
+                        <CheckBox
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/cbplayer7"
-                            android:text="Masayuki Shimokawa"
-                            />-->
+                            android:text="Somvir Shekhar"
+                            android:layout_weight="1"
+                            />
                         <CheckBox
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/cbplayer8"
-                            android:text="Parvesh Malik"
+                            android:text="Ajit Singh"
                             android:layout_weight="1"
                             />
-
+                        <CheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/cbplayer9"
+                            android:text="Santhapanaselvam"
+                            />
+                        <CheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/cbplayer10"
+                            android:text="Pawan Kumar"
+                            android:layout_weight="1"
+                            />
 
                     </LinearLayout>
 
@@ -353,28 +354,11 @@
                         android:weightSum="8"
                         >
 
-
-                        <CheckBox
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/cbplayer9"
-                            android:text="Praveen Narwal"
-                            android:layout_weight="1"
-                            />
-
-                        <CheckBox
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/cbplayer10"
-                            android:text="Rajesh Narwal"
-                            android:layout_weight="1"
-                            />
-
                         <CheckBox
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/cbplayer11"
-                            android:text="Ran Singh"
+                            android:text="Vignesh B"
                             android:layout_weight="1"
                             />
 
@@ -382,46 +366,58 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/cbplayer12"
-                            android:text="Rohit Rana"
+                            android:text="Kamal Kishor"
                             android:layout_weight="1"
                             />
                         <CheckBox
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/cbplayer13"
-                            android:text="Shabeer Bapu Sharfudheen"
-                            android:singleLine="true"
+                            android:text="Sidharth Dahiya"
                             android:layout_weight="1"
                             />
                         <CheckBox
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/cbplayer14"
-                            android:text="Shrikant Tewthia"
+                            android:text="Sunil Siddhgavali"
                             android:layout_weight="1"
                             />
-
                         <CheckBox
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/cbplayer15"
-                            android:text="Tushar Patil"
+                            android:text="Abhishek N"
                             android:layout_weight="1"
                             />
-
                         <CheckBox
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Sonu Narwal"
+                            android:id="@+id/cbplayer16"
+                            android:text="Ravinder Kumar"
                             android:layout_weight="1"
-                            android:visibility="invisible"
                             />
-
-                        <!--<CheckBox-->
-                            <!--android:layout_width="wrap_content"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:id="@+id/cbplayer17"-->
-                            <!--android:text="Wei Yang Tsai" />-->
+                        <CheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/cbplayer17"
+                            android:text="Rahul Choudhary"
+                            android:layout_weight="1"
+                            />
+                        <CheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/cbplayer18"
+                            android:text="Dong Gyu Kim"
+                            android:layout_weight="1"
+                            />
+                        <CheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/cbplayer19"
+                            android:text="Jae Min Lee"
+                            android:layout_weight="1"
+                            />
 
                     </LinearLayout>
 
@@ -503,6 +499,7 @@
         android:src="@drawable/comingsoon1"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
+        android:visibility="gone"
         />
 
 </LinearLayout>

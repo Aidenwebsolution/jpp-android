@@ -174,21 +174,21 @@ public class WallpaperActivity extends ActionBarActivity
                 }
             }, 300);
         }
-//        if (position == 6) { // tickets
-//            final Handler handler = new Handler();
-//            handler.postDelayed(new Runnable() {
-//                @Override
-//                public void run() {
-//                    ma.clearBackStackOfFragments(getFragmentManager());
-//                    startActivity(new Intent(WallpaperActivity.this, MerchandiseActivity.class).setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY));
-//                    finish();
-//                }
-//            }, 300);
-//        }
-        if (position == 6) { // wallpaper
+        if (position == 6) { // tickets
+            final Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    ma.clearBackStackOfFragments(getFragmentManager());
+                    startActivity(new Intent(WallpaperActivity.this, MerchandiseActivity.class).setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY));
+                    finish();
+                }
+            }, 300);
+        }
+        if (position == 7) { // wallpaper
 
         }
-        if (position == 7) { // points table
+        if (position == 8) { // points table
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -200,7 +200,7 @@ public class WallpaperActivity extends ActionBarActivity
             }, 300);
         }
 
-        if (position == 8) { // fan corner
+        if (position == 9) { // fan corner
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -211,7 +211,7 @@ public class WallpaperActivity extends ActionBarActivity
                 }
             }, 300);
         }
-        if (position == 9) { // about us
+        if (position == 10) { // about us
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override

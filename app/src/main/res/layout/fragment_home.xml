@@ -68,7 +68,7 @@
                                 android:layout_marginRight="-25dp"
                                 android:layout_weight="2"
                                 android:adjustViewBounds="true"
-                                android:src="@drawable/t1" />
+                                android:src="@drawable/tbd" />
 
                             <ImageView
                                 android:id="@+id/imageView7"
@@ -85,7 +85,7 @@
                                 android:layout_marginLeft="-25dp"
                                 android:layout_weight="2"
                                 android:adjustViewBounds="true"
-                                android:src="@drawable/t5" />
+                                android:src="@drawable/tbd" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -389,7 +389,7 @@
                                 android:layout_marginRight="-25dp"
                                 android:layout_weight="2"
                                 android:adjustViewBounds="true"
-                                android:src="@drawable/t5" />
+                                android:src="@drawable/tbd" />
 
                             <ImageView
                                 android:id="@+id/imageView7live"
@@ -406,7 +406,7 @@
                                 android:layout_marginLeft="-25dp"
                                 android:layout_weight="2"
                                 android:adjustViewBounds="true"
-                                android:src="@drawable/t1" />
+                                android:src="@drawable/tbd" />
                         </LinearLayout>
 
                         <RelativeLayout
@@ -494,159 +494,159 @@
 
                 </FrameLayout>
 
-                <!--<FrameLayout
-                    android:id="@+id/ll1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="10dp"
-                    android:visibility="visible">
+                <!--<FrameLayout-->
+                    <!--android:id="@+id/ll1"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="10dp"-->
+                    <!--android:layout_marginRight="10dp"-->
+                    <!--android:layout_marginTop="10dp"-->
+                    <!--android:visibility="visible">-->
 
-                    <ImageView
-                        android:id="@+id/ivHomeMain"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:adjustViewBounds="true"
-                        android:scaleType="fitXY"/>
+                    <!--<ImageView-->
+                        <!--android:id="@+id/ivHomeMain"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:adjustViewBounds="true"-->
+                        <!--android:scaleType="fitXY"/>-->
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:visibility="visible">
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:orientation="vertical"-->
+                        <!--android:visibility="visible">-->
 
-                        &lt;!&ndash;<include
-                            android:id="@+id/llUpcomingMatch"
-                            layout="@layout/layout_cross_header"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>&ndash;&gt;
-                        <include
-                            android:id="@+id/llLatestUpdate"
-                            layout="@layout/layout_cross_header"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
+                        <!--&lt;!&ndash;<include-->
+                            <!--android:id="@+id/llUpcomingMatch"-->
+                            <!--layout="@layout/layout_cross_header"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"/>&ndash;&gt;-->
+                        <!--<include-->
+                            <!--android:id="@+id/llLatestUpdate"-->
+                            <!--layout="@layout/layout_cross_header"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"/>-->
 
-                        <LinearLayout
-                            android:id="@+id/llTeamVs"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-
-                            <ImageView
-                                android:id="@+id/ivT1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:layout_weight="2"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/blank"/>
-
-                            <ImageView
-                                android:id="@+id/imageView7"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="3.35"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/vs"/>
-
-                            <ImageView
-                                android:id="@+id/ivT2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginRight="10dp"
-                                android:layout_weight="2"
-                                android:adjustViewBounds="true"
-                                android:paddingLeft="10dp"
-                                android:src="@drawable/blank"/>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/linearLayout2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/llTeamVs"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/tvS1"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:gravity="right"
-                                android:paddingRight="40dp"
-                                android:text="&#45;&#45;"
-                                android:textColor="@android:color/white"
-                                android:textIsSelectable="false"
-                                android:textSize="44sp"/>
-
-                            <TextView
-                                android:id="@+id/tvCo"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="3"
-                                android:gravity="center"
-                                android:text=":"
-                                android:textColor="@android:color/white"
-                                android:textSize="44sp"/>
-
-                            <TextView
-                                android:id="@+id/tvS2"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:gravity="left"
-                                android:paddingLeft="40dp"
-                                android:text="&#45;&#45;"
-                                android:textColor="@android:color/white"
-                                android:textSize="44sp"/>
-                        </LinearLayout>
+                        <!--<LinearLayout-->
+                            <!--android:id="@+id/llTeamVs"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center_horizontal"-->
+                            <!--android:gravity="center"-->
+                            <!--android:orientation="horizontal">-->
 
 
-                        <LinearLayout
-                            android:id="@+id/linearLayout3"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentLeft="true"
-                            android:layout_alignParentStart="true"
-                            android:layout_below="@+id/llTeamVs"
-                            android:orientation="vertical">
+                            <!--<ImageView-->
+                                <!--android:id="@+id/ivT1"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_marginLeft="10dp"-->
+                                <!--android:layout_weight="2"-->
+                                <!--android:adjustViewBounds="true"-->
+                                <!--android:src="@drawable/blank"/>-->
 
-                            <TextView
-                                android:id="@+id/tvMatchTime"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="&#45;&#45;:&#45;&#45;"
-                                android:textColor="@android:color/white"/>
+                            <!--<ImageView-->
+                                <!--android:id="@+id/imageView7"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_weight="3.35"-->
+                                <!--android:adjustViewBounds="true"-->
+                                <!--android:src="@drawable/vs"/>-->
 
-                            <TextView
-                                android:id="@+id/tvVenue"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:padding="5dp"
-                                android:text="&#45;&#45;"
-                                android:textColor="@android:color/white"/>
+                            <!--<ImageView-->
+                                <!--android:id="@+id/ivT2"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_marginRight="10dp"-->
+                                <!--android:layout_weight="2"-->
+                                <!--android:adjustViewBounds="true"-->
+                                <!--android:paddingLeft="10dp"-->
+                                <!--android:src="@drawable/blank"/>-->
 
-                            <TextView
-                                android:id="@+id/tvTime"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="&#45;&#45;"
-                                android:textColor="@android:color/white"/>
-                        </LinearLayout>
+                        <!--</LinearLayout>-->
+
+                        <!--<LinearLayout-->
+                            <!--android:id="@+id/linearLayout2"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_below="@+id/llTeamVs"-->
+                            <!--android:orientation="horizontal">-->
+
+                            <!--<TextView-->
+                                <!--android:id="@+id/tvS1"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_weight="2"-->
+                                <!--android:gravity="right"-->
+                                <!--android:paddingRight="40dp"-->
+                                <!--android:text="&#45;&#45;"-->
+                                <!--android:textColor="@android:color/white"-->
+                                <!--android:textIsSelectable="false"-->
+                                <!--android:textSize="44sp"/>-->
+
+                            <!--<TextView-->
+                                <!--android:id="@+id/tvCo"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_weight="3"-->
+                                <!--android:gravity="center"-->
+                                <!--android:text=":"-->
+                                <!--android:textColor="@android:color/white"-->
+                                <!--android:textSize="44sp"/>-->
+
+                            <!--<TextView-->
+                                <!--android:id="@+id/tvS2"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_weight="2"-->
+                                <!--android:gravity="left"-->
+                                <!--android:paddingLeft="40dp"-->
+                                <!--android:text="&#45;&#45;"-->
+                                <!--android:textColor="@android:color/white"-->
+                                <!--android:textSize="44sp"/>-->
+                        <!--</LinearLayout>-->
 
 
-                    </LinearLayout>
+                        <!--<LinearLayout-->
+                            <!--android:id="@+id/linearLayout3"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_alignParentLeft="true"-->
+                            <!--android:layout_alignParentStart="true"-->
+                            <!--android:layout_below="@+id/llTeamVs"-->
+                            <!--android:orientation="vertical">-->
+
+                            <!--<TextView-->
+                                <!--android:id="@+id/tvMatchTime"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:gravity="center"-->
+                                <!--android:text="&#45;&#45;:&#45;&#45;"-->
+                                <!--android:textColor="@android:color/white"/>-->
+
+                            <!--<TextView-->
+                                <!--android:id="@+id/tvVenue"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:gravity="center"-->
+                                <!--android:padding="5dp"-->
+                                <!--android:text="&#45;&#45;"-->
+                                <!--android:textColor="@android:color/white"/>-->
+
+                            <!--<TextView-->
+                                <!--android:id="@+id/tvTime"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:gravity="center"-->
+                                <!--android:text="&#45;&#45;"-->
+                                <!--android:textColor="@android:color/white"/>-->
+                        <!--</LinearLayout>-->
 
 
-                </FrameLayout>-->
+                    <!--</LinearLayout>-->
+
+
+                <!--</FrameLayout>-->
 
                 <RelativeLayout
                     android:id="@+id/flReview"
@@ -702,10 +702,13 @@
                     <ImageView
                         android:id="@+id/home_congrats"
                         android:layout_width="match_parent"
-                        android:layout_height="250dp"
+                        android:layout_height="wrap_content"
                         android:src="@drawable/loadingpink"
                         android:layout_alignParentTop="true"
-                        android:layout_alignParentStart="true" />
+                        android:layout_alignParentStart="true"
+                        android:onClick="matchupdate1"
+
+                        />
 
                 </RelativeLayout>
                 <!--news-->
@@ -747,7 +750,6 @@
                             android:layout_weight="1"
                             android:layout_marginLeft="50dp"
                             android:layout_marginRight="50dp"
-                            android:background="@drawable/loadingpink"
                             android:scaleType="centerCrop" />
 
                         <LinearLayout
@@ -843,7 +845,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="10dp"
                     android:background="@android:color/white"
-                    android:visibility="visible">
+                    android:visibility="gone">
 
                     <ImageView
                         android:id="@+id/ivsignup"
@@ -1018,16 +1020,19 @@
                 <!--sponsers-->
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="120dp"
+                    android:layout_height="100dp"
                     android:visibility="gone"
                     android:id="@+id/sponsers"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     >
                     <!--android:background="@drawable/footersponsor"-->
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="120dp"
+                        android:layout_height="match_parent"
                         android:id="@+id/home_iv_sponsor"
-                        android:src="@drawable/jppsponsors"/>
+                        android:scaleType="fitXY"
+                        />
 
                 </RelativeLayout>
 

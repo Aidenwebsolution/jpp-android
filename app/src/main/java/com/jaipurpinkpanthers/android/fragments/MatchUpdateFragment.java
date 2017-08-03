@@ -25,6 +25,7 @@ import com.android.volley.toolbox.Volley;
 import com.jaipurpinkpanthers.android.R;
 import com.jaipurpinkpanthers.android.adapters.MatchRecycleAdapter;
 import com.jaipurpinkpanthers.android.adapters.MatchUpdateGetter;
+import com.jaipurpinkpanthers.android.util.InternetOperations;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -47,6 +48,8 @@ public class MatchUpdateFragment extends Fragment {
     public static final String TAG_team1id = "team1id";
     public static final String TAG_team2id = "team2id";
     public static final String TAG_matchtime = "matchtime";
+    public static final String TAG_teamimage1 = "teamimage1";
+    public static final String TAG_teamimage2 = "teamimage2";
 
     public ArrayList<String> team1 = new ArrayList<>();
     public ArrayList<String> team2 = new ArrayList<>();
@@ -57,6 +60,8 @@ public class MatchUpdateFragment extends Fragment {
     public ArrayList<String> team1id = new ArrayList<>();
     public ArrayList<String> team2id = new ArrayList<>();
     public ArrayList<String> matchtime = new ArrayList<>();
+    public ArrayList<String> teamimage1 = new ArrayList<>();
+    public ArrayList<String> teamimage2 = new ArrayList<>();
 
     Activity activity;
     SwipeRefreshLayout swipeRefreshLayout;
@@ -96,7 +101,7 @@ public class MatchUpdateFragment extends Fragment {
 
     public void getdata() {
 
-        String DATA_URL = "http://admin.jaipurpinkpanthers.com/index.php/json/getScheduleForIosAndroidSeason4";
+        String DATA_URL = InternetOperations.SERVER_URL +"getScheduleForIosAndroidSeason4";
 
 
 
@@ -162,6 +167,8 @@ public class MatchUpdateFragment extends Fragment {
         team1id.clear();
         team2id.clear();
         matchtime.clear();
+        teamimage1.clear();
+        teamimage2.clear();
         matchUpdateGetter.clear();
 
         //if (images.isEmpty()) {
@@ -184,6 +191,8 @@ public class MatchUpdateFragment extends Fragment {
                 team1id.add(obj.getString(TAG_team1id));
                 team2id.add(obj.getString(TAG_team2id));
                 matchtime.add(obj.getString(TAG_matchtime));
+                teamimage1.add(obj.getString(TAG_teamimage1));
+                teamimage2.add(obj.getString(TAG_teamimage2));
                 //count++;
 
 
@@ -193,15 +202,15 @@ public class MatchUpdateFragment extends Fragment {
         }
         //}
 
-
+        int count =team1.size();
         //Creating GridViewAdapter Object
         for (int i = 0; i < team1.size(); i++) {
             MatchUpdateGetter current = new MatchUpdateGetter(team1.get(i), team2.get(i), score1.get(i),
                     score2.get(i), stadium.get(i), starttimedate.get(i), team1id.get(i), team2id.get(i),
-                    matchtime.get(i));
+                    matchtime.get(i),teamimage1.get(i),teamimage2.get(i), String.valueOf(count));
             matchUpdateGetter.add(current);
 
-            //i++;
+            count--;
             Log.e("ItemInfoGetter: ", "" + i);
         }
 
@@ -219,13 +228,8 @@ public class MatchUpdateFragment extends Fragment {
         recyclerView.setAdapter(RecyclerAdapter);
         RecyclerAdapter.notifyDataSetChanged();
 
-
-
-
-
-
-
     }
+
 
 
 }

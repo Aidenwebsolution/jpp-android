@@ -494,24 +494,13 @@
                 android:layout_weight="1"
                 />
 
-            <ImageView
-                android:id="@id/merchandise1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/merchandise_kit"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="60dp"
-                android:layout_marginRight="60dp"
-                android:layout_marginBottom="-30dp"
-                android:src="@drawable/merchandise_text"
-                android:layout_weight="4"
-                />
+
 
             <Button
                 android:id="@+id/buynow"
                 android:layout_width="120dp"
                 android:layout_height="30dp"
-                android:layout_below="@+id/merchandise1"
+                android:layout_below="@+id/merchandise_kit"
                 android:layout_centerInParent="true"
                 android:layout_gravity="center"
                 android:background="@color/jppProfileType"

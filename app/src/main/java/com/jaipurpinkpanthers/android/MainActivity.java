@@ -321,38 +321,38 @@ public class MainActivity extends ActionBarActivity
                     clearBackStackOfFragments(getFragmentManager());
                     homeShow();
                     break;
-//                case 1:
-//                    clearBackStackOfFragments(getFragmentManager());
-//                    scheduleShow();
-//                    break;
+                case 1:
+                    clearBackStackOfFragments(getFragmentManager());
+                    scheduleShow();
+                    break;
 //                case 1:
 //                    clearBackStackOfFragments(getFragmentManager());
 //                    matchupdate();
 //                    break;
-                case 1:
+                case 2:
                     clearBackStackOfFragments(getFragmentManager());
                     matchupdate1();
                     break;
-                case 2:
+                case 3:
                     clearBackStackOfFragments(getFragmentManager());
                     galleryShow();
                     break;
-                case 3:
+                case 4:
                     clearBackStackOfFragments(getFragmentManager());
                     videoShows();
                     break;
-                case 4:
+                case 5:
                     clearBackStackOfFragments(getFragmentManager());
                     newsShow();
                     break;
-                case 5:
+                case 6:
                     clearBackStackOfFragments(getFragmentManager());
                     knowPanthersShow();
                     break;
-                case 6:
-                    clearBackStackOfFragments(getFragmentManager());
-                    merchandise1();
-                    break;
+//                case 7:
+//                    clearBackStackOfFragments(getFragmentManager());
+//                    merchandise1();
+//                    break;
                 case 7:
                     clearBackStackOfFragments(getFragmentManager());
                     wallpapers1();
@@ -425,7 +425,7 @@ public class MainActivity extends ActionBarActivity
 
     public void initializeBottomToolbarViews() {
         ivHome = (ImageView) findViewById(R.id.ivHome);
-//        ivSchedule = (ImageView) findViewById(R.id.ivSchedule);
+        ivSchedule = (ImageView) findViewById(R.id.ivSchedule);
         ivGallery = (ImageView) findViewById(R.id.ivGallery);
         ivNews = (ImageView) findViewById(R.id.ivNews);
         ivPanthers = (ImageView) findViewById(R.id.ivPanthers);
@@ -434,7 +434,7 @@ public class MainActivity extends ActionBarActivity
     public void bottomViewClicked(int i) {
 
         ivHome.setImageResource(R.drawable.ic_bottom_home_color);
-//        ivSchedule.setImageResource(R.drawable.ic_bottom_schedule_color);
+        ivSchedule.setImageResource(R.drawable.ic_bottom_schedule_color);
         ivGallery.setImageResource(R.drawable.ic_bottom_gallery_color);
         ivNews.setImageResource(R.drawable.ic_bottom_news_color);
         ivPanthers.setImageResource(R.drawable.ic_bottom_panthers_color);
@@ -442,14 +442,14 @@ public class MainActivity extends ActionBarActivity
         if (i == 1) {
             ivHome.setImageResource(R.drawable.ic_bottom_home_white);
         }
-//        else if (i == 2) {
-//            ivSchedule.setImageResource(R.drawable.ic_bottom_schedule_white);
-//        }
         else if (i == 2) {
+            ivSchedule.setImageResource(R.drawable.ic_bottom_schedule_white);
+        }
+        else if (i == 3) {
             ivGallery.setImageResource(R.drawable.ic_bottom_gallery_white);
-        } else if (i == 3) {
-            ivNews.setImageResource(R.drawable.ic_bottom_news_white);
         } else if (i == 4) {
+            ivNews.setImageResource(R.drawable.ic_bottom_news_white);
+        } else if (i == 5) {
             ivPanthers.setImageResource(R.drawable.ic_bottom_panthers_white);
         }
 
@@ -488,12 +488,12 @@ public class MainActivity extends ActionBarActivity
     }
 
     public void schedule(View v) {
-        Log.v("JPP", "WORLD CUP JOURNEY");
+        Log.v("JPP", "SCHEDULE");
         scheduleShow();
     }
 
     public void scheduleShow() {
-        tvOrImage(true, "WORLD CUP JOURNEY");
+        tvOrImage(true, "SCHEDULE");
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         ScheduleFragment scheduleFragment = new ScheduleFragment();
 
@@ -528,7 +528,7 @@ public class MainActivity extends ActionBarActivity
                 .replace(R.id.container, galleryFragment)
                 .commit();
 
-        bottomViewClicked(2);
+        bottomViewClicked(3);
     }
     public void jppTv(Context v){
         Log.v("JPP", "Inside Gallery");
@@ -553,7 +553,7 @@ public class MainActivity extends ActionBarActivity
     }
     public void matchupdate1(View v){
         Log.v("JPP", "SEASON 4 REVIEW");
-        matchupdate();
+        matchupdate1();
     }
     public void matchupdate1() {
         tvOrImage(true, "SEASON 4 REVIEW");
@@ -604,7 +604,7 @@ public class MainActivity extends ActionBarActivity
                 .replace(R.id.container, newsFragment)
                 .commit();
 
-        bottomViewClicked(3);
+        bottomViewClicked(4);
     }
 
 
@@ -629,7 +629,7 @@ public class MainActivity extends ActionBarActivity
                 .setCustomAnimations(R.animator.enter_anim, R.animator.exit_anim)
                 .replace(R.id.container, panthersFragment)
                 .commit();
-        bottomViewClicked(4);
+        bottomViewClicked(5);
     }
     public void merchandise(View v)
     {

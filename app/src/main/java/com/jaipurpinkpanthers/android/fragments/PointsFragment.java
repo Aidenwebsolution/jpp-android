@@ -1,5 +1,6 @@
 package com.jaipurpinkpanthers.android.fragments;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.graphics.Color;
@@ -10,7 +11,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +22,11 @@ import com.jaipurpinkpanthers.android.R;
 import com.jaipurpinkpanthers.android.adapters.PointsAdapter;
 import com.jaipurpinkpanthers.android.util.CustomFonts;
 import com.jaipurpinkpanthers.android.util.InternetOperations;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.nostra13.universalimageloader.core.assist.ImageScaleType;
+import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,6 +42,13 @@ public class PointsFragment extends Fragment {
     ListView lvTeams;
     ArrayList<HashMap<String, String>> list;
     ProgressDialog progressDialog;
+    LinearLayout llptheader,sponsers;
+    ImageView home_iv_sponsor;
+    String sponsor;
+    Activity activity;
+    ImageLoader imageLoader;
+    DisplayImageOptions options;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -47,7 +63,23 @@ public class PointsFragment extends Fragment {
 
         progressDialog.setCanceledOnTouchOutside(false);
         progressDialog.show();
+        activity = getActivity();
 
+        imageLoader = ImageLoader.getInstance();
+        options = new DisplayImageOptions.Builder().cacheInMemory(false)
+                .cacheOnDisc(false).resetViewBeforeLoading(true).build();
+        // UNIVERSAL IMAGE LOADER SETUP
+        DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()
+                .cacheOnDisc(true).cacheInMemory(false)
+                .imageScaleType(ImageScaleType.EXACTLY)
+                .displayer(new FadeInBitmapDisplayer(300)).build();
+
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(
+                activity)
+                .defaultDisplayImageOptions(defaultOptions)
+                .discCacheSize(1024 * 1024).build();
+
+        ImageLoader.getInstance().init(config);
         initilizeViews();
 
         return view;
@@ -56,7 +88,9 @@ public class PointsFragment extends Fragment {
     public void initilizeViews() {
 
         list = new ArrayList<HashMap<String, String>>();
-
+        llptheader= (LinearLayout) view.findViewById(R.id.llptheader);
+        sponsers= (LinearLayout) view.findViewById(R.id.sponsers);
+        home_iv_sponsor= (ImageView) view.findViewById(R.id.home_iv_sponsor);
         tvNo = (TextView) view.findViewById(R.id.tvNo);
         tvTeam = (TextView) view.findViewById(R.id.tvTeam);
         tvP = (TextView) view.findViewById(R.id.tvP);
@@ -97,12 +131,16 @@ public class PointsFragment extends Fragment {
                 if (Looper.myLooper() == null) {
                     Looper.prepare();
                 }
-                String response;
+                String response, getsponsorimageresponse ;
                 JSONArray jsonArray = null;
                 try {
                     response = InternetOperations.postBlank(InternetOperations.SERVER_URL + "getallpoint");
+                    getsponsorimageresponse = InternetOperations.postBlank(InternetOperations.SERVER_URL + "getsponsorimage");
+                    Log.d("getsponsorimageresponse",getsponsorimageresponse);
 
                     jsonArray = new JSONArray(response);
+                    JSONObject getsponsorimage = new JSONObject(getsponsorimageresponse);
+                    sponsor =getsponsorimage.optString("image");
 
                     if (jsonArray.length() != 0) {
 
@@ -132,6 +170,11 @@ public class PointsFragment extends Fragment {
             protected void onPostExecute(String s) {
                 progressDialog.dismiss();
                 if (done) {
+                    llptheader.setVisibility(View.VISIBLE);
+                    sponsers.setVisibility(View.VISIBLE);
+                    String imagesponsor = InternetOperations.SERVER_UPLOADS_URL + sponsor;
+                    imageLoader.displayImage(imagesponsor, home_iv_sponsor, options);
+
                     refresh();
                 } else {
                     Toast.makeText(getActivity(), "Oops, Something went wrong!", Toast.LENGTH_SHORT).show();

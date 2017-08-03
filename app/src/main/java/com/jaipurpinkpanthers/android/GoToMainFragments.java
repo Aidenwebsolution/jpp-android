@@ -14,11 +14,11 @@ public class GoToMainFragments {
         context.startActivity(intent);
     }
 
-//    public static void goSchedule(Context context){
-//        Intent intent = new Intent(context, MainActivity.class);
-//        intent.putExtra("FragmentId", 1);
-//        context.startActivity(intent);
-////    }
+    public static void goSchedule(Context context){
+        Intent intent = new Intent(context, MainActivity.class);
+        intent.putExtra("FragmentId", 1);
+        context.startActivity(intent);
+    }
 //    public static void gomatchupdate(Context context){
 //        Intent intent = new Intent(context, MainActivity.class);
 //        //intent.putExtra("FragmentId", 4);

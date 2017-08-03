@@ -66,6 +66,7 @@ public class PointsActitivy extends ActionBarActivity
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
+
         // update the main content by replacing fragmentss
         if (position == 0) { // home
             final Handler handler = new Handler();
@@ -78,18 +79,18 @@ public class PointsActitivy extends ActionBarActivity
                 }
             }, 300);
         }
-//        if (position == 1) { // schedule
-//            final Handler handler = new Handler();
-//            handler.postDelayed(new Runnable() {
-//                @Override
-//                public void run() {
-//                    ma.clearBackStackOfFragments(getFragmentManager());
-//                    GoToMainFragments.goSchedule(PointsActitivy.this);
-//                    finish();
-//                }
-//            }, 300);
-//
-//        }
+        if (position == 1) { // schedule
+            final Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    ma.clearBackStackOfFragments(getFragmentManager());
+                    GoToMainFragments.goSchedule(PointsActitivy.this);
+                    finish();
+                }
+            }, 300);
+
+        }
 //        if (position == 1) { // MATCH UPDATE
 //            final Handler handler = new Handler();
 //            handler.postDelayed(new Runnable() {
@@ -103,7 +104,7 @@ public class PointsActitivy extends ActionBarActivity
 //            }, 300);
 //
 //        }
-        if (position == 1) { // MATCH UPDATE
+        if (position == 2) { // MATCH UPDATE
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -116,7 +117,7 @@ public class PointsActitivy extends ActionBarActivity
             }, 300);
 
         }
-        if (position == 2) { // gallery
+        if (position == 3) { // gallery
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -128,7 +129,7 @@ public class PointsActitivy extends ActionBarActivity
             }, 300);
         }
 
-        if (position == 3) { // jpptv
+        if (position == 4) { // jpptv
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -139,7 +140,7 @@ public class PointsActitivy extends ActionBarActivity
                 }
             }, 300);
         }
-        if (position == 4) { // news
+        if (position == 5) { // news
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -150,7 +151,7 @@ public class PointsActitivy extends ActionBarActivity
                 }
             }, 300);
         }
-        if (position == 5) { // knowPanthers
+        if (position == 6) { // knowPanthers
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -161,17 +162,17 @@ public class PointsActitivy extends ActionBarActivity
                 }
             }, 300);
         }
-        if (position == 6) { // tickets
-            final Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    ma.clearBackStackOfFragments(getFragmentManager());
-                    startActivity(new Intent(PointsActitivy.this, MerchandiseActivity.class).setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY));
-                    finish();
-                }
-            }, 300);
-        }
+//        if (position == 7) { // tickets
+//            final Handler handler = new Handler();
+//            handler.postDelayed(new Runnable() {
+//                @Override
+//                public void run() {
+//                    ma.clearBackStackOfFragments(getFragmentManager());
+//                    startActivity(new Intent(PointsActitivy.this, MerchandiseActivity.class).setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY));
+//                    finish();
+//                }
+//            }, 300);
+//        }
         if (position == 7) { // wallpaper
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {

@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.jaipurpinkpanthers.android.R;
 import com.jaipurpinkpanthers.android.util.CustomFonts;
+import com.jaipurpinkpanthers.android.util.InternetOperations;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -122,6 +123,8 @@ public class MatchUpdateAdapter extends BaseAdapter {
         String team1Id = map.get("team1id");
         String team2Id = map.get("team2id");
         String matchTime = map.get("matchtime");
+        String teamimage1 = map.get("teamimage1");
+        String teamimage2 = map.get("teamimage2");
         String header=map.get("header");
 
 
@@ -143,15 +146,24 @@ public class MatchUpdateAdapter extends BaseAdapter {
 
         TextView tvLatest = (TextView)holder.llMatchUpdate.findViewById(R.id.tvCrossHeader);
         tvLatest.setTypeface(CustomFonts.getRegularFont(activity));
+        Log.d("header",header);
         tvLatest.setText("MATCH - 0"+header);
 
 
         //if(!desc.startsWith("http")){
         //    holder.tvNewsDesc.setText(desc);
         //}
-        if (team1Id != null && team2Id != null) {
+        if (teamimage1 != null && teamimage2 != null) {
+//            String imageUriTeam1 = logo_url+team1+".png" ;
+//            String imageUriTeam2 = logo_url+team2+".png" ;
+            String imageUriTeam1 = InternetOperations.SERVER_URL +teamimage1  ;
+            String imageUriTeam2 = InternetOperations.SERVER_URL +teamimage2 ;
+            imageLoader.displayImage(imageUriTeam1,holder.ivT1matchupdate , options);
+            imageLoader.displayImage(imageUriTeam2,holder.ivT2matchupdate , options);
+        }else{
             String imageUriTeam1 = logo_url+team1+".png" ;
             String imageUriTeam2 = logo_url+team2+".png" ;
+
             imageLoader.displayImage(imageUriTeam1,holder.ivT1matchupdate , options);
             imageLoader.displayImage(imageUriTeam2,holder.ivT2matchupdate , options);
         }

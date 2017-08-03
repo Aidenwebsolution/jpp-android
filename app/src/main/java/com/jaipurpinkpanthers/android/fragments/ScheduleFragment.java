@@ -170,7 +170,7 @@ public class ScheduleFragment extends Fragment {
                     response = InternetOperations.postBlank(InternetOperations.SERVER_URL + "getScheduleAndroid");
 
                     jsonArray = new JSONArray(response);
-
+                    Log.d("jsonArray", String.valueOf(jsonArray));
                     if (jsonArray.length() != 0) {
 
                         for (int i = 0; i < jsonArray.length(); i++) {
@@ -182,8 +182,11 @@ public class ScheduleFragment extends Fragment {
                                 String team2 = jsonObject.optString("team2");
                                 String time = jsonObject.optString("starttimedate");
                                 String venue = jsonObject.optString("stadium");
+                                String team1logo = jsonObject.optString("appteamimage1");
+                                String team2logo = jsonObject.optString("appteamimage2");
+
                                 Log.d("team1",team1+team2);
-                                populate(team1, team2, time,venue);
+                                populate(team1, team2, time,venue,team1logo,team2logo);
                             } else {
                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                                 //String id = String.valueOf(i + 1);
@@ -193,6 +196,8 @@ public class ScheduleFragment extends Fragment {
                                 String team2id = jsonObject.optString("team2id");
                                 String time = jsonObject.optString("starttimedate");
                                 String stadium = jsonObject.optString("stadium");
+                                String team1logo = jsonObject.optString("appteamimage1");
+                                String team2logo = jsonObject.optString("appteamimage2");
 
                                 single.put("team1", team1);
                                 single.put("team2", team2);
@@ -200,6 +205,8 @@ public class ScheduleFragment extends Fragment {
                                 single.put("team2id", team2id);
                                 single.put("time", time);
                                 single.put("stadium", stadium);
+                                single.put("team1logo", team1logo);
+                                single.put("team2logo", team2logo);
 
                             }
                         }
@@ -242,8 +249,10 @@ public class ScheduleFragment extends Fragment {
 
 
         if (team1Id != null || team2Id != null) {
-            String imageUriTeam1 = logo_url+team_1+".png" ;
-            String imageUriTeam2 = logo_url+team_2+".png" ;
+//            String imageUriTeam1 = logo_url+team_1+".png" ;
+//            String imageUriTeam2 = logo_url+team_2+".png" ;
+            String imageUriTeam1 =  InternetOperations.SERVER_UPLOADS_URL +single.get("team1logo");
+            String imageUriTeam2 =  InternetOperations.SERVER_UPLOADS_URL+single.get("team2logo") ;
 //            String imageBanner = "http://jaipurpinkpanthers.com/extraimages/footersponsor.png";
 
             imageLoader.displayImage(imageUriTeam1, ivT1, options);
@@ -252,7 +261,7 @@ public class ScheduleFragment extends Fragment {
         }
 
         if (list.size() > 0) {
-
+            Log.d("single.get(\"stadium\")",single.get("stadium"));
             tvVenue.setText(single.get("stadium"));
             tvTime.setText(single.get("time") + "(IST)");
             String tagMain = single.get("team1") + "#" + single.get("team2") + "#" + single.get("time");
@@ -311,12 +320,14 @@ public class ScheduleFragment extends Fragment {
         }
     }
 
-    public void populate(String team1, String team2, String time, String venue) {
+    public void populate(String team1, String team2, String time, String venue,String team1logo ,String team2logo) {
         HashMap<String, String> map = new HashMap<String, String>();
         map.put("team1", team1);
         map.put("team2", team2);
         map.put("time", time);
         map.put("venue", venue);
+        map.put("team1logo", team1logo);
+        map.put("team2logo", team2logo);
         list.add(map);
     }
 

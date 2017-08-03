@@ -21,12 +21,12 @@ public class InternetOperations {
     /*public static String SERVER_UPLOADS_URL = "http://192.168.0.124/jppbackend/uploads/";
     public static String SERVER_THUMB_URL = "http://192.168.0.124/admin/index.php/image/index?name=";*/
     //String local_url="http://192.168.1.105/jppbackend/indexindex.php/json/";
-    public static String SERVER_URL = "http://admin.jaipurpinkpanthers.com/beta/index.php/json/";
-//    public static String SERVER_URL = "http://admin.jaipurpinkpanthers.com/index.php/json/";
-    public static String SERVER_UPLOADS_URL = "http://admin.jaipurpinkpanthers.com/beta/uploads/";
-//    public static String SERVER_UPLOADS_URL = "http://admin.jaipurpinkpanthers.com/uploads/";
-    public static String SERVER_THUMB_URL = "http://admin.jaipurpinkpanthers.com/beta/index.php/image/index?name=";
-//    public static String SERVER_THUMB_URL = "http://admin.jaipurpinkpanthers.com/index.php/image/index?name=";
+//    public static String SERVER_URL = "http://admin.jaipurpinkpanthers.com/beta/index.php/json/";//server on beta
+    public static String SERVER_URL = "http://admin.jaipurpinkpanthers.com/index.php/json/";//server
+//    public static String SERVER_UPLOADS_URL = "http://admin.jaipurpinkpanthers.com/beta/uploads/";//server on beta
+    public static String SERVER_UPLOADS_URL = "http://admin.jaipurpinkpanthers.com/uploads/";//server
+//    public static String SERVER_THUMB_URL = "http://admin.jaipurpinkpanthers.com/beta/index.php/image/index?name=";//server on beta
+    public static String SERVER_THUMB_URL = "http://admin.jaipurpinkpanthers.com/index.php/image/index?name=";//server
     public static String SERVER_WIDTH_250 = "&width=250";
     public static String SERVER_WIDTH_400 = "&width=400";
 

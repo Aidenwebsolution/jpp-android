@@ -104,7 +104,6 @@
                         android:gravity="center"
                         android:padding="5dp"
                         android:text="--"
-                        android:visibility="gone"
                         android:textColor="@android:color/white"/>
 
                     <TextView
@@ -127,7 +126,7 @@
                     android:orientation="horizontal"
                     android:onClick="addToCalendar"
                     android:clickable="false"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     android:id="@+id/llAddToCalendar">
 
                     <ImageView

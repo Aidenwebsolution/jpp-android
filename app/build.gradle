@@ -8,8 +8,8 @@ android {
         applicationId "com.jaipurpinkpanthers.android"
         minSdkVersion 17
         targetSdkVersion 23
-        versionCode 21
-        versionName "3.3"
+        versionCode 23
+        versionName "3.5"
         multiDexEnabled true
 
     }

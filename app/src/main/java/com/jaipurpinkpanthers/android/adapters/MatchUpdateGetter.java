@@ -69,6 +69,20 @@ public class MatchUpdateGetter {
         this.team2id = team2id;
     }
 
+    public String getTeamimage1() {
+        return teamimage1;
+    }
+
+    public void setTeamimage1(String matchtime) {
+        this.teamimage1 = teamimage1;
+    }
+    public String getTeamimage2() {
+        return teamimage2;
+    }
+
+    public void setTeamimage2(String matchtime) {
+        this.teamimage2 = teamimage2;
+    }
     public String getMatchtime() {
         return matchtime;
     }
@@ -87,6 +101,8 @@ public class MatchUpdateGetter {
     String team1id ;
     String team2id ;
     String matchtime ;
+    String teamimage1 ;
+    String teamimage2 ;
 
     public String getCount() {
         return count;
@@ -109,8 +125,28 @@ public class MatchUpdateGetter {
         this.team1id=team1id;
         this.team2id=team2id;
         this.matchtime=matchtime;
+        this.teamimage1=teamimage1;
+        this.teamimage2=teamimage2;
 
-    }  public MatchUpdateGetter(String team1, String team2, String score1, String score2, String stadium,
+    }
+    public MatchUpdateGetter(String team1, String team2, String score1, String score2, String stadium,
+                             String starttimedate, String team1id, String team2id, String matchtime,String teamimage1 ,String teamimage2 ,String count){
+        this.team1=team1;
+        this.team2=team2;
+        this.score1=score1;
+        this.score2=score2;
+        this.stadium=stadium;
+        this.starttimedate=starttimedate;
+        this.team1id=team1id;
+        this.team2id=team2id;
+        this.matchtime=matchtime;
+        this.teamimage1=teamimage1;
+        this.teamimage2=teamimage2;
+        this.count=count;
+
+
+    }
+    public MatchUpdateGetter(String team1, String team2, String score1, String score2, String stadium,
                              String starttimedate, String team1id, String team2id, String matchtime,String count){
         this.team1=team1;
         this.team2=team2;
@@ -121,6 +157,7 @@ public class MatchUpdateGetter {
         this.team1id=team1id;
         this.team2id=team2id;
         this.matchtime=matchtime;
+
         this.count=count;
 
     }

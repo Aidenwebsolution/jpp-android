@@ -62,7 +62,17 @@ public class MatchRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         vh.time.setText(current.getStarttimedate());
         vh.venue.setText(current.getStadium());
         vh.halftime.setText(current.getMatchtime());
+        Log.d("current.getCount()", current.getCount());
+        if (Integer.parseInt(current.getCount())>= 10){
+            Log.d("current.getCount() yes", current.getCount());
 
+            vh.matchnumbertv.setText("MATCH - "+current.getCount());
+        }else{
+            Log.d("current.getCount() no", current.getCount());
+
+            vh.matchnumbertv.setText("MATCH - 0"+current.getCount());
+
+        }
 
 
         /*vh.textView.setTypeface(CustomFonts.getScoreFont(ctx));
@@ -84,41 +94,41 @@ public class MatchRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         String puneripaltan="http://jaipurpinkpanthers.com/img/team/6.png";
         String umumba="http://jaipurpinkpanthers.com/img/team/8.png";
 
-
-        switch (position){
-            case 0:vh.matchnumbertv.setText("MATCH - 16");
-                break;
-            case 1:vh.matchnumbertv.setText("MATCH - 15");
-                break;
-            case 2:vh.matchnumbertv.setText("MATCH - 14");
-                break;
-            case 3:vh.matchnumbertv.setText("MATCH - 13");
-                break;
-            case 4:vh.matchnumbertv.setText("MATCH - 12");
-                break;
-            case 5:vh.matchnumbertv.setText("MATCH - 11");
-                break;
-            case 6:vh.matchnumbertv.setText("MATCH - 10");
-                break;
-            case 7:vh.matchnumbertv.setText("MATCH - 9");
-                break;
-            case 8:vh.matchnumbertv.setText("MATCH - 8");
-                break;
-            case 9:vh.matchnumbertv.setText("MATCH - 7");
-                break;
-            case 10:vh.matchnumbertv.setText("MATCH - 6");
-                break;
-            case 11:vh.matchnumbertv.setText("MATCH - 5");
-                break;
-            case 12:vh.matchnumbertv.setText("MATCH - 4");
-                break;
-            case 13:vh.matchnumbertv.setText("MATCH - 3");
-                break;
-            case 14:vh.matchnumbertv.setText("MATCH - 2");
-                break;
-            case 15:vh.matchnumbertv.setText("MATCH - 1");
-                break;
-        }
+//
+//        switch (position){
+//            case 0:vh.matchnumbertv.setText("MATCH - 16");
+//                break;
+//            case 1:vh.matchnumbertv.setText("MATCH - 15");
+//                break;
+//            case 2:vh.matchnumbertv.setText("MATCH - 14");
+//                break;
+//            case 3:vh.matchnumbertv.setText("MATCH - 13");
+//                break;
+//            case 4:vh.matchnumbertv.setText("MATCH - 12");
+//                break;
+//            case 5:vh.matchnumbertv.setText("MATCH - 11");
+//                break;
+//            case 6:vh.matchnumbertv.setText("MATCH - 10");
+//                break;
+//            case 7:vh.matchnumbertv.setText("MATCH - 9");
+//                break;
+//            case 8:vh.matchnumbertv.setText("MATCH - 8");
+//                break;
+//            case 9:vh.matchnumbertv.setText("MATCH - 7");
+//                break;
+//            case 10:vh.matchnumbertv.setText("MATCH - 6");
+//                break;
+//            case 11:vh.matchnumbertv.setText("MATCH - 5");
+//                break;
+//            case 12:vh.matchnumbertv.setText("MATCH - 4");
+//                break;
+//            case 13:vh.matchnumbertv.setText("MATCH - 3");
+//                break;
+//            case 14:vh.matchnumbertv.setText("MATCH - 2");
+//                break;
+//            case 15:vh.matchnumbertv.setText("MATCH - 1");
+//                break;
+//        }
 
 
         if (current.getTeam2().equals("Puneri Paltan")){

@@ -109,7 +109,7 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
         items.add(new NavigationItem("HOME","ic_menu_home"));
         items.add(new NavigationItem("SCHEDULE", "ic_menu_season4"));
 //        items.add(new NavigationItem("WORLD CUP JOURNEY", "ic_menu_matchupdate"));
-        items.add(new NavigationItem("SEASON 4 REVIEW", "ic_menu_matchupdate"));
+        items.add(new NavigationItem("MATCH UPDATE", "ic_menu_matchupdate"));
         items.add(new NavigationItem("GALLERY", "ic_menu_gallery"));
         items.add(new NavigationItem("JPP TV", "ic_menu_jpptv"));
         items.add(new NavigationItem("NEWS & MEDIA", "ic_menu_news"));
@@ -119,6 +119,7 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
         items.add(new NavigationItem("POINTS TABLE", "ic_menu_points"));
         items.add(new NavigationItem("FAN CORNER", "ic_menu_fan"));
         items.add(new NavigationItem("ABOUT", "ic_menu_about"));
+        items.add(new NavigationItem("SPONSORS", "sponsorsicon"));
         //items.add(new NavigationItem("ABOUT", getResources().getDrawable(R.drawable.ic_menu_about)));
         return items;
     }

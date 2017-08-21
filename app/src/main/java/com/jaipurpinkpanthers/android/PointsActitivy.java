@@ -210,6 +210,17 @@ public class PointsActitivy extends ActionBarActivity
                 }
             }, 300);
         }
+        if (position == 11) { // Sponsors
+            final Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    ma.clearBackStackOfFragments(getFragmentManager());
+                    startActivity(new Intent(PointsActitivy.this, SponsorsActivity.class));
+                    finish();
+                }
+            }, 300);
+        }
     }
 
     @Override

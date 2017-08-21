@@ -62,7 +62,7 @@ import java.util.HashMap;
 public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
     View view;
     TextView tvNo, tvTeam, tvP, tvW, tvL, tvPts,tvmonth,tvdays,tvhours,tvmins;
-    LinearLayout llLatestUpdate, llNews, llTable, llPoints,llupcomingmatch, lljpptv, llsignUp,llLiveupdate;
+    LinearLayout llLatestUpdate, llNews, llTable, llPointsA,llPointsB,llupcomingmatch, lljpptv, llsignUp,llLiveupdate;
     ImageView ivT1, ivT2, ivNews, ivHomeMain,llivT1live,llivT2live;
     int tvS1,tvS2;
 //    TextView tvS2,tvS1;
@@ -78,10 +78,10 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
     String imageLink = null;
     ImageLoader imageLoader;
     DisplayImageOptions options;
-    ArrayList<HashMap<String, String>> list;
+    ArrayList<HashMap<String, String>> listA,listB;
     String team1Id = null, team2Id = null, team1 = null, team2 = null, team1Pts = null, team2Pts = null, venue = "--", time = null, matchTime = null ,bannerimg =null;
     String teamlive1= null,teamlive2= null ,team1logo,team2logo,level;
-    ListView lvTeams;
+    ListView lvTeamsA,lvTeamsB;
     RelativeLayout ll2, ll3,ll4,ll5,rlsponsers;
     FrameLayout ll1,llLiveUpdatescore;
     ProgressDialog progressDialog;
@@ -123,7 +123,7 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
         //relativeLayout=(RelativeLayout)view.findViewById(R.id.home_congrats);
 
         activity = getActivity();
-        list = new ArrayList<HashMap<String, String>>();
+
         homecongrats=(ImageView)view.findViewById(R.id.home_congrats);
         iv_jpptv=(ImageView)view.findViewById(R.id.home_iv_jpptv);
         ivsponsor=(ImageView)view.findViewById(R.id.home_iv_sponsor);
@@ -237,9 +237,12 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
 
         flReview = (RelativeLayout) view.findViewById(R.id.flReview);
 
-        list = new ArrayList<HashMap<String, String>>();
-        lvTeams = (ListView) view.findViewById(R.id.lvTeams);
-        llPoints = (LinearLayout) view.findViewById(R.id.llPoints);
+        listA = new ArrayList<HashMap<String, String>>();
+        listB = new ArrayList<HashMap<String, String>>();
+        lvTeamsA = (ListView) view.findViewById(R.id.lvTeamsA);
+        lvTeamsB = (ListView) view.findViewById(R.id.lvTeamsB);
+        llPointsA = (LinearLayout) view.findViewById(R.id.llPointsA);
+        llPointsB = (LinearLayout) view.findViewById(R.id.llPointsB);
         ivHomeMain = (ImageView) view.findViewById(R.id.ivHomeMain);
         addtocalender= (Button) view.findViewById(R.id.bAddToCalendar);
         addtocalender.setTypeface(CustomFonts.getRegularFont(activity));
@@ -381,12 +384,13 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                 if (Looper.myLooper() == null) {
                     Looper.prepare();
                 }
-                String response;
+                String response,getallpoint;
                 JSONObject jsonObject = null;
 
 
                 try {
                     response = InternetOperations.postBlank(InternetOperations.SERVER_URL + "getHomeContent");
+                    getallpoint = InternetOperations.postBlank(InternetOperations.SERVER_URL + "getallpoint");
 
                     jsonObject = new JSONObject(response);
                     Log.d("jsonObject 222", String.valueOf(jsonObject));
@@ -488,24 +492,40 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                     }
 
                     try {
-                        String jObjectString = jsonObject.optString("points");
-                        JSONArray jsonArray = new JSONArray(jObjectString);
+                        JSONArray pointArray=null;
+                        pointArray = new JSONArray(getallpoint);
+                        JSONObject zoneA = pointArray.getJSONObject(0);
+                        JSONArray pointsTableA = new JSONArray(zoneA.optString("pointsTableA"));
+                        JSONObject zoneB = pointArray.getJSONObject(1);
+                        JSONArray pointsTableB = new JSONArray(zoneB.optString("pointsTableB"));
+                        Log.d( "doInBackground: ", String.valueOf(pointsTableB));
 
-                        if (jsonArray.length() != 0) {
+                        if (pointsTableA.length() != 0 && pointsTableB.length() != 0) {
 
-                            if (list.size() > 0) { //need to clear the list if pull to refresh is initiated
-                                list.clear();
+                            if (listA.size() > 0 && listB.size() > 0) { //need to clear the list if pull to refresh is initiated
+                                listA.clear();
+                                listB.clear();
                             }
 
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject jsonObjectPts = jsonArray.getJSONObject(i);
+                            for (int i = 0; i < pointsTableA.length(); i++) {
+                                JSONObject jsonObjectPts = pointsTableA.getJSONObject(i);
                                 String id = String.valueOf(i + 1);
                                 String name = jsonObjectPts.optString("name");
                                 String p = jsonObjectPts.optString("played");
                                 String w = jsonObjectPts.optString("wins");
                                 String l = jsonObjectPts.optString("lost");
                                 String points = jsonObjectPts.optString("point");
-                                populate(id, name, p, w, l, points);
+                                populate(id, name, p, w, l, points,listA);
+                            }
+                            for (int i = 0; i < pointsTableB.length(); i++) {
+                                JSONObject jsonObjectPts = pointsTableB.getJSONObject(i);
+                                String id = String.valueOf(i + 1);
+                                String name = jsonObjectPts.optString("name");
+                                String p = jsonObjectPts.optString("played");
+                                String w = jsonObjectPts.optString("wins");
+                                String l = jsonObjectPts.optString("lost");
+                                String points = jsonObjectPts.optString("point");
+                                populate(id, name, p, w, l, points,listB);
                             }
                         }
                     } catch (JSONException je) {
@@ -590,165 +610,6 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
         }.execute(null, null, null);
     }
 
-    public  void getdata(){
-
-//        String DATA_URL = "http://admin.jaipurpinkpanthers.com/index.php/json/getHomeContent";
-        String DATA_URL = InternetOperations.SERVER_URL + "getHomeContent";
-        swipeRefreshLayout.setRefreshing(true);
-        //relativeLayout.setVisibility(View.GONE);
-        //Creating a json array request to get the json from our api
-        /*StringRequest jsonRequest = new StringRequest(Request.Method.GET, DATA_URL, null, new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        // the response is already constructed as a JSONObject!
-                        show(response);
-                        *//*try {
-                            response = response.getJSONObject("args");
-                            String site = response.getString("site"),
-                                    network = response.getString("network");
-                            System.out.println("Site: "+site+"\nNetwork: "+network);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }*//*
-                    }
-                }, new Response.ErrorListener() {
-
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        error.printStackTrace();
-                    }
-                });*/
-
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, DATA_URL,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        // Display the first 500 characters of the response string.
-                        //relativeLayout.setVisibility(View.VISIBLE);
-
-                        show(response);
-                        swipeRefreshLayout.setRefreshing(false);
-
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                if (error instanceof NoConnectionError) {
-                    Toast.makeText(activity, "No Internet Access, Check your internet connection.",
-                            Toast.LENGTH_SHORT).show();
-                    swipeRefreshLayout.setRefreshing(false);
-                    //reload_holder.setVisibility(View.VISIBLE);
-                }
-
-                if (error instanceof TimeoutError) {
-                    Toast.makeText(activity, "Connection timed out", Toast.LENGTH_SHORT).show();
-                    swipeRefreshLayout.setRefreshing(false);
-                    //reload_holder.setVisibility(View.VISIBLE);
-                }
-            }
-        });
-        RequestQueue queue = Volley.newRequestQueue(getActivity());
-        queue.add(stringRequest);
-
-
-    }
-
-    private void show(String response) {
-        //Looping through all the elements of json array
-
-        try {
-            JSONObject jsonObject = null;
-            jsonObject = new JSONObject(response);
-            String jObjectString = jsonObject.optString("points");
-            JSONArray jsonArray = new JSONArray(jObjectString);
-
-            JSONObject latestNews = new JSONObject(jsonObject.optString("news"));
-            newsTitle = latestNews.optString("name");
-            newsImage = latestNews.optString("image");
-            newsTime = latestNews.optString("timestamp");
-            newsContent = latestNews.optString("content");
-            imageLink = InternetOperations.SERVER_UPLOADS_URL + newsImage;
-
-            Log.e("getdat","getdata");
-            // Retrieves "colorArray" from the JSON object
-
-            if (list.size() > 0) { //need to clear the list if pull to refresh is initiated
-                list.clear();
-            }
-
-            for (int i = 0; i < jsonArray.length(); i++) {
-                JSONObject jsonObjectPts = jsonArray.getJSONObject(i);
-                String id = String.valueOf(i + 1);
-                String name = jsonObjectPts.optString("name");
-                String p = jsonObjectPts.optString("played");
-                String w = jsonObjectPts.optString("wins");
-                String l = jsonObjectPts.optString("lost");
-                String points = jsonObjectPts.optString("point");
-                Log.e("getdat",points);
-                populate(id, name, p, w, l, points);
-            }
-            Log.e("getdat","getdata");
-            /*if (jsonObject.length() != 0) {
-
-                if (list.size() > 0) { //need to clear the list if pull to refresh is initiated
-                    list.clear();
-                }
-
-                for (int i = 0; i < jsonObject.length(); i++) {
-                    //JSONObject jsonObjectPts = jsonObject.getJSONObject(i);
-                    String id = String.valueOf(i + 1);
-                    String name = jsonObject.getString("name");
-                    String p = jsonObject.getString("name");
-                    String w = jsonObject.getString("name");
-                    String l = jsonObject.getString("wins");
-                    String points = jsonObject.getString("lost");
-                    Log.e("getdat",points);
-                    populate(id, name, p, w, l, points);
-                }
-            }*/
-
-            refresh();
-
-
-
-
-
-
-
-        } catch (JSONException e1) {
-            e1.printStackTrace();
-        }
-
-
-        //if (images.isEmpty()) {
-        /*for (int i = 0; i < jsonArray.length(); i++) {
-            //Creating a json object of the current index
-            JSONObject obj = null;
-            try {
-                //getting json object from current index
-                obj = jsonArray.getJSONObject(i);
-
-                //getting image url and title from json object
-
-                team1.add(obj.getString(TAG_team1));
-                team2.add(obj.getString(TAG_team2));
-                score1.add(obj.getString(TAG_score1));
-                score2.add(obj.getString(TAG_score2));
-                stadium.add(obj.getString(TAG_stadium));
-                starttimedate.add(obj.getString(TAG_starttimedate));
-                team1id.add(obj.getString(TAG_team1id));
-                team2id.add(obj.getString(TAG_team2id));
-                matchtime.add(obj.getString(TAG_matchtime));
-                //count++;
-
-
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }*/
-    }
-
-
     public void refresh() {
         f=true;
         e=true;
@@ -797,7 +658,7 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
 
             ll4.setVisibility(View.VISIBLE);
             llsignUp.setVisibility(View.VISIBLE);
-            rlsponsers.setVisibility(View.VISIBLE);
+//            rlsponsers.setVisibility(View.VISIBLE);
             showcongrats.setVisibility(View.VISIBLE);
         }
 //        if (sponsers) {
@@ -806,7 +667,8 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
 //            showcongrats.setVisibility(View.VISIBLE);
 //        }
 
-        llPoints.removeAllViews();
+        llPointsA.removeAllViews();
+        llPointsB.removeAllViews();
 
 
 
@@ -1043,30 +905,30 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                 .centerCrop()
                 .into(ivsignup);
 
-        Glide.with(activity)
-                .load(InternetOperations.SERVER_UPLOADS_URL+sponsorimg)
-                .asBitmap()
-                .placeholder(R.drawable.loadingnews)
-                .centerCrop()
-                .into(ivsponsor);
+//        Glide.with(activity)
+//                .load(InternetOperations.SERVER_UPLOADS_URL+sponsorimg)
+//                .asBitmap()
+//                .placeholder(R.drawable.loadingnews)
+//                .centerCrop()
+//                .into(ivsponsor);
 
-        if (list.size() > 0) {
+        if (listA.size() > 0) {
 
 
-            for (int i = 0; i < list.size(); i++) {
+            for (int i = 0; i < listA.size(); i++) {
                 LayoutInflater inflator = activity.getLayoutInflater();
-                View viewPointsRow = inflator.inflate(R.layout.layout_points_row, null, false);
+                View viewPointsRowA = inflator.inflate(R.layout.layout_points_row, null, false);
 
-                TextView tvNo = (TextView) viewPointsRow.findViewById(R.id.tvNo); //find the different Views
-                TextView tvTeam = (TextView) viewPointsRow.findViewById(R.id.tvTeam);
-                TextView tvP = (TextView) viewPointsRow.findViewById(R.id.tvP);
-                TextView tvW = (TextView) viewPointsRow.findViewById(R.id.tvW);
-                TextView tvL = (TextView) viewPointsRow.findViewById(R.id.tvL);
-                TextView tvPts = (TextView) viewPointsRow.findViewById(R.id.tvPts);
+                TextView tvNo = (TextView) viewPointsRowA.findViewById(R.id.tvNo); //find the different Views
+                TextView tvTeam = (TextView) viewPointsRowA.findViewById(R.id.tvTeam);
+                TextView tvP = (TextView) viewPointsRowA.findViewById(R.id.tvP);
+                TextView tvW = (TextView) viewPointsRowA.findViewById(R.id.tvW);
+                TextView tvL = (TextView) viewPointsRowA.findViewById(R.id.tvL);
+                TextView tvPts = (TextView) viewPointsRowA.findViewById(R.id.tvPts);
 
-                LinearLayout llFull = (LinearLayout) viewPointsRow.findViewById(R.id.llFull);
+                LinearLayout llFull = (LinearLayout) viewPointsRowA.findViewById(R.id.llFull);
 
-                HashMap<String, String> map = list.get(i);
+                HashMap<String, String> map = listA.get(i);
 
                 String no = map.get("tvNo");
                 String team = map.get("tvTeam");
@@ -1079,12 +941,7 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                 tvTeam.setText(team);
 
                 if (team.equals("Jaipur Pink Panthers")) {
-                    /*tvNo.setTypeface(CustomFonts.getRegularFont(activity));
-                    tvTeam.setTypeface(CustomFonts.getRegularFont(activity));
-                    tvP.setTypeface(CustomFonts.getRegularFont(activity));
-                    tvW.setTypeface(CustomFonts.getRegularFont(activity));
-                    tvL.setTypeface(CustomFonts.getRegularFont(activity));
-                    tvPts.setTypeface(CustomFonts.getRegularFont(activity));*/
+
 
                     tvNo.setTypeface(CustomFonts.getRegularFont(activity));
                     tvNo.setTextColor(Color.parseColor("#ee4a9b"));
@@ -1123,7 +980,81 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                 tvL.setText(l);
                 tvPts.setText(pts);
 
-                llPoints.addView(viewPointsRow);
+                llPointsA.addView(viewPointsRowA);
+            }
+
+        } else {
+
+        }
+        if (listB.size() > 0) {
+
+            Log.d( "refresh: ", String.valueOf(listB));
+            for (int i = 0; i < listB.size(); i++) {
+                LayoutInflater inflator = activity.getLayoutInflater();
+                View viewPointsRowB = inflator.inflate(R.layout.layout_points_row, null, false);
+
+                TextView tvNo = (TextView) viewPointsRowB.findViewById(R.id.tvNo); //find the different Views
+                TextView tvTeam = (TextView) viewPointsRowB.findViewById(R.id.tvTeam);
+                TextView tvP = (TextView) viewPointsRowB.findViewById(R.id.tvP);
+                TextView tvW = (TextView) viewPointsRowB.findViewById(R.id.tvW);
+                TextView tvL = (TextView) viewPointsRowB.findViewById(R.id.tvL);
+                TextView tvPts = (TextView) viewPointsRowB.findViewById(R.id.tvPts);
+
+                LinearLayout llFull = (LinearLayout) viewPointsRowB.findViewById(R.id.llFull);
+
+                HashMap<String, String> map = listB.get(i);
+
+                String no = map.get("tvNo");
+                String team = map.get("tvTeam");
+                String p = map.get("tvP");
+                String w = map.get("tvW");
+                String l = map.get("tvL");
+                String pts = map.get("tvPts");
+
+                tvNo.setText(no);
+                tvTeam.setText(team);
+
+                if (team.equals("Jaipur Pink Panthers")) {
+
+
+                    tvNo.setTypeface(CustomFonts.getRegularFont(activity));
+                    tvNo.setTextColor(Color.parseColor("#ee4a9b"));
+                    tvTeam.setTypeface(CustomFonts.getRegularFont(activity));
+                    tvTeam.setTextColor(Color.parseColor("#ee4a9b"));
+                    tvP.setTypeface(CustomFonts.getRegularFont(activity));
+                    tvP.setTextColor(Color.parseColor("#ee4a9b"));
+                    tvW.setTypeface(CustomFonts.getRegularFont(activity));
+                    tvW.setTextColor(Color.parseColor("#ee4a9b"));
+                    tvL.setTypeface(CustomFonts.getRegularFont(activity));
+                    tvL.setTextColor(Color.parseColor("#ee4a9b"));
+                    tvPts.setTypeface(CustomFonts.getRegularFont(activity));
+                    tvPts.setTextColor(Color.parseColor("#ee4a9b"));
+                    llFull.setBackgroundColor(Color.parseColor("#7bd9fa"));
+
+
+                } else {
+                    tvNo.setTypeface(CustomFonts.getLightFont(activity));
+                    tvNo.setTextColor(Color.parseColor("black"));
+                    tvTeam.setTypeface(CustomFonts.getLightFont(activity));
+                    tvTeam.setTextColor(Color.parseColor("black"));
+                    tvP.setTypeface(CustomFonts.getLightFont(activity));
+                    tvP.setTextColor(Color.parseColor("black"));
+                    tvW.setTypeface(CustomFonts.getLightFont(activity));
+                    tvW.setTextColor(Color.parseColor("black"));
+                    tvL.setTypeface(CustomFonts.getLightFont(activity));
+                    tvL.setTextColor(Color.parseColor("black"));
+                    tvPts.setTypeface(CustomFonts.getLightFont(activity));
+                    tvPts.setTextColor(Color.parseColor("black"));
+
+                    llFull.setBackgroundColor(Color.parseColor("#7bd9fa"));
+
+                }
+                tvP.setText(p);
+                tvW.setText(w);
+                tvL.setText(l);
+                tvPts.setText(pts);
+
+                llPointsB.addView(viewPointsRowB);
             }
 
         } else {
@@ -1133,7 +1064,7 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
         //viewPagerAdapter.notifyDataSetChanged();
     }
 
-    public void populate(String n, String team, String p, String w, String l, String pts) {
+    public void populate(String n, String team, String p, String w, String l, String pts,ArrayList<HashMap<String, String>> list) {
         HashMap<String, String> map = new HashMap<String, String>();
         map.put("tvNo", n);
         map.put("tvTeam", team);
@@ -1143,6 +1074,7 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
         map.put("tvPts", pts);
         list.add(map);
     }
+
     public void setappImage(String appimg1){
 
     }

@@ -39,8 +39,8 @@ import java.util.HashMap;
 public class PointsFragment extends Fragment {
     View view;
     TextView tvNo, tvTeam, tvP, tvW, tvL, tvPts;
-    ListView lvTeams;
-    ArrayList<HashMap<String, String>> list;
+    ListView lvTeamsA,lvTeamsB;
+    ArrayList<HashMap<String, String>> listA,listB;
     ProgressDialog progressDialog;
     LinearLayout llptheader,sponsers;
     ImageView home_iv_sponsor;
@@ -87,7 +87,9 @@ public class PointsFragment extends Fragment {
 
     public void initilizeViews() {
 
-        list = new ArrayList<HashMap<String, String>>();
+        listA = new ArrayList<HashMap<String, String>>();
+        listB = new ArrayList<HashMap<String, String>>();
+
         llptheader= (LinearLayout) view.findViewById(R.id.llptheader);
         sponsers= (LinearLayout) view.findViewById(R.id.sponsers);
         home_iv_sponsor= (ImageView) view.findViewById(R.id.home_iv_sponsor);
@@ -97,7 +99,8 @@ public class PointsFragment extends Fragment {
         tvW = (TextView) view.findViewById(R.id.tvW);
         tvL = (TextView) view.findViewById(R.id.tvL);
         tvPts = (TextView) view.findViewById(R.id.tvPts);
-        lvTeams = (ListView) view.findViewById(R.id.lvTeams);
+        lvTeamsA = (ListView) view.findViewById(R.id.lvTeamsA);
+        lvTeamsB = (ListView) view.findViewById(R.id.lvTeamsB);
 
         tvNo.setTypeface(CustomFonts.getRegularFont(getActivity()));
         tvNo.setTextColor(Color.parseColor("black"));
@@ -136,23 +139,41 @@ public class PointsFragment extends Fragment {
                 try {
                     response = InternetOperations.postBlank(InternetOperations.SERVER_URL + "getallpoint");
                     getsponsorimageresponse = InternetOperations.postBlank(InternetOperations.SERVER_URL + "getsponsorimage");
-                    Log.d("getsponsorimageresponse",getsponsorimageresponse);
+                    Log.d("getsponsorimageresponse",response);
 
                     jsonArray = new JSONArray(response);
                     JSONObject getsponsorimage = new JSONObject(getsponsorimageresponse);
                     sponsor =getsponsorimage.optString("image");
+                    JSONObject zoneA = jsonArray.getJSONObject(0);
+                    JSONArray pointsTableA = new JSONArray(zoneA.optString("pointsTableA"));
+                    JSONObject zoneB = jsonArray.getJSONObject(1);
+                    JSONArray pointsTableB = new JSONArray(zoneB.optString("pointsTableB"));
 
-                    if (jsonArray.length() != 0) {
 
-                        for (int i = 0; i < jsonArray.length(); i++) {
-                            JSONObject jsonObject = jsonArray.getJSONObject(i);
+                    if (pointsTableA.length() != 0) {
+
+                        for (int i = 0; i < pointsTableA.length(); i++) {
+                            JSONObject jsonObject = pointsTableA.getJSONObject(i);
                             String id = String.valueOf(i + 1);
                             String name = jsonObject.optString("name");
                             String p = jsonObject.optString("played");
                             String w = jsonObject.optString("wins");
                             String l = jsonObject.optString("lost");
                             String points = jsonObject.optString("point");
-                            populate(id, name, p, w, l, points);
+                            populate(id, name, p, w, l, points,listA);
+                        }
+                    }
+                    if (pointsTableB.length() != 0) {
+
+                        for (int i = 0; i < pointsTableB.length(); i++) {
+                            JSONObject jsonObject = pointsTableB.getJSONObject(i);
+                            String id = String.valueOf(i + 1);
+                            String name = jsonObject.optString("name");
+                            String p = jsonObject.optString("played");
+                            String w = jsonObject.optString("wins");
+                            String l = jsonObject.optString("lost");
+                            String points = jsonObject.optString("point");
+                            populate(id, name, p, w, l, points,listB);
                         }
                     }
                     done = true;
@@ -171,7 +192,7 @@ public class PointsFragment extends Fragment {
                 progressDialog.dismiss();
                 if (done) {
                     llptheader.setVisibility(View.VISIBLE);
-                    sponsers.setVisibility(View.VISIBLE);
+//                    sponsers.setVisibility(View.VISIBLE);
                     String imagesponsor = InternetOperations.SERVER_UPLOADS_URL + sponsor;
                     imageLoader.displayImage(imagesponsor, home_iv_sponsor, options);
 
@@ -185,15 +206,21 @@ public class PointsFragment extends Fragment {
     }
 
     public void refresh() {
-        if (list.size() > 0) {
-            PointsAdapter pointsAdapter = new PointsAdapter(getActivity(), list);
-            lvTeams.setAdapter(pointsAdapter);
+        if (listA.size() > 0) {
+            PointsAdapter pointsAdapter = new PointsAdapter(getActivity(), listA);
+            lvTeamsA.setAdapter(pointsAdapter);
+        } else {
+            //istView.setEmptyView(tvNoBets);
+        }
+        if (listB.size() > 0) {
+            PointsAdapter pointsAdapter = new PointsAdapter(getActivity(), listB);
+            lvTeamsB.setAdapter(pointsAdapter);
         } else {
             //istView.setEmptyView(tvNoBets);
         }
     }
 
-    public void populate(String n, String team, String p, String w, String l, String pts) {
+    public void populate(String n, String team, String p, String w, String l, String pts,ArrayList<HashMap<String, String>> list) {
         HashMap<String, String> map = new HashMap<String, String>();
         map.put("tvNo", n);
         map.put("tvTeam", team);

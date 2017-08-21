@@ -15,11 +15,16 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.jaipurpinkpanthers.android.fragments.MerchandiseFragment;
+import com.jaipurpinkpanthers.android.fragments.AboutUsFragment;
 import com.jaipurpinkpanthers.android.fragments.NavigationDrawerFragment;
+import com.jaipurpinkpanthers.android.fragments.SponsorsFragment;
 import com.jaipurpinkpanthers.android.util.CustomFonts;
 
-public class MerchandiseActivity extends ActionBarActivity
+/**
+ * Created by wohlig on 5/8/17.
+ */
+
+public class SponsorsActivity extends ActionBarActivity
         implements NavigationDrawerCallbacks {
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -38,7 +43,7 @@ public class MerchandiseActivity extends ActionBarActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_merchandise);
+        setContentView(R.layout.activity_sponsors);
         mToolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -49,14 +54,15 @@ public class MerchandiseActivity extends ActionBarActivity
 
         //tvToolbarText.setVisibility(View.GONE);
         ivToolbarImage.setVisibility(View.GONE);
-        tvToolbarText.setText("MERCHANDISE");
+        tvToolbarText.setText("SPONSORS");
+
+        onTrimMemory(TRIM_MEMORY_BACKGROUND);
 
         container = (FrameLayout) findViewById(R.id.container);
         /*container.setBackgroundColor(getResources().getColor(R.color.jppPrimaryColor));*/
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getFragmentManager().findFragmentById(R.id.fragment_drawer);
-
 
 
         // Set up the drawer.
@@ -70,15 +76,14 @@ public class MerchandiseActivity extends ActionBarActivity
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
-
-        // update the main content by replacing fragmentss
+        // update the main content by replacing fragments
         if (position == 0) { // home
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
                     ma.clearBackStackOfFragments(getFragmentManager());
-                    GoToMainFragments.goHome(MerchandiseActivity.this);
+                    GoToMainFragments.goHome(SponsorsActivity.this);
                     finish();
                 }
             }, 300);
@@ -89,7 +94,7 @@ public class MerchandiseActivity extends ActionBarActivity
                 @Override
                 public void run() {
                     ma.clearBackStackOfFragments(getFragmentManager());
-                    GoToMainFragments.goSchedule(MerchandiseActivity.this);
+                    GoToMainFragments.goSchedule(SponsorsActivity.this);
                     finish();
                 }
             }, 300);
@@ -101,9 +106,8 @@ public class MerchandiseActivity extends ActionBarActivity
 //                @Override
 //                public void run() {
 //                    ma.clearBackStackOfFragments(getFragmentManager());
-//                    GoToMainFragments.gomatchupdate(MerchandiseActivity.this);
+//                    GoToMainFragments.gomatchupdate(SponsorsActivity.this);
 //                    finish();
-//
 //                }
 //            }, 300);
 //
@@ -114,9 +118,8 @@ public class MerchandiseActivity extends ActionBarActivity
                 @Override
                 public void run() {
                     ma.clearBackStackOfFragments(getFragmentManager());
-                    GoToMainFragments.gomatchupdate1(MerchandiseActivity.this);
+                    GoToMainFragments.gomatchupdate1(SponsorsActivity.this);
                     finish();
-
                 }
             }, 300);
 
@@ -127,7 +130,7 @@ public class MerchandiseActivity extends ActionBarActivity
                 @Override
                 public void run() {
                     ma.clearBackStackOfFragments(getFragmentManager());
-                    GoToMainFragments.goGallery(MerchandiseActivity.this);
+                    GoToMainFragments.goGallery(SponsorsActivity.this);
                     finish();
                 }
             }, 300);
@@ -138,7 +141,7 @@ public class MerchandiseActivity extends ActionBarActivity
                 @Override
                 public void run() {
                     ma.clearBackStackOfFragments(getFragmentManager());
-                    GoToMainFragments.goJppTv(MerchandiseActivity.this);
+                    GoToMainFragments.goJppTv(SponsorsActivity.this);
                     finish();
                 }
             }, 300);
@@ -149,7 +152,7 @@ public class MerchandiseActivity extends ActionBarActivity
                 @Override
                 public void run() {
                     ma.clearBackStackOfFragments(getFragmentManager());
-                    GoToMainFragments.goNews(MerchandiseActivity.this);
+                    GoToMainFragments.goNews(SponsorsActivity.this);
                     finish();
                 }
             }, 300);
@@ -160,13 +163,21 @@ public class MerchandiseActivity extends ActionBarActivity
                 @Override
                 public void run() {
                     ma.clearBackStackOfFragments(getFragmentManager());
-                    GoToMainFragments.goPanthers(MerchandiseActivity.this);
+                    GoToMainFragments.goPanthers(SponsorsActivity.this);
                     finish();
                 }
             }, 300);
         }
-//        if (position == 7) { // Merchandise
-//
+//        if (position == 7) { // tickets
+//            final Handler handler = new Handler();
+//            handler.postDelayed(new Runnable() {
+//                @Override
+//                public void run() {
+//                    ma.clearBackStackOfFragments(getFragmentManager());
+//                    startActivity(new Intent(SponsorsActivity.this, MerchandiseActivity.class));
+//                    finish();
+//                }
+//            }, 300);
 //        }
         if (position == 7) { // wallpaper
             final Handler handler = new Handler();
@@ -174,7 +185,7 @@ public class MerchandiseActivity extends ActionBarActivity
                 @Override
                 public void run() {
                     ma.clearBackStackOfFragments(getFragmentManager());
-                    startActivity(new Intent(MerchandiseActivity.this, WallpaperActivity.class).setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY));
+                    startActivity(new Intent(SponsorsActivity.this, WallpaperActivity.class));
                     finish();
                 }
             }, 300);
@@ -185,7 +196,7 @@ public class MerchandiseActivity extends ActionBarActivity
                 @Override
                 public void run() {
                     ma.clearBackStackOfFragments(getFragmentManager());
-                    startActivity(new Intent(MerchandiseActivity.this, PointsActitivy.class).setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY));
+                    startActivity(new Intent(SponsorsActivity.this, PointsActitivy.class));
                     finish();
                 }
             }, 300);
@@ -197,7 +208,7 @@ public class MerchandiseActivity extends ActionBarActivity
                 @Override
                 public void run() {
                     ma.clearBackStackOfFragments(getFragmentManager());
-                    startActivity(new Intent(MerchandiseActivity.this, FanActivity.class).setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY));
+                    startActivity(new Intent(SponsorsActivity.this, FanActivity.class));
                     finish();
                 }
             }, 300);
@@ -208,21 +219,12 @@ public class MerchandiseActivity extends ActionBarActivity
                 @Override
                 public void run() {
                     ma.clearBackStackOfFragments(getFragmentManager());
-                    startActivity(new Intent(MerchandiseActivity.this, AboutActivity.class).setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY));
+                    startActivity(new Intent( SponsorsActivity.this,AboutActivity.class));
                     finish();
                 }
             }, 300);
-        }
-        if (position == 11) { // Sponsors
-            final Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    ma.clearBackStackOfFragments(getFragmentManager());
-                    startActivity(new Intent(MerchandiseActivity.this, SponsorsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY));
-                    finish();
-                }
-            }, 300);
+        }if (position == 11) { // Sponsors
+
         }
     }
 
@@ -230,11 +232,12 @@ public class MerchandiseActivity extends ActionBarActivity
     public void onBackPressed() {
         if (mNavigationDrawerFragment.isDrawerOpen()) {
             mNavigationDrawerFragment.closeDrawer();
-        }  else if (getFragmentManager().getBackStackEntryCount() == 0) {
-            //if (doubleBackToExitPressedOnce) {
-                super.onBackPressed();
-                //super.onDestroy();
-                //return;
+        } else if (getFragmentManager().getBackStackEntryCount() == 0) {
+            //if (doubleBackToExitPressedOnce){
+            super.onBackPressed();
+            finish();
+            //super.onDestroy();
+            //return;
             /*}
 
             this.doubleBackToExitPressedOnce = true;
@@ -246,9 +249,11 @@ public class MerchandiseActivity extends ActionBarActivity
                     doubleBackToExitPressedOnce = false;
                 }
             }, 2000);*/
+
         } else {
             getFragmentManager().popBackStack();
         }
+
 
     }
 
@@ -267,9 +272,9 @@ public class MerchandiseActivity extends ActionBarActivity
     public void initializeViews() {
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        MerchandiseFragment merchandiseFragment = new MerchandiseFragment();
+        SponsorsFragment sponsorsFragment = new SponsorsFragment();
 
-        fragmentTransaction.add(R.id.container, merchandiseFragment);
+        fragmentTransaction.add(R.id.container, sponsorsFragment);
         //fragmentTransaction.replace(R.id.container, scheduleFragment);
         fragmentTransaction.commit();
 
@@ -278,49 +283,32 @@ public class MerchandiseActivity extends ActionBarActivity
     public void home(View v) {
         Log.v("JPP", "Home");
         GoToMainFragments.goHome(this);
+        finish();
     }
 
 //    public void schedule(View v) {
 //        Log.v("JPP", "Schedule");
 //        GoToMainFragments.goSchedule(this);
+//        finish();
 //    }
 
     public void gallery(View v) {
         Log.v("JPP", "Gallery");
         GoToMainFragments.goGallery(this);
+        finish();
     }
 
     public void news(View v) {
         Log.v("JPP", "News");
         GoToMainFragments.goNews(this);
+        finish();
     }
 
     public void knowPanthers(View v) {
         Log.v("JPP", "Panthers");
         GoToMainFragments.goPanthers(this);
+        finish();
     }
 
-    public void goToMerc(View v){
-        /*Intent intent = new Intent(MerchandiseActivity.this, WebActivity.class);
-        intent.putExtra("webLink", "http://www.google.com");
-        startActivity(intent);*/
-    }
 
-    public void goToTic(View v){
-        Intent intent = new Intent(MerchandiseActivity.this, WebActivity.class);
-        intent.putExtra("webLink", "http://in.bookmyshow.com/sports/kabaddi/jaipur-pink-panthers/?utm_source=web_prokabaddi&utm_medium=referral&utm_campaign=web_prokabaddi_011816");
-        startActivity(intent);
-    }
-
-    public static void tvOrImage(boolean tv, String header) {
-        if (tv) {
-            ivToolbarImage.setVisibility(View.GONE);
-            tvToolbarText.setVisibility(View.VISIBLE);
-            tvToolbarText.setText(header);
-        } else {
-            tvToolbarText.setVisibility(View.GONE);
-            ivToolbarImage.setVisibility(View.VISIBLE);
-        }
-    }
 }
-

@@ -914,7 +914,7 @@
                 <RelativeLayout
                     android:id="@+id/ll3"
                     android:layout_width="match_parent"
-                    android:layout_height="530dp"
+                    android:layout_height="580dp"
                     android:layout_marginBottom="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
@@ -1003,16 +1003,40 @@
                                 android:text="PTS"
                                 android:textColor="@android:color/black" />
                         </LinearLayout>
-
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Zone A"
+                            android:textColor="@android:color/white"
+                            android:textSize="16dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="5dp"
+                            />
                         <LinearLayout
-                            android:id="@+id/llPoints"
+                            android:id="@+id/llPointsA"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
                             android:paddingBottom="5dp"
                             android:paddingLeft="5dp"
                             android:paddingRight="5dp" />
-
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Zone B"
+                            android:textColor="@android:color/white"
+                            android:textSize="16dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="5dp"
+                            />
+                        <LinearLayout
+                            android:id="@+id/llPointsB"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingBottom="5dp"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp" />
                     </LinearLayout>
 
                 </RelativeLayout>

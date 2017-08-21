@@ -223,6 +223,17 @@ public class WallpaperActivity extends ActionBarActivity
                 }
             }, 300);
         }
+        if (position == 11) { // Sponsors
+            final Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    ma.clearBackStackOfFragments(getFragmentManager());
+                    startActivity(new Intent(WallpaperActivity.this, SponsorsActivity.class).setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY));
+                    finish();
+                }
+            }, 300);
+        }
     }
 
     @Override

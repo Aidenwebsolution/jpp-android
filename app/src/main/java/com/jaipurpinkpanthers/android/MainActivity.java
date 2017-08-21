@@ -36,6 +36,7 @@ import com.jaipurpinkpanthers.android.fragments.NewsFragment;
 import com.jaipurpinkpanthers.android.fragments.PanthersFragment;
 import com.jaipurpinkpanthers.android.fragments.PlayerDescriptionFragment;
 import com.jaipurpinkpanthers.android.fragments.ScheduleFragment;
+import com.jaipurpinkpanthers.android.fragments.SponsorsFragment;
 import com.jaipurpinkpanthers.android.util.CalendarEvent;
 import com.jaipurpinkpanthers.android.util.CustomFonts;
 //import com.pushwoosh.BasePushMessageReceiver;
@@ -369,6 +370,10 @@ public class MainActivity extends ActionBarActivity
                     clearBackStackOfFragments(getFragmentManager());
                     about1();
                     break;
+                case 11:
+                    clearBackStackOfFragments(getFragmentManager());
+                    sponsors1();
+                    break;
                 default:
                     homeShow();
                     break;
@@ -552,11 +557,11 @@ public class MainActivity extends ActionBarActivity
                 .commit();
     }
     public void matchupdate1(View v){
-        Log.v("JPP", "SEASON 4 REVIEW");
+        Log.v("JPP", "MATCH UPDATE");
         matchupdate1();
     }
     public void matchupdate1() {
-        tvOrImage(true, "SEASON 4 REVIEW");
+        tvOrImage(true, "MATCH UPDATE");
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         MatchUpdateFragment matchUpdateFragment =new MatchUpdateFragment();
         /*fragmentTransaction.replace(R.id.container, matchUpdateFragment);
@@ -712,7 +717,23 @@ public class MainActivity extends ActionBarActivity
                 .commit();
     }
 
+    public void sponsors(View v)
+    {
+        Log.v("JPP", "SPONSORS");
+        sponsors1();
+    }
+    public void sponsors1()
+    {
+        //startActivity(new Intent(MainActivity.this, AboutActivity.class));
+        tvOrImage(true, "SPONSORS");
+        SponsorsFragment SponsorsFragment =new SponsorsFragment();
 
+        getFragmentManager()
+                .beginTransaction()
+                .setCustomAnimations(R.animator.enter_anim, R.animator.exit_anim)
+                .replace(R.id.container, SponsorsFragment)
+                .commit();
+    }
     public void removeFragment(String TAG_FRAGMENT) {
         Fragment fragment = getSupportFragmentManager().findFragmentByTag(TAG_FRAGMENT);
         if (fragment != null)

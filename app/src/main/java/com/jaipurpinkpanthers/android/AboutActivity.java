@@ -211,6 +211,17 @@ public class AboutActivity extends ActionBarActivity
         if (position == 10) { // about us
 
         }
+        if (position == 11) { // Sponsors
+            final Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    ma.clearBackStackOfFragments(getFragmentManager());
+                    startActivity(new Intent(AboutActivity.this, SponsorsActivity.class));
+                    finish();
+                }
+            }, 300);
+        }
     }
 
     @Override

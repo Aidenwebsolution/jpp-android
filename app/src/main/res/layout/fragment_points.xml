@@ -22,7 +22,8 @@
             android:background="@color/jpptable"
             android:id="@+id/llptheader"
             android:visibility="gone"
-            android:padding="5dp">
+            android:padding="5dp"
+            android:weightSum="1">
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
@@ -86,24 +87,60 @@
                     android:gravity="center"
                     android:textColor="@android:color/black"/>
             </LinearLayout>
-            <ListView
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="8dp"
-                android:layout_width="match_parent"
-                android:layout_height="420dp"
-                android:id="@+id/lvTeams"
-                android:dividerHeight="0dp"
-                android:isScrollContainer="false"
-                android:divider="@android:color/transparent"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Zone A"
+                android:textColor="@android:color/white"
+                android:textSize="16dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
                 />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="215dp">
+                <ListView
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lvTeamsA"
+                    android:dividerHeight="0dp"
+                    android:isScrollContainer="false"
+                    android:divider="@android:color/transparent"
+                    />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Zone B"
+                android:textColor="@android:color/white"
+                android:textSize="16dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="215dp">
+                <ListView
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lvTeamsB"
+                    android:dividerHeight="0dp"
+                    android:isScrollContainer="false"
+                    android:divider="@android:color/transparent"
+                    />
+            </LinearLayout>
+
         </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="130dp"
         android:visibility="gone"
         android:id="@+id/sponsers"
-
         >
         <ImageView
             android:layout_width="match_parent"

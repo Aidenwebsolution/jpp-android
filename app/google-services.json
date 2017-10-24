@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "166446624422",
+    "firebase_url": "https://jaipurpinkpanthers-12fa1.firebaseio.com",
+    "project_id": "jaipurpinkpanthers-12fa1",
+    "storage_bucket": "jaipurpinkpanthers-12fa1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:166446624422:android:50ed40473aaef880",
+        "android_client_info": {
+          "package_name": "com.jaipurpinkpanthers.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "166446624422-6gcucf13bel9q0qit7o9nl233p8q56ts.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBP5w68gb1o_d5waMYScjEL6YWNIvbuwRc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

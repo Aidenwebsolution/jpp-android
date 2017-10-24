@@ -48,8 +48,8 @@ public class MatchUpdateFragment extends Fragment {
     public static final String TAG_team1id = "team1id";
     public static final String TAG_team2id = "team2id";
     public static final String TAG_matchtime = "matchtime";
-    public static final String TAG_teamimage1 = "teamimage1";
-    public static final String TAG_teamimage2 = "teamimage2";
+    public static final String TAG_teamimage1 = "appteamimage1";
+    public static final String TAG_teamimage2 = "appteamimage2";
 
     public ArrayList<String> team1 = new ArrayList<>();
     public ArrayList<String> team2 = new ArrayList<>();
@@ -157,7 +157,7 @@ public class MatchUpdateFragment extends Fragment {
 
     private void show(JSONArray jsonArray) {
         //Looping through all the elements of json array
-
+        Log.d("jsonArray", String.valueOf(jsonArray));
         team1.clear();
         team2.clear();
         score1.clear();

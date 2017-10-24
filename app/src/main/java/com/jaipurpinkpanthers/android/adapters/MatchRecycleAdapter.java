@@ -1,5 +1,6 @@
 package com.jaipurpinkpanthers.android.adapters;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -16,6 +17,12 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.jaipurpinkpanthers.android.R;
+import com.jaipurpinkpanthers.android.util.InternetOperations;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.nostra13.universalimageloader.core.assist.ImageScaleType;
+import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 
 import java.util.ArrayList;
 
@@ -30,12 +37,32 @@ public class MatchRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     private int lastAnimatedPosition = -1;
     private int itemsCount = 0;
     private int time = 600;
+    ImageLoader imageLoader;
+    DisplayImageOptions options;
+    Activity activity;
+
 
 
 
     public MatchRecycleAdapter(ArrayList<MatchUpdateGetter> arrayList, Context ctx){
         this.arrayList=arrayList;
         this.ctx=ctx;
+        activity = (Activity) ctx;
+        imageLoader = ImageLoader.getInstance();
+        options = new DisplayImageOptions.Builder().cacheInMemory(false)
+                .cacheOnDisc(false).resetViewBeforeLoading(true).build();
+
+        DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()
+                .cacheOnDisc(true).cacheInMemory(false)
+                .imageScaleType(ImageScaleType.EXACTLY)
+                .displayer(new FadeInBitmapDisplayer(300)).build();
+
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(
+                activity)
+                .defaultDisplayImageOptions(defaultOptions)
+                .discCacheSize(1024 * 1024).build();
+
+        ImageLoader.getInstance().init(config);
     }
 
 
@@ -47,6 +74,7 @@ public class MatchRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_matchupdate, parent, false);
 
         return new MatchViewHolder(view);
+
     }
 
     @Override
@@ -130,154 +158,93 @@ public class MatchRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 //                break;
 //        }
 
+        String team1_link ="http://admin.jaipurpinkpanthers.com/uploads/"+current.getTeamimage1() ;
+        String team2_link ="http://admin.jaipurpinkpanthers.com/uploads/"+current.getTeamimage2() ;
+        Log.d("current.getTeam1() current.getTeam2()",current.getTeamimage2()+current.getTeamimage1());
+
+//        Glide.with(ctx)
+//                .load(team1_link)
+//                .asBitmap()
+//                .override(100, 100)
+//                .centerCrop()
+//                .into(vh.imageView1);
+//        Glide.with(ctx)
+//                .load(team2_link)
+//                .asBitmap()
+//                .override(100, 100)
+//                .centerCrop()
+//                .into(vh.imageView2);
+
+        imageLoader.displayImage(team1_link, vh.imageView1, options);
+        imageLoader.displayImage(team2_link, vh.imageView2, options);
 
         if (current.getTeam2().equals("Puneri Paltan")){
-            Glide.with(ctx)
-                    .load(puneripaltan)
-                    .asBitmap()
-                    .override(400, 400)
-                    .centerCrop()
-                    .into(vh.imageView2);
+
             vh.score2.setTextColor(Color.parseColor("#fff04e23"));
         }
         if (current.getTeam1().equals("Puneri Paltan")){
-            Glide.with(ctx)
-                    .load(puneripaltan)
-                    .asBitmap()
-                    .override(400, 400)
-                    .centerCrop()
-                    .into(vh.imageView1);
+
             vh.textView.setTextColor(Color.parseColor("#fff04e23"));
         }
         if (current.getTeam2().equals("Jaipur Pink Panthers")){
-            Glide.with(ctx)
-                    .load(jpp)
-                    .asBitmap()
-                    .override(400, 400)
-                    .centerCrop()
-                    .into(vh.imageView2);
+
             vh.score2.setTextColor(Color.parseColor("#ffee4a9b"));
         }
         if (current.getTeam1().equals("Jaipur Pink Panthers")){
-            Glide.with(ctx)
-                    .load(jpp)
-                    .asBitmap()
-                    .override(400, 400)
-                    .centerCrop()
-                    .into(vh.imageView1);
+
             vh.textView.setTextColor(Color.parseColor("#ffee4a9b"));
         }
         if (current.getTeam2().equals("Bengal Warriors")){
-            Glide.with(ctx)
-                    .load(bwarriors)
-                    .asBitmap()
-                    .override(400, 400)
-                    .centerCrop()
-                    .into(vh.imageView2);
+
             vh.score2.setTextColor(Color.parseColor("#fff26724"));
         }
         if (current.getTeam1().equals("Bengal Warriors")){
-            Glide.with(ctx)
-                    .load(bwarriors)
-                    .asBitmap()
-                    .override(400, 400)
-                    .centerCrop()
-                    .into(vh.imageView1);
+
             vh.textView.setTextColor(Color.parseColor("#fff26724"));
         }
 
         if (current.getTeam2().equals("Dabang Delhi")){
-            Glide.with(ctx)
-                    .load(delhi)
-                    .asBitmap()
-                    .override(400, 400)
-                    .centerCrop()
-                    .into(vh.imageView2);
+
             vh.score2.setTextColor(Color.parseColor("#ffd91f2d"));
         }
         if (current.getTeam1().equals("Dabang Delhi")){
-            Glide.with(ctx)
-                    .load(delhi)
-                    .asBitmap()
-                    .override(400, 400)
-                    .centerCrop()
-                    .into(vh.imageView1);
+
             vh.textView.setTextColor(Color.parseColor("#ffd91f2d"));
         }
 
         if (current.getTeam2().equals("Patna Pirates")){
-            Glide.with(ctx)
-                    .load(patnap)
-                    .asBitmap()
-                    .override(400, 400)
-                    .centerCrop()
-                    .into(vh.imageView2);
+
             vh.score2.setTextColor(Color.parseColor("#ff0a4436"));
         }
         if (current.getTeam1().equals("Patna Pirates")){
-            Glide.with(ctx)
-                    .load(patnap)
-                    .asBitmap()
-                    .override(400, 400)
-                    .centerCrop()
-                    .into(vh.imageView1);
+
             vh.textView.setTextColor(Color.parseColor("#ff0a4436"));
         }
 
         if (current.getTeam2().equals("Telugu Titans")){
-            Glide.with(ctx)
-                    .load(teluguttitans)
-                    .asBitmap()
-                    .override(400, 400)
-                    .centerCrop()
-                    .into(vh.imageView2);
+
             vh.score2.setTextColor(Color.parseColor("#ffda2131"));
         }
         if (current.getTeam1().equals("Telugu Titans")){
-            Glide.with(ctx)
-                    .load(teluguttitans)
-                    .asBitmap()
-                    .override(400, 400)
-                    .centerCrop()
-                    .into(vh.imageView1);
+
             vh.textView.setTextColor(Color.parseColor("#ffda2131"));
         }
 
         if (current.getTeam2().equals("U Mumba")){
-            Glide.with(ctx)
-                    .load(umumba)
-                    .asBitmap()
-                    .override(400, 400)
-                    .centerCrop()
-                    .into(vh.imageView2);
+
             vh.score2.setTextColor(Color.parseColor("#fff15922"));
         }
         if (current.getTeam1().equals("U Mumba")){
-            Glide.with(ctx)
-                    .load(umumba)
-                    .asBitmap()
-                    .override(400, 400)
-                    .centerCrop()
-                    .into(vh.imageView1);
+
             vh.textView.setTextColor(Color.parseColor("#fff15922"));
         }
 
         if (current.getTeam2().equals("Bengaluru Bulls")){
-            Glide.with(ctx)
-                    .load(bbulls)
-                    .asBitmap()
-                    .override(400, 400)
-                    .centerCrop()
-                    .into(vh.imageView2);
+
             vh.score2.setTextColor(Color.parseColor("#ffb01d21"));
         }
         if (current.getTeam1().equals("Bengaluru Bulls")){
-            Glide.with(ctx)
-                    .load(bbulls)
-                    .asBitmap()
-                    .override(400, 400)
-                    .centerCrop()
-                    .into(vh.imageView1);
+
             vh.textView.setTextColor(Color.parseColor("#ffb01d21"));
         }
 

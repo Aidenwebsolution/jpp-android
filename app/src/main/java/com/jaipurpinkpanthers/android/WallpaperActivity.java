@@ -7,7 +7,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarActivity;
+//import android.support.v7.app.ActionBarActivity;
+
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
@@ -15,8 +17,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
+//import com.google.android.gms.appindexing.Action;
+//import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.jaipurpinkpanthers.android.fragments.NavigationDrawerFragment;
 import com.jaipurpinkpanthers.android.fragments.WallpaperFragment;
@@ -24,7 +26,7 @@ import com.jaipurpinkpanthers.android.util.CustomFonts;
 
 import java.util.ArrayList;
 
-public class WallpaperActivity extends ActionBarActivity
+public class WallpaperActivity extends AppCompatActivity
         implements NavigationDrawerCallbacks {
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -77,7 +79,7 @@ public class WallpaperActivity extends ActionBarActivity
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+//        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
     @Override
@@ -95,18 +97,18 @@ public class WallpaperActivity extends ActionBarActivity
                 }
             }, 300);
         }
-        if (position == 1) { // schedule
-            final Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    ma.clearBackStackOfFragments(getFragmentManager());
-                    GoToMainFragments.goSchedule(WallpaperActivity.this);
-                    finish();
-                }
-            }, 300);
-
-        }
+//        if (position == 1) { // schedule
+//            final Handler handler = new Handler();
+//            handler.postDelayed(new Runnable() {
+//                @Override
+//                public void run() {
+//                    ma.clearBackStackOfFragments(getFragmentManager());
+//                    GoToMainFragments.goSchedule(WallpaperActivity.this);
+//                    finish();
+//                }
+//            }, 300);
+//
+//        }
 //        if (position == 1) { // MATCH UPDATE
 //            final Handler handler = new Handler();
 //            handler.postDelayed(new Runnable() {
@@ -119,7 +121,7 @@ public class WallpaperActivity extends ActionBarActivity
 //            }, 300);
 //
 //        }
-        if (position == 2) { // MATCH UPDATE
+        if (position == 1) { // MATCH UPDATE
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -131,7 +133,7 @@ public class WallpaperActivity extends ActionBarActivity
             }, 300);
 
         }
-        if (position == 3) { // gallery
+        if (position == 2) { // gallery
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -142,7 +144,7 @@ public class WallpaperActivity extends ActionBarActivity
                 }
             }, 300);
         }
-        if (position == 4) { // jpptv
+        if (position == 3) { // jpptv
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -153,7 +155,7 @@ public class WallpaperActivity extends ActionBarActivity
                 }
             }, 300);
         }
-        if (position == 5) { // news
+        if (position == 4) { // news
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -164,7 +166,7 @@ public class WallpaperActivity extends ActionBarActivity
                 }
             }, 300);
         }
-        if (position == 6) { // knowPanthers
+        if (position == 5) { // knowPanthers
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -186,10 +188,10 @@ public class WallpaperActivity extends ActionBarActivity
 //                }
 //            }, 300);
 //        }
-        if (position == 7) { // wallpaper
+        if (position == 6) { // wallpaper
 
         }
-        if (position == 8) { // points table
+        if (position == 7) { // points table
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -201,7 +203,7 @@ public class WallpaperActivity extends ActionBarActivity
             }, 300);
         }
 
-        if (position == 9) { // fan corner
+        if (position == 8) { // fan corner
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -212,7 +214,7 @@ public class WallpaperActivity extends ActionBarActivity
                 }
             }, 300);
         }
-        if (position == 10) { // about us
+        if (position == 9) { // about us
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -223,7 +225,7 @@ public class WallpaperActivity extends ActionBarActivity
                 }
             }, 300);
         }
-        if (position == 11) { // Sponsors
+        if (position == 10) { // Sponsors
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -345,18 +347,18 @@ public class WallpaperActivity extends ActionBarActivity
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client.connect();
-        Action viewAction = Action.newAction(
-                Action.TYPE_VIEW, // TODO: choose an action type.
-                "Wallpaper Page", // TODO: Define a title for the content shown.
-                // TODO: If you have web page content that matches this app activity's content,
-                // make sure this auto-generated web page URL is correct.
-                // Otherwise, set the URL to null.
-                Uri.parse("http://host/path"),
-                // TODO: Make sure this auto-generated app URL is correct.
-                Uri.parse("android-app://com.jaipurpinkpanthers.android/http/host/path")
-        );
-        AppIndex.AppIndexApi.start(client, viewAction);
+//        client.connect();
+//        Action viewAction = Action.newAction(
+//                Action.TYPE_VIEW, // TODO: choose an action type.
+//                "Wallpaper Page", // TODO: Define a title for the content shown.
+//                // TODO: If you have web page content that matches this app activity's content,
+//                // make sure this auto-generated web page URL is correct.
+//                // Otherwise, set the URL to null.
+//                Uri.parse("http://host/path"),
+//                // TODO: Make sure this auto-generated app URL is correct.
+//                Uri.parse("android-app://com.jaipurpinkpanthers.android/http/host/path")
+//        );
+//        AppIndex.AppIndexApi.start(client, viewAction);
     }
 
     @Override
@@ -364,19 +366,19 @@ public class WallpaperActivity extends ActionBarActivity
         super.onStop();
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        Action viewAction = Action.newAction(
-                Action.TYPE_VIEW, // TODO: choose an action type.
-                "Wallpaper Page", // TODO: Define a title for the content shown.
-                // TODO: If you have web page content that matches this app activity's content,
-                // make sure this auto-generated web page URL is correct.
-                // Otherwise, set the URL to null.
-                Uri.parse("http://host/path"),
-                // TODO: Make sure this auto-generated app URL is correct.
-                Uri.parse("android-app://com.jaipurpinkpanthers.android/http/host/path")
-        );
-        AppIndex.AppIndexApi.end(client, viewAction);
-        client.disconnect();
+//        // See https://g.co/AppIndexing/AndroidStudio for more information.
+//        Action viewAction = Action.newAction(
+//                Action.TYPE_VIEW, // TODO: choose an action type.
+//                "Wallpaper Page", // TODO: Define a title for the content shown.
+//                // TODO: If you have web page content that matches this app activity's content,
+//                // make sure this auto-generated web page URL is correct.
+//                // Otherwise, set the URL to null.
+//                Uri.parse("http://host/path"),
+//                // TODO: Make sure this auto-generated app URL is correct.
+//                Uri.parse("android-app://com.jaipurpinkpanthers.android/http/host/path")
+//        );
+//        AppIndex.AppIndexApi.end(client, viewAction);
+//        client.disconnect();
     }
 
     public static void tvOrImage(boolean tv, String header) {

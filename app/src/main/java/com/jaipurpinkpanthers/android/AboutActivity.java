@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
@@ -19,7 +19,7 @@ import com.jaipurpinkpanthers.android.fragments.AboutUsFragment;
 import com.jaipurpinkpanthers.android.fragments.NavigationDrawerFragment;
 import com.jaipurpinkpanthers.android.util.CustomFonts;
 
-public class AboutActivity extends ActionBarActivity
+public class AboutActivity extends AppCompatActivity
         implements NavigationDrawerCallbacks {
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -83,18 +83,18 @@ public class AboutActivity extends ActionBarActivity
                     }
                 }, 300);
         }
-        if (position == 1) { // schedule
-            final Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    ma.clearBackStackOfFragments(getFragmentManager());
-                    GoToMainFragments.goSchedule(AboutActivity.this);
-                    finish();
-                }
-            }, 300);
-
-        }
+//        if (position == 1) { // schedule
+//            final Handler handler = new Handler();
+//            handler.postDelayed(new Runnable() {
+//                @Override
+//                public void run() {
+//                    ma.clearBackStackOfFragments(getFragmentManager());
+//                    GoToMainFragments.goSchedule(AboutActivity.this);
+//                    finish();
+//                }
+//            }, 300);
+//
+//        }
 //        if (position == 1) { // MATCH UPDATE
 //            final Handler handler = new Handler();
 //            handler.postDelayed(new Runnable() {
@@ -107,7 +107,7 @@ public class AboutActivity extends ActionBarActivity
 //            }, 300);
 //
 //        }
-        if (position == 2) { // MATCH UPDATE
+        if (position == 1) { // MATCH UPDATE
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -119,7 +119,7 @@ public class AboutActivity extends ActionBarActivity
             }, 300);
 
         }
-        if (position == 3) { // gallery
+        if (position == 2) { // gallery
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -130,7 +130,7 @@ public class AboutActivity extends ActionBarActivity
                 }
             }, 300);
         }
-        if (position == 4) { // jpptv
+        if (position == 3) { // jpptv
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -141,7 +141,7 @@ public class AboutActivity extends ActionBarActivity
                 }
             }, 300);
         }
-        if (position == 5) { // news
+        if (position == 4) { // news
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -152,7 +152,7 @@ public class AboutActivity extends ActionBarActivity
                 }
             }, 300);
         }
-        if (position == 6) { // knowPanthers
+        if (position == 5) { // knowPanthers
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -174,7 +174,7 @@ public class AboutActivity extends ActionBarActivity
 //                }
 //            }, 300);
 //        }
-        if (position == 7) { // wallpaper
+        if (position == 6) { // wallpaper
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -185,7 +185,7 @@ public class AboutActivity extends ActionBarActivity
                 }
             }, 300);
         }
-        if (position == 8) { // points table
+        if (position == 7) { // points table
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -197,7 +197,7 @@ public class AboutActivity extends ActionBarActivity
             }, 300);
         }
 
-        if (position == 9) { // fan corner
+        if (position == 8) { // fan corner
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -208,10 +208,10 @@ public class AboutActivity extends ActionBarActivity
                 }
             }, 300);
         }
-        if (position == 10) { // about us
+        if (position == 9) { // about us
 
         }
-        if (position == 11) { // Sponsors
+        if (position == 10) { // Sponsors
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override

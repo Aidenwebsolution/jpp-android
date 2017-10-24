@@ -10,8 +10,10 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarActivity;
+//import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
@@ -39,9 +41,14 @@ import com.jaipurpinkpanthers.android.fragments.ScheduleFragment;
 import com.jaipurpinkpanthers.android.fragments.SponsorsFragment;
 import com.jaipurpinkpanthers.android.util.CalendarEvent;
 import com.jaipurpinkpanthers.android.util.CustomFonts;
+import com.pushwoosh.Pushwoosh;
+import com.pushwoosh.notification.LocalNotification;
+import com.pushwoosh.tags.Tags;
 //import com.pushwoosh.BasePushMessageReceiver;
 //import com.pushwoosh.BaseRegistrationReceiver;
 //import com.pushwoosh.PushManager;
+
+
 
 import java.io.File;
 import java.util.ArrayList;
@@ -49,7 +56,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-public class MainActivity extends ActionBarActivity
+public class MainActivity extends AppCompatActivity
         implements NavigationDrawerCallbacks {
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -58,6 +65,7 @@ public class MainActivity extends ActionBarActivity
     private NavigationDrawerFragment mNavigationDrawerFragment;
     private Toolbar mToolbar;
 
+    public static final String LTAG = "PushwooshSample";
     private static ImageView ivToolbarImage;
     public static TextView tvToolbarText;
     private FrameLayout container;
@@ -93,9 +101,9 @@ public class MainActivity extends ActionBarActivity
 
 
         /*********** PushWoosh **********/
+        Pushwoosh.getInstance().registerForPushNotifications();
 
-
-        //Register receivers for push notifications
+//        //Register receivers for push notifications
 //        registerReceivers();
 //
 //        //Create and start push manager
@@ -150,6 +158,7 @@ public class MainActivity extends ActionBarActivity
         onNavigationDrawerItemSelected(fragmentId);
 
     }
+
 
     /*@Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -322,31 +331,31 @@ public class MainActivity extends ActionBarActivity
                     clearBackStackOfFragments(getFragmentManager());
                     homeShow();
                     break;
-                case 1:
-                    clearBackStackOfFragments(getFragmentManager());
-                    scheduleShow();
-                    break;
+//                case 1:
+//                    clearBackStackOfFragments(getFragmentManager());
+//                    scheduleShow();
+//                    break;
 //                case 1:
 //                    clearBackStackOfFragments(getFragmentManager());
 //                    matchupdate();
 //                    break;
-                case 2:
+                case 1:
                     clearBackStackOfFragments(getFragmentManager());
                     matchupdate1();
                     break;
-                case 3:
+                case 2:
                     clearBackStackOfFragments(getFragmentManager());
                     galleryShow();
                     break;
-                case 4:
+                case 3:
                     clearBackStackOfFragments(getFragmentManager());
                     videoShows();
                     break;
-                case 5:
+                case 4:
                     clearBackStackOfFragments(getFragmentManager());
                     newsShow();
                     break;
-                case 6:
+                case 5:
                     clearBackStackOfFragments(getFragmentManager());
                     knowPanthersShow();
                     break;
@@ -354,23 +363,23 @@ public class MainActivity extends ActionBarActivity
 //                    clearBackStackOfFragments(getFragmentManager());
 //                    merchandise1();
 //                    break;
-                case 7:
+                case 6:
                     clearBackStackOfFragments(getFragmentManager());
                     wallpapers1();
                     break;
-                case 8:
+                case 7:
                     clearBackStackOfFragments(getFragmentManager());
                     points1();
                     break;
-                case 9:
+                case 8:
                     clearBackStackOfFragments(getFragmentManager());
                     fan();
                     break;
-                case 10:
+                case 9:
                     clearBackStackOfFragments(getFragmentManager());
                     about1();
                     break;
-                case 11:
+                case 10:
                     clearBackStackOfFragments(getFragmentManager());
                     sponsors1();
                     break;
@@ -430,7 +439,7 @@ public class MainActivity extends ActionBarActivity
 
     public void initializeBottomToolbarViews() {
         ivHome = (ImageView) findViewById(R.id.ivHome);
-        ivSchedule = (ImageView) findViewById(R.id.ivSchedule);
+//        ivSchedule = (ImageView) findViewById(R.id.ivSchedule);
         ivGallery = (ImageView) findViewById(R.id.ivGallery);
         ivNews = (ImageView) findViewById(R.id.ivNews);
         ivPanthers = (ImageView) findViewById(R.id.ivPanthers);
@@ -439,7 +448,7 @@ public class MainActivity extends ActionBarActivity
     public void bottomViewClicked(int i) {
 
         ivHome.setImageResource(R.drawable.ic_bottom_home_color);
-        ivSchedule.setImageResource(R.drawable.ic_bottom_schedule_color);
+//        ivSchedule.setImageResource(R.drawable.ic_bottom_schedule_color);
         ivGallery.setImageResource(R.drawable.ic_bottom_gallery_color);
         ivNews.setImageResource(R.drawable.ic_bottom_news_color);
         ivPanthers.setImageResource(R.drawable.ic_bottom_panthers_color);
@@ -447,9 +456,9 @@ public class MainActivity extends ActionBarActivity
         if (i == 1) {
             ivHome.setImageResource(R.drawable.ic_bottom_home_white);
         }
-        else if (i == 2) {
-            ivSchedule.setImageResource(R.drawable.ic_bottom_schedule_white);
-        }
+//        else if (i == 2) {
+//            ivSchedule.setImageResource(R.drawable.ic_bottom_schedule_white);
+//        }
         else if (i == 3) {
             ivGallery.setImageResource(R.drawable.ic_bottom_gallery_white);
         } else if (i == 4) {
@@ -928,9 +937,9 @@ public class MainActivity extends ActionBarActivity
         }
     }
 
-
-
-    //pushwoosh
+//
+//
+//    //pushwoosh
 //
 //    //Registration receiver
 //    BroadcastReceiver mBroadcastReceiver = new BaseRegistrationReceiver()
@@ -1064,7 +1073,7 @@ public class MainActivity extends ActionBarActivity
 //
 //        setIntent(mainAppIntent);
 //    }
-
+//
 //    private void showMessage(String message)
 //    {
 //        //Toast.makeText(this, message, Toast.LENGTH_LONG).show();

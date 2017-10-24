@@ -4,8 +4,13 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,8 +21,17 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.NoConnectionError;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.TimeoutError;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
 import com.jaipurpinkpanthers.android.R;
 import com.jaipurpinkpanthers.android.WebActivity;
+import com.jaipurpinkpanthers.android.adapters.MatchRecycleAdapter;
+import com.jaipurpinkpanthers.android.adapters.MatchUpdateGetter;
 import com.jaipurpinkpanthers.android.util.CustomFonts;
 import com.jaipurpinkpanthers.android.util.InternetOperations;
 import com.nostra13.universalimageloader.cache.memory.impl.WeakMemoryCache;
@@ -27,21 +41,23 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MerchandiseFragment extends Fragment {
-
-    View view;
+    RecyclerView.Adapter RecyclerAdapter;
+    RecyclerView.LayoutManager RecyclerlayoutManager;
     TextView tvTic, tvBookNow;
     TextView tvMer, tvBuyNow;
     TextView tvVenue1, tvTime1,tvVenue2, tvTime2,tvVenue3, tvTime3,tvVenue4, tvTime4;
     Button bBook1,bBook2,bBook3,bBook4;
-    ArrayList<HashMap<String, String>> list;
     HashMap<String, String> single;
     ImageView ivT1, ivT2, ivBanner;
-    ProgressDialog progressDialog;
-    Activity activity;
+
     ImageLoader imageLoader;
     DisplayImageOptions options;
     LinearLayout llAddToCalendar, llSchedule;
@@ -51,6 +67,23 @@ public class MerchandiseFragment extends Fragment {
     private Handler handler;
     private  Runnable runnable;
     Button  buynow;
+    Activity activity;
+    SwipeRefreshLayout swipeRefreshLayout;
+
+    public static final String TAG_id = "id";
+    public static final String TAG_image = "image";
+    public static final String TAG_link = "link";
+    public static final String TAG_name= "name";
+    public static final String TAG_order = "order";
+    public static final String TAG_price = "price";
+
+    ArrayList<MatchUpdateGetter> matchUpdateGetter = new ArrayList<MatchUpdateGetter>();
+
+    View view;
+    RecyclerView recyclerView;
+    ArrayList<HashMap<String, String>> list;
+    ProgressDialog progressDialog;
+    AsyncTask asyncTask;
 
     RelativeLayout rlSchedule1, rlSchedule2;
     @Override
@@ -59,7 +92,16 @@ public class MerchandiseFragment extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_merchandise, container, false);
         activity = getActivity();
-
+//        recyclerView=(RecyclerView)view.findViewById(R.id.rvmarchandise);
+//        swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipeRefreshLayout);
+//        swipeRefreshLayout.setColorSchemeResources(R.color.jppAccentColor,R.color.myPrimaryColor);
+//        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+//            @Override
+//            public void onRefresh() {
+//                getdata();
+//
+//            }
+//        });
         // UNIVERSAL IMAGE LOADER SETUP
         DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()
                 .cacheOnDisc(true).cacheInMemory(false)
@@ -108,6 +150,7 @@ public class MerchandiseFragment extends Fragment {
                 startActivity(intent);
             }
         });
+//        getdata();
 //
 //        bBook1 = (Button) view.findViewById(R.id.bBook1);
 //        bBook1.setTypeface(CustomFonts.getBoldFont(getActivity()));
@@ -301,8 +344,116 @@ public class MerchandiseFragment extends Fragment {
 //            Toast.makeText(getActivity(), "Please check your Internet Connection!", Toast.LENGTH_SHORT).show();
 //        }
     }
-
-
+//    public void getdata() {
+//
+//        String DATA_URL = InternetOperations.SERVER_URL +"getallmerchandize";
+//
+//
+//
+//        //Creating a json array request to get the json from our api
+//        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(DATA_URL, new Response.Listener<JSONArray>() {
+//            @Override
+//            public void onResponse(JSONArray response) {
+//
+//                show(response);
+//                swipeRefreshLayout.setRefreshing(false);
+//
+//            }
+//
+//        },
+//                new Response.ErrorListener() {
+//                    @Override
+//                    public void onErrorResponse(VolleyError error) {
+//                        if (error instanceof NoConnectionError) {
+//                            Toast.makeText(activity, "No Internet Access, Check your internet connection.",
+//                                    Toast.LENGTH_SHORT).show();
+//                            swipeRefreshLayout.setRefreshing(false);
+//                        }
+//
+//                        if (error instanceof TimeoutError) {
+//                            Toast.makeText(activity, "Connection timed out", Toast.LENGTH_SHORT).show();
+//                            swipeRefreshLayout.setRefreshing(false);
+//                        }
+//                    }
+//                }
+//        );
+//
+//        //Creating a request queue
+//        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+//        //Adding our request to the queue
+//        requestQueue.add(jsonArrayRequest);
+//
+//    }
+//
+//    private void show(JSONArray jsonArray) {
+//        //Looping through all the elements of json array
+//
+////        team1.clear();
+////        team2.clear();
+////        score1.clear();
+////        score2.clear();
+////        stadium.clear();
+////        starttimedate.clear();
+////        team1id.clear();
+////        team2id.clear();
+////        matchtime.clear();
+////        teamimage1.clear();
+////        teamimage2.clear();
+//        matchUpdateGetter.clear();
+//
+//        //if (images.isEmpty()) {
+//
+//        for (int i = 0; i < jsonArray.length(); i++) {
+//            //Creating a json object of the current index
+//            JSONObject obj = null;
+//            try {
+//                //getting json object from current index
+//                obj = jsonArray.getJSONObject(i);
+//
+//                //getting image url and title from json object
+//
+////                team1.add(obj.getString(TAG_team1));
+////                team2.add(obj.getString(TAG_team2));
+////                score1.add(obj.getString(TAG_score1));
+////                score2.add(obj.getString(TAG_score2));
+////                stadium.add(obj.getString(TAG_stadium));
+////                starttimedate.add(obj.getString(TAG_starttimedate));
+////                team1id.add(obj.getString(TAG_team1id));
+////                team2id.add(obj.getString(TAG_team2id));
+////                matchtime.add(obj.getString(TAG_matchtime));
+////                teamimage1.add(obj.getString(TAG_teamimage1));
+////                teamimage2.add(obj.getString(TAG_teamimage2));
+//                //count++;
+//
+//
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//        //}
+//
+//        int count =team1.size();
+//        //Creating GridViewAdapter Object
+//        for (int i = 0; i < team1.size(); i++) {
+//            MatchUpdateGetter current = new MatchUpdateGetter(team1.get(i), team2.get(i), score1.get(i),
+//                    score2.get(i), stadium.get(i), starttimedate.get(i), team1id.get(i), team2id.get(i),
+//                    matchtime.get(i),teamimage1.get(i),teamimage2.get(i), String.valueOf(count));
+//            matchUpdateGetter.add(current);
+//
+//            count--;
+//            Log.e("ItemInfoGetter: ", "" + i);
+//        }
+//
+//        RecyclerAdapter = new MatchRecycleAdapter(matchUpdateGetter, getActivity());
+//
+//        recyclerView.setHasFixedSize(true);
+//
+//        RecyclerlayoutManager = new LinearLayoutManager(getActivity());
+//        recyclerView.setLayoutManager(RecyclerlayoutManager);
+//        recyclerView.setAdapter(RecyclerAdapter);
+//        RecyclerAdapter.notifyDataSetChanged();
+//
+//    }
 //    public void getScheduleData() {
 //
 //        new AsyncTask<Void, Void, String>() {

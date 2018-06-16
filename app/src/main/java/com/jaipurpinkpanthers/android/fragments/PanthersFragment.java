@@ -88,15 +88,16 @@ public class PanthersFragment extends Fragment {
                             "timestamp": "27 Jan 2016",
                             "content": "Lorem Ipsum is*/
                         String id = null, name = null, image = null, type = null;
-
+String status=null;
                         JSONObject player = jsonArray.getJSONObject(j);
                         id = player.optString("id");
                         type = player.optString("type");
                         name = player.optString("name");
                         image = player.optString("smallimage");
+                        status = player.optString("status");
 
 
-                        populate(id,type,name, image);
+                        populate(id,type,name, image,status);
                     }
 
                     done = true;
@@ -149,12 +150,13 @@ public class PanthersFragment extends Fragment {
             //istView.setEmptyView(tvNoBets);
         }
     }
-    public void populate(String id,String type, String name, String image) {
+    public void populate(String id,String type, String name, String image,String status) {
         HashMap<String, String> map = new HashMap<String, String>();
         map.put("id", id);
         map.put("type", type);
         map.put("name", name);
         map.put("image", image);
+        map.put("status", status);
         list.add(map);
         Log.d("list", String.valueOf(list));
 

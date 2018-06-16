@@ -29,6 +29,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import static android.content.ContentValues.TAG;
+
 public class JppTvFragment extends Fragment{
 
         View  viewVideos;
@@ -66,7 +68,6 @@ public class JppTvFragment extends Fragment{
             tvVideos.setTypeface(CustomFonts.getLightFont(getActivity()));
 
             llVideos = (LinearLayout) view.findViewById(R.id.llVideos);
-
             vfGallery = (ViewFlipper) view.findViewById(R.id.vfGallery);
             vfGallery.setFlipInterval(500);
 
@@ -88,7 +89,7 @@ public class JppTvFragment extends Fragment{
                 @Override
                 public void onClick(View v) {
                     viewVideos.setBackgroundColor(getResources().getColor(R.color.jppAccentColor));
-
+                    Log.d(TAG, "onClick: dksdjkasjdkjasldkjl ");
                     if (vfGallery.getDisplayedChild() != 1)
                         vfGallery.showNext();
                 }

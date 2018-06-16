@@ -758,22 +758,26 @@ public class MainActivity extends AppCompatActivity
         Log.v("JPP", "Panther Description");
 
         String tag = v.getTag().toString();
+        Log.d( "pantherDescription v: ",v.getTag().toString());
         List<String> playerInfoList = Arrays.asList(tag.split("#"));
-
-        int id = Integer.parseInt(playerInfoList.get(0));
+    int id = Integer.parseInt(playerInfoList.get(0));
         String name = playerInfoList.get(1);
+        String status = playerInfoList.get(2);
+if(status.equals("1")) {
+    setPlayerId(id);
 
-        setPlayerId(id);
+    tvOrImage(true, name);
+    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+    PlayerDescriptionFragment playerDescriptionFragment = new PlayerDescriptionFragment();
 
-        tvOrImage(true, name);
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        PlayerDescriptionFragment playerDescriptionFragment = new PlayerDescriptionFragment();
-
-        //fragmentTransaction.add(R.id.container, panthersFragment, "PANTHERS");
-        fragmentTransaction.replace(R.id.container, playerDescriptionFragment);
-        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
+    //fragmentTransaction.add(R.id.container, panthersFragment, "PANTHERS");
+    fragmentTransaction.replace(R.id.container, playerDescriptionFragment);
+    fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+    fragmentTransaction.addToBackStack(null);
+    fragmentTransaction.commit();
+}else{
+    Log.d( "pantherDescription: ",status);
+}
     }
 
     public void newsDetail(View v) {

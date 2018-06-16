@@ -2,6 +2,7 @@ package com.jaipurpinkpanthers.android.adapters;
 
 import android.app.Activity;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +24,8 @@ import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * Created by Jitu on 28-01-2016.
@@ -111,6 +114,7 @@ public class VideoAdapter extends BaseAdapter {
         String url = map.get("url");
 
         String tag = "https://www.youtube.com/embed/"+url+"?autoplay=1&modestbranding=1&showinfo=0&rel=0&loop=1";
+        Log.d(TAG, "getView: "+tag);
         holder.tvTitle.setText(title);
         holder.flGallery.setTag(tag);
 

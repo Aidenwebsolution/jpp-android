@@ -116,6 +116,7 @@ public class PanthersAdapter extends BaseAdapter {
         String playerName = map.get("name");
         String playerType = map.get("type");
         String image = map.get("image");
+        String status = map.get("status");
 
         image = InternetOperations.SERVER_UPLOADS_URL + image;
 //        HashMap<String, String> map = list.get(position);
@@ -133,7 +134,7 @@ public class PanthersAdapter extends BaseAdapter {
         holder.player_name.setText(playerName.toUpperCase());
         holder.player_type.setText(playerType.toUpperCase());
 
-        holder.llPlayer.setTag(playerId+"#"+playerName);
+        holder.llPlayer.setTag(playerId+"#"+playerName+"#"+status);
 
         //setScaleAnimation(convertView);
 

@@ -143,68 +143,68 @@ public class FanFragment extends Fragment {
                 String city = actvcity.getText().toString().trim();
 
                 if (cbplayer1.isChecked())
-                    selections.add("Jasvir Singh");
+                    selections.add("Anup Kumar");
                 else
-                    selections.remove("Jasvir Singh");
+                    selections.remove("Anup Kumar");
 
                 if (cbplayer2.isChecked())
-                    selections.add("Manjeet Chhillar");
+                    selections.add("Deepak Niwas Hooda");
                 else
-                    selections.remove("Manjeet Chhillar");
+                    selections.remove("Deepak Niwas Hooda");
 
                 if (cbplayer3.isChecked())
-                    selections.add("Navneet Gautam");
+                    selections.add("Selvamani");
                 else
-                    selections.remove("Navneet Gautam");
+                    selections.remove("Selvamani");
 
                 if (cbplayer4.isChecked())
-                    selections.add("Tushar Patil");
+                    selections.add("Sandeep Dhull");
                 else
-                    selections.remove("Tushar Patil");
+                    selections.remove("Sandeep Dhull");
 
                 if (cbplayer5.isChecked())
-                    selections.add("Manoj Dhull");
+                    selections.add("Mohit Chhillar");
                 else
-                    selections.remove("Manoj Dhull");
+                    selections.remove("Mohit Chhillar");
 
                 if (cbplayer6.isChecked())
-                    selections.add("Selvamani K");
+                    selections.add("Nitin Rawal");
                 else
-                    selections.remove("Selvamani K");
+                    selections.remove("Nitin Rawal");
                 if (cbplayer7.isChecked())
-                    selections.add("Somvir Shekhar");
+                    selections.add("Bajirao Hodge");
                 else
-                    selections.remove("Somvir Shekhar");
+                    selections.remove("Bajirao Hodge");
 
                 if (cbplayer8.isChecked())
+                    selections.add("Santhapanaselvam");
+                else
+                    selections.remove("Santhapanaselvam");
+
+                if (cbplayer9.isChecked())
+                    selections.add("Anand Patil");
+                else
+                    selections.remove("Anand Patil");
+
+                if (cbplayer10.isChecked())
                     selections.add("Ajit Singh");
                 else
                     selections.remove("Ajit Singh");
 
-                if (cbplayer9.isChecked())
-                    selections.add("Santhapanaselvam");
-                else
-                    selections.remove("Praveen Narwal");
-
-                if (cbplayer10.isChecked())
-                    selections.add("Pawan Kumar");
-                else
-                    selections.remove("Pawan Kumar");
-
                 if (cbplayer11.isChecked())
-                    selections.add("Vignesh B");
+                    selections.add("David Mosambayi");
                 else
-                    selections.remove("Vignesh B");
+                    selections.remove("David Mosambayi");
 
                 if (cbplayer12.isChecked())
-                    selections.add("Kamal Kishor");
+                    selections.add("Gangadhari Mallesh");
                 else
-                    selections.remove("Kamal Kishor");
+                    selections.remove("Gangadhari Mallesh");
 
                 if (cbplayer13.isChecked())
-                    selections.add("Sidharth Dahiya");
+                    selections.add("Lokesh Kaushik");
                 else
-                    selections.remove("Sidharth Dahiya");
+                    selections.remove("Lokesh Kaushik");
 
                 if (cbplayer14.isChecked())
                     selections.add("Sunil Siddhgavali");
@@ -212,31 +212,31 @@ public class FanFragment extends Fragment {
                     selections.remove("Sunil Siddhgavali");
 
                 if (cbplayer15.isChecked())
-                    selections.add("Abhishek N");
+                    selections.add("Young Chang Ko");
                 else
-                    selections.remove("Abhishek N");
+                    selections.remove("Young Chang Ko");
 
 
                 if (cbplayer16.isChecked())
-                    selections.add("Ravinder Kumar");
+                    selections.add("Brijendra Chaudhary");
                 else
-                    selections.remove("Ravinder Kumar");
+                    selections.remove("Brijendra Chaudhary");
 
 
                 if (cbplayer17.isChecked())
-                    selections.add("Rahul Choudhary");
+                    selections.add("N. Shiva Ramakrishna");
                 else
-                    selections.remove("Rahul Choudhary");
+                    selections.remove("N. Shiva Ramakrishna");
 
                 if (cbplayer18.isChecked())
-                    selections.add("Dong Gyu Kim");
+                    selections.add("Amit Kumar");
                 else
-                    selections.remove("Dong Gyu Kim");
+                    selections.remove("Amit Kumar");
 
                 if (cbplayer19.isChecked())
-                    selections.add("Jae Min Lee");
+                    selections.add("Ajinkya Pawar");
                 else
-                    selections.remove("Jae Min Lee");
+                    selections.remove("Ajinkya Pawar");
 
                 String str = "";
                 //Log.d("hi", str);
@@ -410,55 +410,55 @@ public class FanFragment extends Fragment {
 
                     if (cbplayer1.isChecked()) {
                         cbplayer1.setChecked(false);
-                        selections.remove("Jasvir Singh");
+                        selections.remove("Anup Kumar");
                     }
                     if (cbplayer2.isChecked()) {
                         cbplayer2.setChecked(false);
-                        selections.remove("Manjeet Chhillar");
+                        selections.remove("Deepak Niwas Hooda");
                     }
                     if (cbplayer3.isChecked()) {
                         cbplayer3.setChecked(false);
-                        selections.remove("Navneet Gautam");
+                        selections.remove("Selvamani");
                     }
                     if (cbplayer4.isChecked()) {
                         cbplayer4.setChecked(false);
-                        selections.remove("Tushar Patil");
+                        selections.remove("Sandeep Dhull");
                     }
                     if (cbplayer5.isChecked()) {
                         cbplayer5.setChecked(false);
-                        selections.remove("Manoj Dhull");
+                        selections.remove("Mohit Chhillar");
                     }
                     if (cbplayer6.isChecked()) {
                         cbplayer6.setChecked(false);
-                        selections.remove("Selvamani K");
+                        selections.remove("Nitin Rawal");
                     }
                     if (cbplayer7.isChecked()) {
                         cbplayer7.setChecked(false);
-                        selections.remove("Somvir Shekhar");
+                        selections.remove("Bajirao Hodge");
                     }
                     if (cbplayer8.isChecked()) {
                         cbplayer8.setChecked(false);
-                        selections.remove("Ajit Singh");
+                        selections.remove("Santhapanaselvam");
                     }
                     if (cbplayer9.isChecked()) {
                         cbplayer9.setChecked(false);
-                        selections.remove("Santhapanaselvam");
+                        selections.remove("Anand Patil");
                     }
                     if (cbplayer10.isChecked()) {
                         cbplayer10.setChecked(false);
-                        selections.remove("Pawan Kumar");
+                        selections.remove("Ajit Singh");
                     }
                     if (cbplayer11.isChecked()) {
                         cbplayer11.setChecked(false);
-                        selections.remove("Vignesh B");
+                        selections.remove("David Mosambayi");
                     }
                     if (cbplayer12.isChecked()) {
                         cbplayer12.setChecked(false);
-                        selections.remove("Kamal Kishor");
+                        selections.remove("Gangadhari Mallesh");
                     }
                     if (cbplayer13.isChecked()) {
                         cbplayer13.setChecked(false);
-                        selections.remove("Sidharth Dahiya");
+                        selections.remove("Lokesh Kaushik");
                     }
                     if (cbplayer14.isChecked()) {
                         cbplayer14.setChecked(false);
@@ -466,24 +466,24 @@ public class FanFragment extends Fragment {
                     }
                     if (cbplayer15.isChecked()) {
                         cbplayer15.setChecked(false);
-                        selections.remove("Abhishek N");
+                        selections.remove("Young Chang Ko");
                     }
 
                     if (cbplayer16.isChecked()) {
                         cbplayer16.setChecked(false);
-                        selections.remove("Ravinder Kumar");
+                        selections.remove("Brijendra Chaudhary");
                     }
                     if (cbplayer17.isChecked()) {
                         cbplayer17.setChecked(false);
-                        selections.remove("Rahul Choudhary");
+                        selections.remove("N. Shiva Ramakrishna");
                     }
                     if (cbplayer18.isChecked()) {
                         cbplayer18.setChecked(false);
-                        selections.remove("Dong Gyu Kim");
+                        selections.remove("Amit Kumar");
                     }
                     if (cbplayer19.isChecked()) {
                         cbplayer19.setChecked(false);
-                        selections.remove("Jae Min Lee");
+                        selections.remove("Ajinkya Pawar");
                     }
 
                 }else {

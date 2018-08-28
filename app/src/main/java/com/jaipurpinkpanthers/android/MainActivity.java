@@ -331,31 +331,31 @@ public class MainActivity extends AppCompatActivity
                     clearBackStackOfFragments(getFragmentManager());
                     homeShow();
                     break;
-//                case 1:
-//                    clearBackStackOfFragments(getFragmentManager());
-//                    scheduleShow();
-//                    break;
+                case 1:
+                    clearBackStackOfFragments(getFragmentManager());
+                    scheduleShow();
+                    break;
 //                case 1:
 //                    clearBackStackOfFragments(getFragmentManager());
 //                    matchupdate();
 //                    break;
-                case 1:
+                case 2:
                     clearBackStackOfFragments(getFragmentManager());
                     matchupdate1();
                     break;
-                case 2:
+                case 3:
                     clearBackStackOfFragments(getFragmentManager());
                     galleryShow();
                     break;
-                case 3:
+                case 4:
                     clearBackStackOfFragments(getFragmentManager());
                     videoShows();
                     break;
-                case 4:
+                case 5:
                     clearBackStackOfFragments(getFragmentManager());
                     newsShow();
                     break;
-                case 5:
+                case 6:
                     clearBackStackOfFragments(getFragmentManager());
                     knowPanthersShow();
                     break;
@@ -363,23 +363,23 @@ public class MainActivity extends AppCompatActivity
 //                    clearBackStackOfFragments(getFragmentManager());
 //                    merchandise1();
 //                    break;
-                case 6:
+                case 7:
                     clearBackStackOfFragments(getFragmentManager());
                     wallpapers1();
                     break;
-                case 7:
+                case 8:
                     clearBackStackOfFragments(getFragmentManager());
                     points1();
                     break;
-                case 8:
+                case 9:
                     clearBackStackOfFragments(getFragmentManager());
                     fan();
                     break;
-                case 9:
+                case 10:
                     clearBackStackOfFragments(getFragmentManager());
                     about1();
                     break;
-                case 10:
+                case 11:
                     clearBackStackOfFragments(getFragmentManager());
                     sponsors1();
                     break;

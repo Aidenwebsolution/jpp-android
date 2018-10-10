@@ -107,19 +107,19 @@ public class AboutActivity extends AppCompatActivity
 //            }, 300);
 //
 //        }
-        if (position == 2) { // MATCH UPDATE
-            final Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    ma.clearBackStackOfFragments(getFragmentManager());
-                    GoToMainFragments.gomatchupdate1(AboutActivity.this);
-                    finish();
-                }
-            }, 300);
-
-        }
-        if (position == 3) { // gallery
+//        if (position == 2) { // MATCH UPDATE
+//            final Handler handler = new Handler();
+//            handler.postDelayed(new Runnable() {
+//                @Override
+//                public void run() {
+//                    ma.clearBackStackOfFragments(getFragmentManager());
+//                    GoToMainFragments.gomatchupdate1(AboutActivity.this);
+//                    finish();
+//                }
+//            }, 300);
+//
+//        }
+        if (position == 2) { // gallery
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -130,7 +130,7 @@ public class AboutActivity extends AppCompatActivity
                 }
             }, 300);
         }
-        if (position == 4) { // jpptv
+        if (position == 3) { // jpptv
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -141,7 +141,7 @@ public class AboutActivity extends AppCompatActivity
                 }
             }, 300);
         }
-        if (position == 5) { // news
+        if (position == 4) { // news
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -152,7 +152,7 @@ public class AboutActivity extends AppCompatActivity
                 }
             }, 300);
         }
-        if (position == 6) { // knowPanthers
+        if (position == 5) { // knowPanthers
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -174,7 +174,7 @@ public class AboutActivity extends AppCompatActivity
 //                }
 //            }, 300);
 //        }
-        if (position == 7) { // wallpaper
+        if (position == 6) { // wallpaper
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -185,7 +185,7 @@ public class AboutActivity extends AppCompatActivity
                 }
             }, 300);
         }
-        if (position == 8) { // points table
+        if (position == 7) { // points table
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -197,7 +197,7 @@ public class AboutActivity extends AppCompatActivity
             }, 300);
         }
 
-        if (position == 9) { // fan corner
+        if (position == 8) { // fan corner
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -208,10 +208,10 @@ public class AboutActivity extends AppCompatActivity
                 }
             }, 300);
         }
-        if (position == 10) { // about us
+        if (position == 9) { // about us
 
         }
-        if (position == 11) { // Sponsors
+        if (position == 10) { // Sponsors
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override

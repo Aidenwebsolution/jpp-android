@@ -134,16 +134,13 @@ public class PointsFragment extends Fragment {
                 if (Looper.myLooper() == null) {
                     Looper.prepare();
                 }
-                String response, getsponsorimageresponse ;
+                String response ;
                 JSONArray jsonArray = null;
                 try {
                     response = InternetOperations.postBlank(InternetOperations.SERVER_URL + "getallpoint");
-                    getsponsorimageresponse = InternetOperations.postBlank(InternetOperations.SERVER_URL + "getsponsorimage");
                     Log.d("getsponsorimageresponse",response);
 
                     jsonArray = new JSONArray(response);
-                    JSONObject getsponsorimage = new JSONObject(getsponsorimageresponse);
-                    sponsor =getsponsorimage.optString("image");
                     JSONObject zoneA = jsonArray.getJSONObject(0);
                     JSONArray pointsTableA = new JSONArray(zoneA.optString("pointsTableA"));
                     JSONObject zoneB = jsonArray.getJSONObject(1);
@@ -192,9 +189,6 @@ public class PointsFragment extends Fragment {
                 progressDialog.dismiss();
                 if (done) {
                     llptheader.setVisibility(View.VISIBLE);
-//                    sponsers.setVisibility(View.VISIBLE);
-                    String imagesponsor = InternetOperations.SERVER_UPLOADS_URL + sponsor;
-                    imageLoader.displayImage(imagesponsor, home_iv_sponsor, options);
 
                     refresh();
                 } else {
@@ -203,6 +197,45 @@ public class PointsFragment extends Fragment {
             }
         }.execute(null, null, null);
 
+
+        new AsyncTask<Void, Void, String>() {
+            boolean done = false;
+
+            @Override
+            protected String doInBackground(Void... params) {
+
+                if (Looper.myLooper() == null) {
+                    Looper.prepare();
+                }
+                String  getsponsorimageresponse ;
+                try {
+                    getsponsorimageresponse = InternetOperations.postBlank(InternetOperations.SERVER_URL + "getsponsorimage");
+
+                    JSONObject getsponsorimage = new JSONObject(getsponsorimageresponse);
+                    sponsor =getsponsorimage.optString("image");
+
+
+                } catch (IOException io) {
+                    Log.e("JPP", Log.getStackTraceString(io));
+                } catch (JSONException je) {
+                    Log.e("JPP", Log.getStackTraceString(je));
+                } catch (Exception e) {
+                    Log.e("JPP", Log.getStackTraceString(e));
+                }
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                progressDialog.dismiss();
+                if (done) {
+                    String imagesponsor = InternetOperations.SERVER_UPLOADS_URL + sponsor;
+                    imageLoader.displayImage(imagesponsor, home_iv_sponsor, options);
+                } else {
+//                    Toast.makeText(getActivity(), "Oops, Something went wrong!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        }.execute(null, null, null);
     }
 
     public void refresh() {

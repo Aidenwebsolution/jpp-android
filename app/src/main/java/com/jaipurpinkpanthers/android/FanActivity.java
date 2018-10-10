@@ -86,18 +86,18 @@ public class FanActivity extends AppCompatActivity
                 }
             }, 300);
         }
-//        if (position == 1) { // schedule
-//            final Handler handler = new Handler();
-//            handler.postDelayed(new Runnable() {
-//                @Override
-//                public void run() {
-//                    ma.clearBackStackOfFragments(getFragmentManager());
-//                    GoToMainFragments.goSchedule(FanActivity.this);
-//                    finish();
-//                }
-//            }, 300);
-//
-//        }
+        if (position == 1) { // schedule
+            final Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    ma.clearBackStackOfFragments(getFragmentManager());
+                    GoToMainFragments.goSchedule(FanActivity.this);
+                    finish();
+                }
+            }, 300);
+
+        }
 //        if (position == 1) { // MATCH UPDATE
 //            final Handler handler = new Handler();
 //            handler.postDelayed(new Runnable() {
@@ -110,18 +110,18 @@ public class FanActivity extends AppCompatActivity
 //            }, 300);
 //
 //        }
-        if (position == 1) { // MATCH UPDATE
-            final Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    ma.clearBackStackOfFragments(getFragmentManager());
-                    GoToMainFragments.gomatchupdate1(FanActivity.this);
-                    finish();
-                }
-            }, 300);
-
-        }
+//        if (position == 1) { // MATCH UPDATE
+//            final Handler handler = new Handler();
+//            handler.postDelayed(new Runnable() {
+//                @Override
+//                public void run() {
+//                    ma.clearBackStackOfFragments(getFragmentManager());
+//                    GoToMainFragments.gomatchupdate1(FanActivity.this);
+//                    finish();
+//                }
+//            }, 300);
+//
+//        }
         if (position == 2) { // gallery
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {

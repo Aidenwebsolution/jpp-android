@@ -1,10 +1,14 @@
 package com.jaipurpinkpanthers.android.util;
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.provider.CalendarContract;
+import android.support.v4.app.ActivityCompat;
 import android.widget.Toast;
 
 import java.text.ParseException;
@@ -95,13 +99,13 @@ public class CalendarEvent {
         return cv;
     }
 
-    public static ContentValues setReminder(Long eventID){
+    public static ContentValues setReminder(Long eventID) {
         ContentValues reminders = new ContentValues();
         reminders.put(CalendarContract.Reminders.EVENT_ID, eventID);
         reminders.put(CalendarContract.Reminders.METHOD, CalendarContract.Reminders.METHOD_ALERT);
         reminders.put(CalendarContract.Reminders.MINUTES, 0);
 
-        return  reminders;
+        return reminders;
     }
 
     public static void setReminder(Context context, long startTime, String title) {
@@ -115,6 +119,19 @@ public class CalendarEvent {
         evt.setIdCalendar("1");
 
         ContentResolver cr = context.getContentResolver();
+        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.WRITE_CALENDAR) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            ActivityCompat.requestPermissions((Activity) context, new String[] {Manifest.permission.WRITE_CALENDAR}, 1);
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+
+
         Uri uri = cr.insert(CalendarContract.Events.CONTENT_URI, toICSContentValues(evt));
 
         long eventID = Long.parseLong(uri.getLastPathSegment());

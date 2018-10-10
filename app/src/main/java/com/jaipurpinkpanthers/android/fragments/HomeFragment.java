@@ -264,12 +264,12 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
         llLatestUpdate = (LinearLayout) view.findViewById(R.id.llLatestUpdate);
         TextView tvLatest = (TextView) llLatestUpdate.findViewById(R.id.tvCrossHeader);
         tvLatest.setTypeface(CustomFonts.getRegularFont(activity));
-//        tvLatest.setText("LIVE UPDATE");
+        tvLatest.setText("LIVE UPDATE");
 
         llLiveupdate = (LinearLayout) view.findViewById(R.id.llLiveUpdate);
         TextView tvmatchupdate = (TextView) llLiveupdate.findViewById(R.id.tvCrossHeader);
         tvmatchupdate.setTypeface(CustomFonts.getRegularFont(activity));
-//        tvmatchupdate.setText("MATCH UPDATE");
+        tvmatchupdate.setText("MATCH UPDATE");
 
         llNews = (LinearLayout) view.findViewById(R.id.llNews);
         TextView tvNews = (TextView) llNews.findViewById(R.id.tvCrossHeader);
@@ -617,23 +617,23 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
         signUp = true;
         sponsers=true;
         Log.d("refresh", String.valueOf(sponsers));
-//        rlsponsers.setVisibility(View.VISIBLE);
-//        if (appImgStatus.equals("1")){
-//            showcongrats.setVisibility(View.VISIBLE);
-//            Glide.with(activity)
-//                    .load(InternetOperations.SERVER_UPLOADS_URL+appImg)
-//                    .asBitmap()
-//                    .into(homecongrats);
-//        }else{
-//            Log.d("live score", "live score ");
-//            if (!a) {
-//                ll1.setVisibility(View.VISIBLE);
-//            }
-//            if (!livescore)
-//            {
-//                llLiveUpdatescore.setVisibility(View.VISIBLE);
-//            }
-//        }
+        rlsponsers.setVisibility(View.VISIBLE);
+        if (appImgStatus.equals("1")){
+            showcongrats.setVisibility(View.VISIBLE);
+            Glide.with(activity)
+                    .load("http://jaipurpinkpanthers.com/img/mobile/meet.png")
+                    .asBitmap()
+                    .into(homecongrats);
+        }else{
+            Log.d("live score", "live score ");
+            if (!a) {
+                ll1.setVisibility(View.VISIBLE);
+            }
+            if (!livescore)
+            {
+                llLiveUpdatescore.setVisibility(View.VISIBLE);
+            }
+        }
 
         if (!b) {
             ll2.setVisibility(View.VISIBLE);
@@ -650,9 +650,9 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
     /*    if (!f) {
             ll5.setVisibility(View.VISIBLE);
         }*/
-        if (jpptv) {
-            ll5.setVisibility(View.VISIBLE);
-        }
+//        if (jpptv) {
+//            ll5.setVisibility(View.VISIBLE);
+//        }
         if (signUp) {
             Log.d( "refreshfdkls", String.valueOf(sponsers));
 
@@ -695,7 +695,7 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                         showcongrats.setVisibility(View.VISIBLE);
                             Log.d("appImg 23e42343",appImg);
                             Glide.with(activity)
-                                    .load("http://admin.jaipurpinkpanthers.com/uploads/"+appImg)
+                                    .load("http://jaipurpinkpanthers.com/img/mobile/meet.png")
                                     .asBitmap()
                                     .into(homecongrats);
                         llLiveUpdatescore.setVisibility(View.GONE);

@@ -339,23 +339,23 @@ public class MainActivity extends AppCompatActivity
 //                    clearBackStackOfFragments(getFragmentManager());
 //                    matchupdate();
 //                    break;
+//                case 2:
+//                    clearBackStackOfFragments(getFragmentManager());
+//                    matchupdate1();
+//                    break;
                 case 2:
-                    clearBackStackOfFragments(getFragmentManager());
-                    matchupdate1();
-                    break;
-                case 3:
                     clearBackStackOfFragments(getFragmentManager());
                     galleryShow();
                     break;
-                case 4:
+                case 3:
                     clearBackStackOfFragments(getFragmentManager());
                     videoShows();
                     break;
-                case 5:
+                case 4:
                     clearBackStackOfFragments(getFragmentManager());
                     newsShow();
                     break;
-                case 6:
+                case 5:
                     clearBackStackOfFragments(getFragmentManager());
                     knowPanthersShow();
                     break;
@@ -363,23 +363,23 @@ public class MainActivity extends AppCompatActivity
 //                    clearBackStackOfFragments(getFragmentManager());
 //                    merchandise1();
 //                    break;
-                case 7:
+                case 6:
                     clearBackStackOfFragments(getFragmentManager());
                     wallpapers1();
                     break;
-                case 8:
+                case 7:
                     clearBackStackOfFragments(getFragmentManager());
                     points1();
                     break;
-                case 9:
+                case 8:
                     clearBackStackOfFragments(getFragmentManager());
                     fan();
                     break;
-                case 10:
+                case 9:
                     clearBackStackOfFragments(getFragmentManager());
                     about1();
                     break;
-                case 11:
+                case 10:
                     clearBackStackOfFragments(getFragmentManager());
                     sponsors1();
                     break;
@@ -439,7 +439,7 @@ public class MainActivity extends AppCompatActivity
 
     public void initializeBottomToolbarViews() {
         ivHome = (ImageView) findViewById(R.id.ivHome);
-//        ivSchedule = (ImageView) findViewById(R.id.ivSchedule);
+        ivSchedule = (ImageView) findViewById(R.id.ivSchedule);
         ivGallery = (ImageView) findViewById(R.id.ivGallery);
         ivNews = (ImageView) findViewById(R.id.ivNews);
         ivPanthers = (ImageView) findViewById(R.id.ivPanthers);
@@ -448,7 +448,7 @@ public class MainActivity extends AppCompatActivity
     public void bottomViewClicked(int i) {
 
         ivHome.setImageResource(R.drawable.ic_bottom_home_color);
-//        ivSchedule.setImageResource(R.drawable.ic_bottom_schedule_color);
+        ivSchedule.setImageResource(R.drawable.ic_bottom_schedule_color);
         ivGallery.setImageResource(R.drawable.ic_bottom_gallery_color);
         ivNews.setImageResource(R.drawable.ic_bottom_news_color);
         ivPanthers.setImageResource(R.drawable.ic_bottom_panthers_color);
@@ -456,9 +456,9 @@ public class MainActivity extends AppCompatActivity
         if (i == 1) {
             ivHome.setImageResource(R.drawable.ic_bottom_home_white);
         }
-//        else if (i == 2) {
-//            ivSchedule.setImageResource(R.drawable.ic_bottom_schedule_white);
-//        }
+        else if (i == 2) {
+            ivSchedule.setImageResource(R.drawable.ic_bottom_schedule_white);
+        }
         else if (i == 3) {
             ivGallery.setImageResource(R.drawable.ic_bottom_gallery_white);
         } else if (i == 4) {

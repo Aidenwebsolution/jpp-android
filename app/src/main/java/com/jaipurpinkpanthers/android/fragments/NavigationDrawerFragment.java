@@ -109,7 +109,7 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
         items.add(new NavigationItem("HOME","ic_menu_home"));
         items.add(new NavigationItem("SCHEDULE", "ic_menu_season4"));
 //        items.add(new NavigationItem("WORLD CUP JOURNEY", "ic_menu_matchupdate"));
-//        items.add(new NavigationItem("MATCH UPDATE", "ic_menu_matchupdate"));
+        items.add(new NavigationItem("MATCH UPDATE", "ic_menu_matchupdate"));
         items.add(new NavigationItem("GALLERY", "ic_menu_gallery"));
         items.add(new NavigationItem("JPP TV", "ic_menu_jpptv"));
         items.add(new NavigationItem("NEWS & MEDIA", "ic_menu_news"));

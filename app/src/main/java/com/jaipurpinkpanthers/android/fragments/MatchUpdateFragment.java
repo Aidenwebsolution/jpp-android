@@ -31,8 +31,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.sql.Struct;
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import static com.nostra13.universalimageloader.core.ImageLoader.TAG;
 
 public class MatchUpdateFragment extends Fragment {
 
@@ -48,8 +51,8 @@ public class MatchUpdateFragment extends Fragment {
     public static final String TAG_team1id = "team1id";
     public static final String TAG_team2id = "team2id";
     public static final String TAG_matchtime = "matchtime";
-    public static final String TAG_teamimage1 = "appteamimage1";
-    public static final String TAG_teamimage2 = "appteamimage2";
+    public static final String TAG_teamimage1 = "teamimage1";
+    public static final String TAG_teamimage2 = "teamimage2";
 
     public ArrayList<String> team1 = new ArrayList<>();
     public ArrayList<String> team2 = new ArrayList<>();
@@ -101,7 +104,7 @@ public class MatchUpdateFragment extends Fragment {
 
     public void getdata() {
 
-        String DATA_URL = InternetOperations.SERVER_URL +"getScheduleForIosAndroidSeason4";
+        String DATA_URL = InternetOperations.SERVER_URL +"getSchedule";
 
 
 
@@ -172,29 +175,34 @@ public class MatchUpdateFragment extends Fragment {
         matchUpdateGetter.clear();
 
         //if (images.isEmpty()) {
-
-        for (int i = 0; i < jsonArray.length(); i++) {
+        int jsonCount =( jsonArray.length() - 1);
+        for (int i =  jsonCount; i >=0 ; i--) {
             //Creating a json object of the current index
             JSONObject obj = null;
             try {
                 //getting json object from current index
                 obj = jsonArray.getJSONObject(i);
+                String score1str = obj.getString(TAG_score1);
+                String score2str = obj.getString(TAG_score2);
 
-                //getting image url and title from json object
-
-                team1.add(obj.getString(TAG_team1));
-                team2.add(obj.getString(TAG_team2));
-                score1.add(obj.getString(TAG_score1));
-                score2.add(obj.getString(TAG_score2));
-                stadium.add(obj.getString(TAG_stadium));
-                starttimedate.add(obj.getString(TAG_starttimedate));
-                team1id.add(obj.getString(TAG_team1id));
-                team2id.add(obj.getString(TAG_team2id));
-                matchtime.add(obj.getString(TAG_matchtime));
-                teamimage1.add(obj.getString(TAG_teamimage1));
-                teamimage2.add(obj.getString(TAG_teamimage2));
-                //count++;
-
+                if(score1str.isEmpty() && score2str.isEmpty()) {
+                    Log.d("", "show: sunday work"+score1str);
+                    Log.d("", "show: sunday work"+score2str);
+                    //count++;
+                }else{
+                    //getting image url and title from json object
+                    team1.add(obj.getString(TAG_team1));
+                    team2.add(obj.getString(TAG_team2));
+                    score1.add(obj.getString(TAG_score1));
+                    score2.add(obj.getString(TAG_score2));
+                    stadium.add(obj.getString(TAG_stadium));
+                    starttimedate.add(obj.getString(TAG_starttimedate));
+                    team1id.add(obj.getString(TAG_team1id));
+                    team2id.add(obj.getString(TAG_team2id));
+                    matchtime.add(obj.getString(TAG_matchtime));
+                    teamimage1.add(obj.getString(TAG_teamimage1));
+                    teamimage2.add(obj.getString(TAG_teamimage2));
+                }
 
             } catch (JSONException e) {
                 e.printStackTrace();

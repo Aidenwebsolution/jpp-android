@@ -97,7 +97,7 @@ public class MatchUpdateFragment1 extends Fragment {
 
     public void getdata() {
 
-        String DATA_URL = "http://admin.jaipurpinkpanthers.com/index.php/json/getScheduleForIosAndroidWorldCup2016";
+        String DATA_URL = "http://admin.jaipurpinkpanthers.com/index.php/json/getSchedule";
 
 
 

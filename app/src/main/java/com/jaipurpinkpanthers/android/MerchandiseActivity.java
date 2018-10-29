@@ -280,10 +280,10 @@ public class MerchandiseActivity extends AppCompatActivity
         GoToMainFragments.goHome(this);
     }
 
-//    public void schedule(View v) {
-//        Log.v("JPP", "Schedule");
-//        GoToMainFragments.goSchedule(this);
-//    }
+    public void schedule(View v) {
+        Log.v("JPP", "Schedule");
+        GoToMainFragments.goSchedule(this);
+    }
 
     public void gallery(View v) {
         Log.v("JPP", "Gallery");

@@ -95,10 +95,11 @@ public class SponsorsFragment extends Fragment {
 
                 try {
 
-                    getsponsorimageresponse = InternetOperations.postBlank(InternetOperations.SERVER_URL + "getsponsorimage");
+                    getsponsorimageresponse = InternetOperations.postBlank(InternetOperations.SERVER_URL + "getHomeContent");
 
                     JSONObject getsponsorimage = new JSONObject(getsponsorimageresponse);
-                    sponsor =getsponsorimage.optString("image");
+                    JSONObject sponsorObject = new JSONObject(getsponsorimage.optString("sponsorimage"));
+                    sponsor =sponsorObject.optString("image");
 
                     done = true;
 

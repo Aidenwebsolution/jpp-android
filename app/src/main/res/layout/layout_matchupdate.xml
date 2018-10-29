@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <FrameLayout
         android:id="@+id/llmatchUpdateScore"
@@ -88,7 +88,7 @@
                     android:layout_marginRight="-25dp"
                     android:layout_weight="2"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/t5" />
+                    android:src="@drawable/tbd" />
 
                 <ImageView
                     android:id="@+id/imageView7live"
@@ -105,7 +105,7 @@
                     android:layout_marginLeft="-25dp"
                     android:layout_weight="2"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/t1" />
+                    android:src="@drawable/tbd" />
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/linearLayout3"

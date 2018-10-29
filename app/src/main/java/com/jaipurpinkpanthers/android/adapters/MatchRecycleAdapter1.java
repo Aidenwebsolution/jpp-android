@@ -54,7 +54,7 @@ public class MatchRecycleAdapter1 extends RecyclerView.Adapter<RecyclerView.View
         DisplayMetrics metrics = ctx.getResources().getDisplayMetrics();
         MatchViewHolder vh=(MatchViewHolder) holder;
         MatchUpdateGetter current=arrayList.get(position);
-        //runEnterAnimation(vh.itemView, position);
+//        runEnterAnimation(vh.itemView, position);
 
         vh.textView.setText(current.getScore1());
         vh.score2.setText(current.getScore2());

@@ -11,6 +11,7 @@ import android.support.v4.widget.DrawerLayout;
 
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -296,27 +297,32 @@ public class WallpaperActivity extends AppCompatActivity
 
     }
 
-    public void home(View v) {
+     public void home(View v) {
+        Log.v("JPP", "Home");
         GoToMainFragments.goHome(this);
         finish();
     }
 
     public void schedule(View v) {
+        Log.v("JPP", "Schedule");
         GoToMainFragments.goSchedule(this);
         finish();
     }
 
     public void gallery(View v) {
+        Log.v("JPP", "Gallery");
         GoToMainFragments.goGallery(this);
         finish();
     }
 
     public void news(View v) {
+        Log.v("JPP", "News");
         GoToMainFragments.goNews(this);
         finish();
     }
 
     public void knowPanthers(View v) {
+        Log.v("JPP", "Panthers");
         GoToMainFragments.goPanthers(this);
         finish();
     }

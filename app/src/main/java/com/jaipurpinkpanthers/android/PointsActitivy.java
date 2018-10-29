@@ -276,28 +276,32 @@ public class PointsActitivy extends AppCompatActivity
     public void home(View v) {
         Log.v("JPP", "Home");
         GoToMainFragments.goHome(this);
+        finish();
     }
 
-//    public void schedule(View v) {
-//        Log.v("JPP", "Schedule");
-//        GoToMainFragments.goSchedule(this);
-//    }
+    public void schedule(View v) {
+        Log.v("JPP", "Schedule");
+        GoToMainFragments.goSchedule(this);
+        finish();
+    }
 
     public void gallery(View v) {
         Log.v("JPP", "Gallery");
         GoToMainFragments.goGallery(this);
+        finish();
     }
 
     public void news(View v) {
         Log.v("JPP", "News");
         GoToMainFragments.goNews(this);
+        finish();
     }
 
     public void knowPanthers(View v) {
         Log.v("JPP", "Panthers");
         GoToMainFragments.goPanthers(this);
+        finish();
     }
-
     public static void tvOrImage(boolean tv, String header) {
         if (tv) {
             ivToolbarImage.setVisibility(View.GONE);

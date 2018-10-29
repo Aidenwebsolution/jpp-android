@@ -160,7 +160,7 @@ public class MatchRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
         String team1_link ="http://admin.jaipurpinkpanthers.com/uploads/"+current.getTeamimage1() ;
         String team2_link ="http://admin.jaipurpinkpanthers.com/uploads/"+current.getTeamimage2() ;
-        Log.d("current.getTeam1() current.getTeam2()",current.getTeamimage2()+current.getTeamimage1());
+        Log.d("current.getTeam1()",current.getTeamimage2()+current.getTeamimage1());
 
 //        Glide.with(ctx)
 //                .load(team1_link)
@@ -289,7 +289,7 @@ public class MatchRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         setScaleAnimation(vh.score2);*/
 
         //setScaleAnimation(vh.itemView);
-        runEnterAnimation(vh.itemView,position);
+//        runEnterAnimation(vh.itemView,position);
 
 
 

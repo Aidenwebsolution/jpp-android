@@ -104,7 +104,7 @@ public class MatchUpdateFragment extends Fragment {
 
     public void getdata() {
 
-        String DATA_URL = InternetOperations.SERVER_URL +"getSchedule";
+        String DATA_URL = InternetOperations.SERVER_URL +"getScheduleForApp";
 
 
 
@@ -212,7 +212,7 @@ public class MatchUpdateFragment extends Fragment {
 
         int count =team1.size();
         //Creating GridViewAdapter Object
-        for (int i = 0; i < team1.size(); i++) {
+        for (int i = team1.size()-1; i >= 0; i--) {
             MatchUpdateGetter current = new MatchUpdateGetter(team1.get(i), team2.get(i), score1.get(i),
                     score2.get(i), stadium.get(i), starttimedate.get(i), team1id.get(i), team2id.get(i),
                     matchtime.get(i),teamimage1.get(i),teamimage2.get(i), String.valueOf(count));

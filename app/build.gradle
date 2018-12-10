@@ -9,8 +9,8 @@ android {
         applicationId "com.jaipurpinkpanthers.android"
         minSdkVersion 17
         targetSdkVersion 26
-        versionCode 35
-        versionName "4.6"
+        versionCode 36
+        versionName "4.7"
         multiDexEnabled true
         manifestPlaceholders = [pw_appid: "D8FF5-9BCDF", gcm_project_number: "166446624422"]
 
